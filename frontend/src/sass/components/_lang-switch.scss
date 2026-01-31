@@ -1,0 +1,19 @@
+.lang-switch {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-switch__btn {
+  border: 1px solid rgba(0,0,0,.10);
+  background: transparent;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.lang-switch__btn.is-active {
+  background: rgba(21, 60, 47, .08);
+  border-color: rgba(21, 60, 47, .25);
+}

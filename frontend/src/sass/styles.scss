@@ -1,1 +1,21 @@
-@use './app' as app;
+//ABSTRACTS
+@use './abstracts/variables';
+@use './abstracts/mixins';
+
+//! BASE
+@use './base/reset';
+@use './base/typography';
+@use './base/base';
+
+//! LAYOUT
+@use './layout/container';
+@use './layout/header';
+@use './layout/footer';
+
+//! COMPONENTS
+@use './components/buttons';
+@use './components/lang-switch';
+@use './components/social';
+
+// PAGES
+@use './pages/home';

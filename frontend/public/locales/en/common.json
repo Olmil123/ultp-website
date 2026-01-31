@@ -1,3 +1,64 @@
 {
-  "app_title": "Template works"
+  "header": { "ask": "Make a question" },
+  "nav": {
+    "practices": "Practices",
+    "services": "Services and their cost",
+    "about": "About Us",
+    "news": "News",
+    "cases": "Cases and references"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "[ SVITLANA RUDIUK ]",
+      "lead": "From idea to launch. The synergy of legal and technological solutions for fintech, web.3, blockchain, and crypto assets' requests.",
+      "p1": "Professionalism and defined specialization.",
+      "p2": "Comprehensive solutions. A unique combination of legal, technological, and compliance expertise.",
+      "p3": "Only the best international practices and expertise. No legal opinions and unfinished technological projects separately. We offer you only comprehensive solutions.",
+      "cta": "Create a unique and ergonomic solution that we will analyze together, calculate, minimize risks, and implement.",
+      "brand": "Ukrainian Legal and Tech Partners",
+      "cardName": "Svitlana Rudiuk",
+      "cardDesc": "International legal & tax consultant in fintech, blockchain, compliance.",
+      "cardLink": "Read more"
+    },
+    "advantages": {
+      "title": "Advantages",
+      "a1": "deep expertise, which is based on experience in implementing international technology projects.",
+      "a2": "Comprehensive project analysis (a combination of exceptional technological and legal expertise).",
+      "a3": "Effective solutions which are based on the synergy of exceptional legal and technological expertise."
+    },
+    "practices": {
+      "title": "Practices",
+      "p1": "National taxation",
+      "p2": "International taxation",
+      "p3": "Technologies",
+      "p4": "Fintech, Blockchain, Web3",
+      "p5": "Compliance"
+    },
+    "news": { "placeholder": "News and updates coming soon." },
+    "cases": { "placeholder": "Cases and references coming soon." },
+    "contacts": {
+      "title": "Contacts",
+      "emailLabel": "Email:",
+      "telLabel": "Tel.:",
+      "tgLabel": "Telegram -",
+      "email": "rudiuksvitlana@gmail.com",
+      "tel": "+380633966786",
+      "telegram": "dont_tax_me"
+    }
+  },
+  "footer": {
+    "copy": "ФОП \"Рудюк С.А.\" 2025",
+    "copy2": "PE Svitlana Rudiuk 2025",
+    "disclaimer1": "The information which is provided on this website is not legal advice and needs to be used for informational purposes only.",
+    "disclaimer2": "All materials are protected by copyright law. Using and/or copying is permitted only with the consent of the website owner.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "modal": {
+    "title": "Make a question",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  }
 }

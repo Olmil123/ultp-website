@@ -1,0 +1,26 @@
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--green, #153c2f);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn--outline {
+  background: #fff;
+  color: var(--green, #153c2f);
+  border: 2px solid var(--green, #153c2f);
+}
+
+.btn--outline:hover {
+  background: rgba(21, 60, 47, 0.06);
+}

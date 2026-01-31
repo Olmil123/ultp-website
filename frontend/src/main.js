@@ -1,70 +1,106 @@
 /**
- * entry point for rendering Handlebars templates with internationalization.
- * - imports global styles (normalize, tailwind, icons, custom SCSS)
- * - registers common Handlebars helpers
- * - compiles and mounts each template into #app
- * - binds i18next to update `[data-lang]` elements on load and language change
+ * entry point for rendering JS components with internationalization.
  */
 
-import Handlebars from 'handlebars';
-import templates from './templates';
 import i18next from './i18n';
 
 import 'normalize.css';
 import 'material-icons/iconfont/material-icons.css';
 import 'flag-icons/css/flag-icons.min.css';
-import '@/tailwind.css';
 import '@/sass/styles.scss';
 
-// register common helpers
-Handlebars.registerHelper('eq', (a, b) => a === b);
+import { createHeader } from '@/templates/header.js';
+import { createMain } from '@/templates/main.js';
+import { createFooter } from '@/templates/footer.js';
 
-// template props resolver
-const getProps = (name) => {
-  const shared = {
-    lang: i18next.language,
-    timestamp: Date.now(),
-  };
-
-  const perTemplate = {
-    nav: {},
-    header: {},
-    main: {},
-    footer: {},
-  };
-
-  return { ...shared, ...(perTemplate[name] || {}) };
-};
-
-// mount root
 const mount = document.getElementById('app');
 
 if (!mount) {
-  console.error('Mount point "#app" not found');
+  document.body.innerHTML = '<p style="padding:20px;color:red;">#app not found</p>';
 } else {
-  mount.innerHTML = ''; // cleaning previous content
-
-  const combinedHTML = Object.entries(templates)
-    .map(([name, source]) => {
-      try {
-        return Handlebars.compile(source)(getProps(name));
-      } catch (err) {
-        console.error(`Failed to render template "${name}"`, err);
-        return '';
-      }
-    })
-    .join('');
-
-  mount.innerHTML = combinedHTML;
+  try {
+    mount.innerHTML = '';
+    mount.appendChild(createHeader());
+    mount.appendChild(createMain());
+    mount.appendChild(createFooter());
+  } catch (err) {
+    mount.innerHTML = `<p style="padding:20px;color:red;">Error: ${err.message}</p>`;
+    console.error(err);
+  }
 }
 
-// bind i18next to update translatable elements
 const updateTranslations = () => {
-  document.querySelectorAll('[data-lang]').forEach((el) => {
-    const key = el.dataset.lang;
-    if (key) el.textContent = i18next.t(key);
+  document.querySelectorAll('[data-lang]').forEach((node) => {
+    const key = node.dataset.lang;
+    if (key) node.textContent = i18next.t(key);
   });
 };
 
 i18next.on('initialized languageChanged', updateTranslations);
-updateTranslations(); // initial trigger
+updateTranslations();
+
+const modal = document.getElementById('questionModal');
+
+const openModal = () => {
+  if (!modal) return;
+  modal.classList.remove('is-hidden');
+  modal.setAttribute('aria-hidden', 'false');
+};
+
+const closeModal = () => {
+  if (!modal) return;
+  modal.classList.add('is-hidden');
+  modal.setAttribute('aria-hidden', 'true');
+};
+
+document.addEventListener('click', (e) => {
+  const btnLang = e.target.closest('[data-lang-switch]');
+  if (btnLang) {
+    const lng = btnLang.dataset.langSwitch;
+    i18next.changeLanguage(lng);
+    localStorage.setItem('language', lng);
+    return;
+  }
+
+  const openBtn = e.target.closest('[data-open-modal="question"]');
+  if (openBtn) {
+    openModal();
+    return;
+  }
+
+  const closeBtn = e.target.closest('[data-close-modal]');
+  if (closeBtn) {
+    closeModal();
+    return;
+  }
+
+  const menuToggle = e.target.closest('[data-menu-toggle]');
+  if (menuToggle) {
+    const mobileNav = document.querySelector('.header__nav--mobile');
+    if (mobileNav) {
+      mobileNav.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', mobileNav.classList.contains('is-open'));
+    }
+    return;
+  }
+
+  const navLink = e.target.closest('.header__nav--mobile a');
+  if (navLink) {
+    document.querySelector('.header__nav--mobile')?.classList.remove('is-open');
+    document.querySelector('[data-menu-toggle]')?.setAttribute('aria-expanded', 'false');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+const form = document.getElementById('questionForm');
+const hint = document.getElementById('formHint');
+
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (hint) hint.textContent = 'Sent (stub).';
+  });
+}
