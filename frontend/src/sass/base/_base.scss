@@ -1,4 +1,15 @@
+@use '../abstracts/mixins' as m;
+
+html {
+  background: var(--page-bg, #f5f4f1);
+  background-image: none;
+}
+
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @include m.page-background;
+}
+
+.app-main {
+  display: block;
+  position: relative;
 }

@@ -1,0 +1,249 @@
+﻿@use '../../abstracts/mixins' as m;
+
+/* Sections */
+.section {
+  @include m.section(64px);
+  background: var(--surface);
+}
+
+.section--alt {
+  background: #eaeae6;
+}
+
+.section__title {
+  @include m.h2(26px);
+  color: var(--green);
+}
+
+.section__placeholder {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.chips {
+  @include m.flex(center, flex-start, 12px);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chip {
+  padding: 12px 20px;
+  background: var(--surface);
+  border: 2px solid rgba(22, 63, 52, 0.25);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text);
+
+    a {
+      color: var(--green);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.contacts__icon {
+  vertical-align: middle;
+  margin: 0 6px 0 0;
+  filter: brightness(0);
+}
+
+.contacts__icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Practices page cards */
+.page-practices {
+  @include m.section(72px);
+  background: var(--bg);
+}
+
+.page-practices .cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.card {
+  position: relative;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #1f2524;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 260px;
+  scroll-margin-top: 120px;
+  @include m.tr(transform, box-shadow, border-color);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 12% 10%, rgba(255, 255, 255, 0.08), transparent 45%),
+      radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.06), transparent 50%),
+      repeating-radial-gradient(
+        circle at 80% 40%,
+        rgba(255, 255, 255, 0.06) 0,
+        rgba(255, 255, 255, 0.06) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card.is-selected {
+  border-color: rgba(242, 201, 76, 0.9);
+  box-shadow:
+    0 0 0 2px rgba(242, 201, 76, 0.35),
+    0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+}
+
+.card__index {
+  font-weight: 700;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.card__list li {
+  position: relative;
+  padding-left: 16px;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--yellow);
+  }
+}
+
+.card__btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@include m.respond(1200px) {
+  .page-practices .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include m.respond(768px) {
+  .page-practices .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+}

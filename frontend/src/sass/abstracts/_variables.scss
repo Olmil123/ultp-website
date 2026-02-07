@@ -1,22 +1,41 @@
 :root {
-  --c-bg: #f6f6f2;
-  --c-text: #111111;
-  --c-muted: #4b4b4b;
+  // Palette
+  --bg: #f6f5f2;
+  --page-bg: #f5f4f1;
+  --surface: #ffffff;
+  --text: #111111;
+  --muted: #4b4b4b;
+  --green: #153c2f;
+  --yellow: #f2c94c;
+  --green-2: #1f5748;
 
-  --c-green: #163f34;
-  --c-green-2: #1f5748;
-  --c-yellow: #f2c94c;
-
+  // Layout
   --container: 1200px;
   --radius-xl: 16px;
   --radius-lg: 12px;
   --header-h: 72px;
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.08);
 
-  --shadow-soft: 0 8px 30px rgba(0,0,0,.08);
+  // Motion
+  --t: 220ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  --bg:#f6f6f3;
-  --surface:#ffffff;
-  --text:#111;
-  --green:#153c2f;
-  --yellow:#f2c94c;
+  // Texture layers
+  --bg-noise-1: rgba(0, 0, 0, 0.04);
+  --bg-noise-2: rgba(0, 0, 0, 0.03);
+  --bg-noise-3: rgba(0, 0, 0, 0.02);
+  --bg-lines: rgba(0, 0, 0, 0.015);
+
+  // Header
+  --header-bg: rgba(255, 255, 255, 0.75);
+  --header-border: rgba(0, 0, 0, 0.06);
+  --header-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --header-hover-bg: rgba(21, 60, 47, 0.08);
+  --header-control-bg: rgba(255, 255, 255, 0.75);
+  --header-control-border: rgba(0, 0, 0, 0.14);
+  --header-control-hover-bg: rgba(21, 60, 47, 0.06);
+  --header-control-hover-border: rgba(21, 60, 47, 0.18);
+  --header-panel-bg: rgba(255, 255, 255, 0.92);
+  --header-panel-border: rgba(0, 0, 0, 0.06);
+  --header-panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }

@@ -1,21 +1,24 @@
-//ABSTRACTS
+// Abstracts
 @use './abstracts/variables';
 @use './abstracts/mixins';
 
-//! BASE
+// Base
 @use './base/reset';
 @use './base/typography';
 @use './base/base';
 
-//! LAYOUT
+// Layout
 @use './layout/container';
 @use './layout/header';
 @use './layout/footer';
 
-//! COMPONENTS
+// Components
 @use './components/buttons';
 @use './components/lang-switch';
 @use './components/social';
 
-// PAGES
+// Pages
 @use './pages/home';
+
+// Responsive (single file for breakpoints)
+@use './layout/responsive';

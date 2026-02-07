@@ -1,19 +1,30 @@
+@use '../abstracts/mixins' as m;
+
 .lang-switch {
-  display: flex;
-  gap: 8px;
+  @include m.flex(center, center, 6px);
 }
 
 .lang-switch__btn {
-  border: 1px solid rgba(0,0,0,.10);
-  background: transparent;
+  min-height: 34px;
+  padding: 6px 12px;
   border-radius: 10px;
-  padding: 6px 10px;
-  cursor: pointer;
+  border: 1px solid var(--header-control-border);
+  background: var(--header-control-bg);
+  color: var(--text);
   font-weight: 700;
   font-size: 13px;
-}
+  cursor: pointer;
 
-.lang-switch__btn.is-active {
-  background: rgba(21, 60, 47, .08);
-  border-color: rgba(21, 60, 47, .25);
+  @include m.tr(background-color, border-color, color);
+
+  &:hover {
+    background: var(--header-control-hover-bg);
+    border-color: var(--header-control-hover-border);
+  }
+
+  &.is-active {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+  }
 }
