@@ -16,7 +16,11 @@ export const setLanguage = async (lang) => {
   localStorage.setItem('language', lang);
 
   subscribers.forEach((cb) => {
-    try { cb(lang); } catch (e) { console.error(e); }
+    try {
+      cb(lang);
+    } catch (e) {
+      console.error(e);
+    }
   });
 };
 

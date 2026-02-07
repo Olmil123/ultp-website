@@ -12,16 +12,31 @@
  */
 
 const SVG_TAGS = new Set([
-  'svg', 'path', 'circle', 'rect', 'line', 'polyline', 'polygon',
-  'g', 'defs', 'linearGradient', 'radialGradient', 'stop', 'clipPath',
-  'mask', 'pattern', 'text', 'tspan', 'use', 'symbol', 'ellipse',
+  'svg',
+  'path',
+  'circle',
+  'rect',
+  'line',
+  'polyline',
+  'polygon',
+  'g',
+  'defs',
+  'linearGradient',
+  'radialGradient',
+  'stop',
+  'clipPath',
+  'mask',
+  'pattern',
+  'text',
+  'tspan',
+  'use',
+  'symbol',
+  'ellipse',
 ]);
 
-function isNode(v) {
-  return v instanceof Node;
-}
+const isNode = (v) => v instanceof Node;
 
-function flattenChildren(children) {
+const flattenChildren = (children) => {
   const out = [];
   const walk = (c) => {
     if (c === null || c === undefined || c === false) return;
@@ -30,9 +45,9 @@ function flattenChildren(children) {
   };
   walk(children);
   return out;
-}
+};
 
-function setStyle(el, style) {
+const setStyle = (el, style) => {
   if (!style) return;
   if (typeof style === 'string') {
     el.style.cssText = style;
@@ -46,17 +61,17 @@ function setStyle(el, style) {
       else el.style[k] = String(v);
     });
   }
-}
+};
 
-function setDataset(el, dataset) {
+const setDataset = (el, dataset) => {
   if (!dataset || typeof dataset !== 'object') return;
   Object.entries(dataset).forEach(([k, v]) => {
     if (v === null || v === undefined) return;
     el.dataset[k] = String(v);
   });
-}
+};
 
-function setAttributes(el, attrs = {}) {
+const setAttributes = (el, attrs = {}) => {
   Object.entries(attrs).forEach(([key, value]) => {
     if (value === null || value === undefined || value === false) return;
 
@@ -115,9 +130,9 @@ function setAttributes(el, attrs = {}) {
     //! normal attribute
     el.setAttribute(key, String(value));
   });
-}
+};
 
-function createDomElement(tag, attrs, children) {
+const createDomElement = (tag, attrs, children) => {
   const wantsSvg = attrs?.svg === true || SVG_TAGS.has(tag);
   const el = wantsSvg
     ? document.createElementNS('http://www.w3.org/2000/svg', tag)
@@ -125,6 +140,7 @@ function createDomElement(tag, attrs, children) {
 
   //? don't keep svg flag as attribute
   if (attrs && 'svg' in attrs) {
+    // eslint-disable-next-line no-unused-vars
     const { svg, ...rest } = attrs;
     setAttributes(el, rest);
   } else {
@@ -144,7 +160,7 @@ function createDomElement(tag, attrs, children) {
   });
 
   return el;
-}
+};
 
 /**
  * el('div', { class: 'box', onClick: fn }, [
@@ -152,18 +168,16 @@ function createDomElement(tag, attrs, children) {
  *   'text',
  * ])
  */
-export function el(tag, attrs = {}, children = []) {
-  return createDomElement(tag, attrs, children);
-}
+export const el = (tag, attrs = {}, children = []) => createDomElement(tag, attrs, children);
 
 /**
  * html`<div class="x">Hello</div>`
  * Minimal template helper (no security sanitization).
  * Use ONLY for static trusted strings.
  */
-export function html(strings, ...values) {
+export const html = (strings, ...values) => {
   const tpl = document.createElement('template');
   const result = strings.reduce((acc, s, i) => acc + s + (values[i] ?? ''), '');
   tpl.innerHTML = result.trim();
   return tpl.content.firstElementChild;
-}
+};
