@@ -22,7 +22,7 @@
     },
     "advantages": {
       "title": "Advantages",
-      "a1": "deep expertise, which is based on experience in implementing international technology projects.",
+      "a1": "Deep expertise, which is based on experience in implementing international technology projects.",
       "a2": "Comprehensive project analysis (a combination of exceptional technological and legal expertise).",
       "a3": "Effective solutions which are based on the synergy of exceptional legal and technological expertise."
     },
@@ -60,5 +60,50 @@
     "email": "Email",
     "message": "Message",
     "send": "Send"
+  },
+  "practices": {
+    "title": "Practices",
+    "items": {
+      "national": "National taxation",
+      "international": "International taxation",
+      "technologies": "Technologies",
+      "fintech": "Fintech, Blockchain, Web3",
+      "compliance": "Compliance"
+    }
+  },
+  "services": {
+    "title": "Services and their cost",
+    "tax": {
+      "title": "Tax practice",
+      "t1": "Advising on the application of the provisions of tax legislation",
+      "t2": "Analysis of business structures with respect to the tax legislation",
+      "t3": "Providing recommendations on choosing the most effective model for implementing a cross-border agreement or business scheme and selecting appropriate jurisdictions for companies, taking into account the provisions of international agreements",
+      "t4": "Supporting the business restructuring process and the process of structuring operations",
+      "t5": "Developing and supporting optimal individual schemes for the purchase and sale of assets (business, real estate, intellectual property, etc.)",
+      "t6": "Advising on compliance with transfer pricing legislation and controlled foreign companies legislation",
+      "t7": "Advising on the application of international treaties on the avoidance of double taxation and the international exchange of tax information",
+      "t8": "Asset protecting and structuring",
+      "t9": "Personal tax declaration measures",
+      "t10": "Consulting and preparation of necessary documents on the application of tax benefits provided by current legislation",
+      "t11": "International tax planning for private clients"
+    },
+    "tech": {
+      "title": "Technologies",
+      "text": "Creating technological projects, mobile applications, crypto wallets, compliance platforms, etc."
+    },
+    "fintech": {
+      "title": "Fintech, Blockchain, Web3",
+      "f1": "Asset tokenization",
+      "f2": "Creating platforms for tokenization",
+      "f3": "Creating payment solutions",
+      "f4": "Obtaining the status of a CASP or VASP provider",
+      "f5": "Refunding funds from crypto scammers, etc."
+    },
+    "compliance": {
+      "title": "Compliance",
+      "text": "Opening bank accounts."
+    },
+    "cta": "Define your request, and we will send you a detailed calculation",
+    "ctaBtn": "Ask a question"
   }
 }
