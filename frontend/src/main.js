@@ -1,17 +1,13 @@
-/**
- * entry point for rendering JS components with internationalization.
- */
-
-import i18next from './i18n';
+﻿import i18next from './i18n';
 
 import 'normalize.css';
-import 'material-icons/iconfont/material-icons.css';
-import 'flag-icons/css/flag-icons.min.css';
 import '@/sass/styles.scss';
 
 import { createHeader } from '@/templates/header.js';
-import { createMain } from '@/templates/main.js';
+import { createModal } from '@/templates/main.js';
 import { createFooter } from '@/templates/footer.js';
+import { createLayout } from '@/templates/layout.js';
+import { initRouter } from '@/router.js';
 
 const mount = document.getElementById('app');
 
@@ -21,8 +17,11 @@ if (!mount) {
   try {
     mount.innerHTML = '';
     mount.appendChild(createHeader());
-    mount.appendChild(createMain());
+    const mainContainer = createLayout();
+    mount.appendChild(mainContainer);
     mount.appendChild(createFooter());
+    mount.appendChild(createModal());
+    initRouter(mainContainer);
   } catch (err) {
     mount.innerHTML = `<p style="padding:20px;color:red;">Error: ${err.message}</p>`;
     console.error(err);
@@ -30,27 +29,50 @@ if (!mount) {
 }
 
 const updateTranslations = () => {
+  if (i18next.language) {
+    document.documentElement.lang = i18next.language;
+  }
   document.querySelectorAll('[data-lang]').forEach((node) => {
     const key = node.dataset.lang;
     if (key) node.textContent = i18next.t(key);
   });
 };
 
-i18next.on('initialized languageChanged', updateTranslations);
+i18next.on('initialized', updateTranslations);
+i18next.on('languageChanged', updateTranslations);
+i18next.on('loaded', updateTranslations);
+document.addEventListener('app:render', updateTranslations);
 updateTranslations();
 
-const modal = document.getElementById('questionModal');
+const modal = () => document.getElementById('questionModal');
+const mobileNav = () => document.querySelector('.header__nav--mobile');
+const burger = () => document.querySelector('[data-menu-toggle]');
+
+const closeMobileNav = () => {
+  mobileNav()?.classList.remove('is-open');
+  burger()?.setAttribute('aria-expanded', 'false');
+};
+
+const toggleMobileNav = () => {
+  const nav = mobileNav();
+  if (!nav) return;
+  nav.classList.toggle('is-open');
+  burger()?.setAttribute('aria-expanded', nav.classList.contains('is-open'));
+};
 
 const openModal = () => {
-  if (!modal) return;
-  modal.classList.remove('is-hidden');
-  modal.setAttribute('aria-hidden', 'false');
+  const node = modal();
+  if (!node) return;
+  node.classList.remove('is-hidden');
+  node.setAttribute('aria-hidden', 'false');
+  node.querySelector('input, textarea, button')?.focus();
 };
 
 const closeModal = () => {
-  if (!modal) return;
-  modal.classList.add('is-hidden');
-  modal.setAttribute('aria-hidden', 'true');
+  const node = modal();
+  if (!node) return;
+  node.classList.add('is-hidden');
+  node.setAttribute('aria-hidden', 'true');
 };
 
 document.addEventListener('click', (e) => {
@@ -76,18 +98,36 @@ document.addEventListener('click', (e) => {
 
   const menuToggle = e.target.closest('[data-menu-toggle]');
   if (menuToggle) {
-    const mobileNav = document.querySelector('.header__nav--mobile');
-    if (mobileNav) {
-      mobileNav.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', mobileNav.classList.contains('is-open'));
-    }
+    toggleMobileNav();
     return;
   }
 
   const navLink = e.target.closest('.header__nav--mobile a');
   if (navLink) {
-    document.querySelector('.header__nav--mobile')?.classList.remove('is-open');
-    document.querySelector('[data-menu-toggle]')?.setAttribute('aria-expanded', 'false');
+    closeMobileNav();
+  }
+
+  const anchor = e.target.closest('a[href^="#"]');
+  if (anchor && !anchor.hasAttribute('data-link')) {
+    const id = anchor.getAttribute('href').slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  if (
+    mobileNav()?.classList.contains('is-open') &&
+    !e.target.closest('.header__nav--mobile') &&
+    !e.target.closest('[data-menu-toggle]')
+  ) {
+    closeMobileNav();
+  }
+
+  if (e.target.closest('a[data-link]')) {
+    closeMobileNav();
   }
 });
 
@@ -95,12 +135,12 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-const form = document.getElementById('questionForm');
-const hint = document.getElementById('formHint');
+const form = () => document.getElementById('questionForm');
+const hint = () => document.getElementById('formHint');
 
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (hint) hint.textContent = 'Sent (stub).';
-  });
-}
+document.addEventListener('submit', (e) => {
+  if (e.target !== form()) return;
+  e.preventDefault();
+  const node = hint();
+  if (node) node.textContent = 'Sent (stub).';
+});
