@@ -34,7 +34,13 @@ const updateTranslations = () => {
   }
   document.querySelectorAll('[data-lang]').forEach((node) => {
     const key = node.dataset.lang;
-    if (key) node.textContent = i18next.t(key);
+    if (!key) return;
+    const value = i18next.t(key);
+    if (node.hasAttribute('data-lang-html')) {
+      node.innerHTML = value;
+      return;
+    }
+    node.textContent = value;
   });
 };
 

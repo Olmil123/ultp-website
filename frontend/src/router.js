@@ -5,6 +5,9 @@ const normalize = (p) => (p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p |
 export const initRouter = (mountNode) => {
   const render = () => {
     const path = normalize(window.location.pathname || '/');
+    const routeName =
+      path === '/' ? 'home' : path.slice(1).replace(/[^a-z0-9-]/gi, '') || 'home';
+    document.body.dataset.route = routeName;
     const factory = routes[path] || routes['/'];
     mountNode.innerHTML = '';
     mountNode.appendChild(factory());

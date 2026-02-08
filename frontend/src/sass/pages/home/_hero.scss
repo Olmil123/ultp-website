@@ -70,8 +70,8 @@
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 0;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--text);
 
   &:last-child {
@@ -82,7 +82,7 @@
     flex: 1;
     min-width: 0;
     display: block;
-    min-height: 2.6em;
+    min-height: 3.2em;
     hyphens: auto;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -236,7 +236,7 @@
   }
 
   .hero__bullet > span:last-child {
-    min-height: 2.4em;
+    min-height: 3.1em;
   }
 
   .hero__check {
@@ -265,7 +265,7 @@
   }
 
   .hero__bullet > span:last-child {
-    min-height: 2.2em;
+    min-height: 3em;
   }
 
   .hero__img {

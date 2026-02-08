@@ -46,13 +46,13 @@ export const createMain = () => {
     ]),
   ]);
 
-  const advantages = el('section', { class: 'section', id: 'advantages' }, [
+  const advantages = el('section', { class: 'section section--advantages', id: 'advantages' }, [
     el('div', { class: 'container' }, [
       el('h2', { class: 'section__title', 'data-lang': 'home.advantages.title' }),
-      el('ul', { class: 'list' }, [
-        el('li', { 'data-lang': 'home.advantages.a1' }),
-        el('li', { 'data-lang': 'home.advantages.a2' }),
-        el('li', { 'data-lang': 'home.advantages.a3' }),
+      el('ul', { class: 'advantages__list' }, [
+        el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a1' }),
+        el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a2' }),
+        el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a3' }),
       ]),
     ]),
   ]);

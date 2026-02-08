@@ -6,19 +6,23 @@ export const createAboutPage = () =>
       el('header', { class: 'about__header' }, [
         el('p', { class: 'about__eyebrow', 'data-lang': 'nav.about' }),
         el('h1', { class: 'about__title', 'data-lang': 'about.title' }),
-        el('p', { class: 'about__lead', 'data-lang': 'about.lead' }),
+        el('p', { class: 'about__lead', 'data-lang': 'about.lead', 'data-lang-html': '' }),
       ]),
 
       el('div', { class: 'about__layout' }, [
         el('div', { class: 'about__content' }, [
           el('h2', { class: 'about__subtitle', 'data-lang': 'about.founder.title' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.founder.text' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.founder.experience' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.founder.specialization' }),
+          el('p', { class: 'about__text', 'data-lang': 'about.founder.text', 'data-lang-html': '' }),
+          el('p', { class: 'about__text', 'data-lang': 'about.founder.experience', 'data-lang-html': '' }),
+          el('p', {
+            class: 'about__text',
+            'data-lang': 'about.founder.specialization',
+            'data-lang-html': '',
+          }),
 
           el('h2', { class: 'about__subtitle', 'data-lang': 'about.web3.title' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.web3.text' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.speaker' }),
+          el('p', { class: 'about__text', 'data-lang': 'about.web3.text', 'data-lang-html': '' }),
+          el('p', { class: 'about__text', 'data-lang': 'about.speaker', 'data-lang-html': '' }),
         ]),
 
         el('aside', { class: 'about__aside' }, [

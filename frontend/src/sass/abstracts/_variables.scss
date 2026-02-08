@@ -53,4 +53,10 @@
       transparent 1px,
       transparent 7px
     );
+
+  //! Advantages
+  --advantages-bg: linear-gradient(180deg, #f7f4ef 0%, #e9f1ec 50%, #e2ebf1 100%);
+  --advantages-card-bg: linear-gradient(160deg, #ffffff 0%, #eef4f1 55%, #e7eff6 100%);
+  --advantages-card-border: rgba(21, 60, 47, 0.14);
+  --advantages-card-shadow: 0 16px 28px rgba(21, 60, 47, 0.12);
 }

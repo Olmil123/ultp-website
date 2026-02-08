@@ -2,27 +2,7 @@
 
 .page-about {
   @include m.section(72px);
-  background: var(--about-bg);
-  position: relative;
-  overflow: hidden;
-}
-
-.page-about::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--about-overlay);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.page-about::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--about-texture);
-  opacity: 0.35;
-  pointer-events: none;
+  background: transparent;
 }
 
 .about {
@@ -89,6 +69,12 @@
   margin: 0;
   font-size: 18px;
   line-height: 1.85;
+  color: var(--text);
+}
+
+.about__text strong,
+.about__lead strong {
+  font-weight: 700;
   color: var(--text);
 }
 
