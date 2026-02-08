@@ -46,6 +46,27 @@
       "telegram": "dont_tax_me"
     }
   },
+  "about": {
+    "title": "Ukrainian Legal and Tech Partners",
+    "lead": "Ukrainian Legal and Tech Partners is a unique project that unites legal, technological and compliance expertise.",
+    "founder": {
+      "title": "Founder",
+      "text": "Founder - Svitlana Rudiuk, an expert in national and international taxation and WEB.3.0. solutions practices.",
+      "experience": "Experience in national and international taxation practices, WEB.3 solutions practices is more than twelve years.",
+      "specialization": "Specializes in solving issues related to international and national taxation, including, but not limited to: corporate and personal tax planning, tax structuring, constructing of holding structures, structuring of M&A deals, attracting financing, and personal tax declaration measures."
+    },
+    "web3": {
+      "title": "WEB.3.0 practice",
+      "text": "In WEB.3.0. practice provides legal support to clients at all stages of tokenization, obtains the status of a VASP or CASPʼs provider, ensures compliance, and opens accounts for VASP or CASP’s providers."
+    },
+    "speaker": "Speaker, author of publications.",
+    "credits": {
+      "title": "Partnerships and expertise",
+      "partner": "UA Tech Network Community Partner",
+      "association": "Expert of the International Association of Tax Advisors",
+      "beps": "BEPS.space expert"
+    }
+  },
   "footer": {
     "copy": "ФОП \"Рудюк С.А.\" 2025",
     "copy2": "PE Svitlana Rudiuk 2025",

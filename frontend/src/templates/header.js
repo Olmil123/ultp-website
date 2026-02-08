@@ -86,7 +86,7 @@ export const createHeader = () => {
         ]),
 
         el('a', { href: '/services', 'data-link': '', 'data-lang': 'nav.services' }),
-        el('a', { href: '/#about', 'data-link': '', 'data-lang': 'nav.about' }),
+        el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
         el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),
         el('a', { href: '/#cases', 'data-link': '', 'data-lang': 'nav.cases' }),
       ]),
@@ -124,7 +124,7 @@ export const createHeader = () => {
     el('nav', { class: 'header__nav header__nav--mobile' }, [
       el('a', { href: '/practices', 'data-link': '', 'data-lang': 'nav.practices' }),
       el('a', { href: '/services', 'data-link': '', 'data-lang': 'nav.services' }),
-      el('a', { href: '/#about', 'data-link': '', 'data-lang': 'nav.about' }),
+      el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
       el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),
       el('a', { href: '/#cases', 'data-link': '', 'data-lang': 'nav.cases' }),
 

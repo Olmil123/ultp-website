@@ -36,8 +36,9 @@ export const createMain = () => {
           el('strong', { class: 'hero__card-title', 'data-lang': 'home.hero.cardName' }),
           el('span', { class: 'hero__card-desc', 'data-lang': 'home.hero.cardDesc' }),
           el('a', {
-            href: '#advantages',
+            href: '/about',
             class: 'hero__card-link',
+            'data-link': '',
             'data-lang': 'home.hero.cardLink',
           }),
         ]),
