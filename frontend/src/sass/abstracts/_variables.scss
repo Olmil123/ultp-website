@@ -1,13 +1,129 @@
-:root {
+﻿:root {
   //! Palette
   --bg: #f6f5f2;
   --page-bg: #f5f4f1;
+  --page-gradient: none;
+
+  //! Services page backgorund
+  --services-page-bg: #f7f6f2;
+  --services-page-gradient:
+    radial-gradient(1200px 600px at 8% -10%, rgba(242, 201, 76, 0.18), transparent 55%),
+    radial-gradient(900px 520px at 95% 6%, rgba(21, 60, 47, 0.12), transparent 56%),
+    radial-gradient(700px 420px at 50% 85%, rgba(21, 60, 47, 0.08), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(243, 246, 244, 0.96) 55%,
+      rgba(241, 245, 248, 0.96) 100%
+    );
+
+  //* Services background texture
+  --services-bg-noise-1: rgba(0, 0, 0, 0.03);
+  --services-bg-noise-2: rgba(0, 0, 0, 0.02);
+  --services-bg-noise-3: rgba(0, 0, 0, 0.015);
+  --services-bg-lines: rgba(0, 0, 0, 0.012);
+
+  //! Services titles and text colors
+  --services-title-color: var(--green);
+  --services-subtitle-color: rgba(21, 60, 47, 0.72);
+  --services-section-title-color: rgba(21, 60, 47, 0.7);
+
+  //?Services cards
+  --services-card-bg: linear-gradient(160deg, #ffffff 0%, #f3f7f5 60%, #eef4f3 100%);
+  --services-card-border: rgba(21, 60, 47, 0.16);
+  --services-card-border-hover: rgba(21, 60, 47, 0.28);
+  --services-card-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  --services-card-shadow-hover:
+    0 22px 46px rgba(0, 0, 0, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  --services-card-inner-border: rgba(255, 255, 255, 0.6);
+  --services-card-glow-1: rgba(242, 201, 76, 0.16);
+  --services-card-glow-2: rgba(21, 60, 47, 0.1);
+
+  //! Services card icons
+  --services-icon-bg: linear-gradient(160deg, var(--green) 0%, var(--green-2) 100%);
+  --services-icon-shadow:
+    0 8px 18px rgba(21, 60, 47, 0.25),
+    0 1px 0 rgba(255, 255, 255, 0.15) inset;
+
+  //! Services cta
+  --services-cta-bg:
+    radial-gradient(120% 140% at 10% 0%, rgba(242, 201, 76, 0.28), transparent 45%),
+    linear-gradient(140deg, #12362c 0%, #1f5748 60%, #1a4a3d 100%);
+  --services-cta-text: #ffffff;
+  --services-cta-shadow: 0 24px 50px rgba(12, 28, 23, 0.25);
+  --services-cta-btn-bg: linear-gradient(180deg, #ffffff 0%, #f5f6f4 100%);
+  --services-cta-btn-border: rgba(255, 255, 255, 0.6);
+  --services-cta-btn-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  --services-cta-btn-shadow-hover:
+    0 14px 28px rgba(0, 0, 0, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.85) inset;
+
+  //! Global theme base
   --surface: #ffffff;
   --text: #111111;
   --muted: #4b4b4b;
   --green: #153c2f;
   --yellow: #f2c94c;
   --green-2: #1f5748;
+  --white: #ffffff;
+
+  //? White transparency tokens
+  --white-92: rgba(255, 255, 255, 0.92);
+  --white-74: rgba(255, 255, 255, 0.74);
+  --white-35: rgba(255, 255, 255, 0.35);
+  --white-18: rgba(255, 255, 255, 0.18);
+  --white-12: rgba(255, 255, 255, 0.12);
+  --white-08: rgba(255, 255, 255, 0.08);
+  --white-06: rgba(255, 255, 255, 0.06);
+  //? Black transparency tokens
+  --black-50: rgba(0, 0, 0, 0.5);
+  --black-25: rgba(0, 0, 0, 0.25);
+  --black-22: rgba(0, 0, 0, 0.22);
+  --black-20: rgba(0, 0, 0, 0.2);
+  --black-18: rgba(0, 0, 0, 0.18);
+  --black-12: rgba(0, 0, 0, 0.12);
+  --black-08: rgba(0, 0, 0, 0.08);
+  --black-06: rgba(0, 0, 0, 0.06);
+  --black-04: rgba(0, 0, 0, 0.04);
+
+  //! Default borders and shadows
+  --surface-border: var(--black-06);
+  --shadow-lift: 0 14px 40px var(--black-12);
+
+  //? Common Ui elements
+  --btn-primary-text: var(--white);
+  --lang-switch-active-bg: var(--text);
+  --lang-switch-active-border: var(--text);
+  --lang-switch-active-text: var(--white);
+  --header-logo-text: var(--white);
+  --footer-text: var(--white-92);
+  --section-alt-bg: #eaeae6;
+  --section-title-bracket: rgba(28, 36, 34, 0.7);
+  --chip-border: rgba(22, 63, 52, 0.25);
+  --about-subtitle-border: rgba(242, 201, 76, 0.5);
+  --about-photo-shadow: 0 20px 50px var(--black-18);
+  --about-list-border: var(--black-08);
+  --advantages-card-border-hover: rgba(21, 60, 47, 0.24);
+  --advantages-card-shadow-hover: 0 22px 38px rgba(21, 60, 47, 0.18);
+
+  //! Hero and model elements
+  --hero-card-bg: rgba(16, 18, 22, 0.92);
+  --modal-details-bg: rgba(15, 18, 17, 0.25);
+
+  //!Practice cards
+  --practice-card-bg: #1f2524;
+  --practice-card-text: var(--white);
+  --practice-card-shadow: 0 18px 50px var(--black-18);
+  --practice-card-selected-border: rgba(242, 201, 76, 0.9);
+  --practice-card-selected-glow: rgba(242, 201, 76, 0.35);
+  --practice-card-selected-shadow: 0 18px 50px var(--black-25);
+  --practice-card-list-color: var(--white-74);
+  --practice-card-scrollbar: var(--white-35);
 
   //! Layout
   --container: 1200px;
@@ -60,3 +176,6 @@
   --advantages-card-border: rgba(21, 60, 47, 0.14);
   --advantages-card-shadow: 0 16px 28px rgba(21, 60, 47, 0.12);
 }
+
+
+

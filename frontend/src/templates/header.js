@@ -15,11 +15,11 @@ const ICONS = {
 };
 
 const PRACTICES = [
-  { key: 'national', path: '/practices#practice-national' },
-  { key: 'international', path: '/practices#practice-international' },
-  { key: 'technologies', path: '/practices#practice-technologies' },
-  { key: 'fintech', path: '/practices#practice-fintech' },
-  { key: 'compliance', path: '/practices#practice-compliance' },
+  { key: 'national', path: '/#practice-national' },
+  { key: 'international', path: '/#practice-international' },
+  { key: 'technologies', path: '/#practice-technologies' },
+  { key: 'fintech', path: '/#practice-fintech' },
+  { key: 'compliance', path: '/#practice-compliance' },
 ];
 
 const langBtn = (code, label) =>
@@ -71,7 +71,7 @@ export const createHeader = () => {
       el('nav', { class: 'header__nav' }, [
         // Practices dropdown
         el('div', { class: 'nav-item nav-item--has-dropdown' }, [
-          el('a', { href: '/practices', 'data-link': '', 'data-lang': 'nav.practices' }),
+          el('a', { href: '/#practices', 'data-link': '', 'data-lang': 'nav.practices' }),
           el(
             'div',
             { class: 'nav-dropdown' },
@@ -122,7 +122,7 @@ export const createHeader = () => {
 
     //* Mobile nav
     el('nav', { class: 'header__nav header__nav--mobile' }, [
-      el('a', { href: '/practices', 'data-link': '', 'data-lang': 'nav.practices' }),
+      el('a', { href: '/#practices', 'data-link': '', 'data-lang': 'nav.practices' }),
       el('a', { href: '/services', 'data-link': '', 'data-lang': 'nav.services' }),
       el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
       el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),

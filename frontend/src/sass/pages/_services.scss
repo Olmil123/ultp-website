@@ -1,0 +1,216 @@
+﻿@use '../abstracts/mixins' as m;
+
+body[data-route='services'] {
+  --page-bg: var(--services-page-bg);
+  --page-gradient: var(--services-page-gradient);
+  --bg-noise-1: var(--services-bg-noise-1);
+  --bg-noise-2: var(--services-bg-noise-2);
+  --bg-noise-3: var(--services-bg-noise-3);
+  --bg-lines: var(--services-bg-lines);
+}
+
+.page-services {
+  @include m.section(80px);
+}
+
+.services-hero {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.services__title {
+  @include m.h2(clamp(26px, 3.2vw, 34px));
+  margin-bottom: 14px;
+  line-height: 1.2;
+  color: var(--services-title-color);
+}
+
+.services__subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--services-subtitle-color);
+  white-space: pre-line;
+}
+
+.services-section {
+  margin-top: 64px;
+}
+
+.services__lead {
+  margin: 8px 0 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.services__note {
+  margin: 20px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.services-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.services-grid--work {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.services-grid--cost {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.service-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 18px;
+  background: var(--services-card-bg);
+  border: 1px solid var(--services-card-border);
+  box-shadow: var(--services-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 170px;
+  @include m.tr(transform, box-shadow, border-color);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 12% 15%, var(--services-card-glow-1), transparent 45%),
+    radial-gradient(circle at 88% 25%, var(--services-card-glow-2), transparent 52%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--services-card-inner-border);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--services-card-border-hover);
+  box-shadow: var(--services-card-shadow-hover);
+}
+
+.service-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--services-icon-bg);
+  color: var(--yellow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: var(--services-icon-shadow);
+}
+
+.service-card__icon::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: var(--yellow);
+  mask-image: var(--icon);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: var(--icon);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.service-card__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.service-card__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.page-services .section__title--bracket {
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  color: var(--services-section-title-color);
+  margin-bottom: 18px;
+}
+
+.services-cta {
+  margin-top: 72px;
+  border-radius: 22px;
+  padding: 36px;
+  background: var(--services-cta-bg);
+  color: var(--services-cta-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: var(--services-cta-shadow);
+}
+
+.services-cta__text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 640px;
+}
+
+.services-cta .btn {
+  background: var(--services-cta-btn-bg);
+  color: var(--green);
+  border: 1px solid var(--services-cta-btn-border);
+  box-shadow: var(--services-cta-btn-shadow);
+  @include m.tr(transform, box-shadow);
+}
+
+.services-cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--services-cta-btn-shadow-hover);
+}
+
+@include m.respond(900px) {
+  .services-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@include m.respond(640px) {
+  .page-services {
+    @include m.section(56px);
+  }
+
+  .services-hero {
+    margin-bottom: 36px;
+  }
+
+  .service-card {
+    padding: 16px;
+  }
+}
+

@@ -1,9 +1,9 @@
-@use '../abstracts/mixins' as m;
+﻿@use '../abstracts/mixins' as m;
 
 .footer {
   @include m.section(40px);
   background: var(--green);
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--footer-text);
 }
 
 .footer__inner {
@@ -38,3 +38,4 @@
     text-decoration: underline;
   }
 }
+

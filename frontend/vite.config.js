@@ -40,14 +40,25 @@ export default defineConfig({
 
   server: {
     port: 9999,
+    host: '0.0.0.0',
+    allowedHosts: ['.ngrok-free.dev'],
     fs: {
-      allow: [__dirname],
+      allow: ['.', 'src', 'public', 'node_modules'],
+    },
+    proxy: {  
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+      },
     },
   },
 
   preview: {
     port: 8888,
+    host: '0.0.0.0',
+    allowedHosts: ['.ngrok-free.dev'],
   },
+
 
   build: {
     outDir: 'dist',

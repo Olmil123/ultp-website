@@ -51,6 +51,9 @@ document.addEventListener('app:render', updateTranslations);
 updateTranslations();
 
 const modal = () => document.getElementById('questionModal');
+const practiceModal = () => document.getElementById('practiceModal');
+const practiceTitle = () => document.getElementById('practiceModalTitle');
+const practiceBody = () => document.getElementById('practiceModalBody');
 const mobileNav = () => document.querySelector('.header__nav--mobile');
 const burger = () => document.querySelector('[data-menu-toggle]');
 
@@ -81,6 +84,43 @@ const closeModal = () => {
   node.setAttribute('aria-hidden', 'true');
 };
 
+const openPracticeModal = (trigger) => {
+  const node = practiceModal();
+  if (!node) return;
+  const card = trigger?.closest('.card');
+  const titleText = card?.querySelector('.card__title')?.textContent?.trim() ?? '';
+  const list = card?.querySelector('.card__list');
+
+  const titleNode = practiceTitle();
+  if (titleNode) titleNode.textContent = titleText;
+
+  const bodyNode = practiceBody();
+  if (bodyNode) {
+    bodyNode.innerHTML = '';
+    if (list) {
+      const modalList = document.createElement('ul');
+      modalList.className = 'modal__list';
+      list.querySelectorAll('li').forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = item.textContent;
+        modalList.appendChild(li);
+      });
+      bodyNode.appendChild(modalList);
+    }
+  }
+
+  node.classList.remove('is-hidden');
+  node.setAttribute('aria-hidden', 'false');
+  node.querySelector('button')?.focus();
+};
+
+const closePracticeModal = () => {
+  const node = practiceModal();
+  if (!node) return;
+  node.classList.add('is-hidden');
+  node.setAttribute('aria-hidden', 'true');
+};
+
 document.addEventListener('click', (e) => {
   const btnLang = e.target.closest('[data-lang-switch]');
   if (btnLang) {
@@ -96,9 +136,17 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  const openPracticeBtn = e.target.closest('[data-open-modal="practice"]');
+  if (openPracticeBtn) {
+    openPracticeModal(openPracticeBtn);
+    return;
+  }
+
   const closeBtn = e.target.closest('[data-close-modal]');
   if (closeBtn) {
-    closeModal();
+    const type = closeBtn.dataset.closeModal;
+    if (type === 'practice') closePracticeModal();
+    else closeModal();
     return;
   }
 
@@ -138,7 +186,10 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') {
+    closeModal();
+    closePracticeModal();
+  }
 });
 
 const form = () => document.getElementById('questionForm');

@@ -1,4 +1,4 @@
-@use '../abstracts/mixins' as m;
+﻿@use '../abstracts/mixins' as m;
 
 .lang-switch {
   @include m.flex(center, center, 6px);
@@ -23,8 +23,9 @@
   }
 
   &.is-active {
-    background: #111;
-    border-color: #111;
-    color: #fff;
+    background: var(--lang-switch-active-bg);
+    border-color: var(--lang-switch-active-border);
+    color: var(--lang-switch-active-text);
   }
 }
+

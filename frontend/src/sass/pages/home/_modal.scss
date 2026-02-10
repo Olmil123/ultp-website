@@ -26,7 +26,7 @@
 .modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--black-50);
   cursor: pointer;
 }
 
@@ -37,7 +37,19 @@
   background: var(--surface);
   border-radius: 16px;
   padding: 28px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 24px 60px var(--black-25);
+}
+
+.modal__dialog--wide {
+  max-width: 720px;
+}
+
+.modal--details .modal__dialog {
+  background: var(--modal-details-bg);
+  box-shadow: none;
+  border: 1px solid var(--white-18);
+  backdrop-filter: blur(8px);
+  color: var(--white);
 }
 
 .modal__head {
@@ -58,10 +70,53 @@
   width: 36px;
   height: 36px;
   border: none;
-  background: rgba(0, 0, 0, 0.06);
+  background: var(--black-06);
   border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
+}
+
+.modal--details .modal__title {
+  color: var(--white);
+}
+
+.modal--details .modal__close {
+  background: var(--white-12);
+  color: var(--white);
+}
+
+.modal__body {
+  max-height: 60vh;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+.modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+
+  li {
+    position: relative;
+    padding-left: 18px;
+
+    &::before {
+      content: '\2022';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--yellow);
+    }
+  }
+}
+
+.modal--details .modal__list {
+  color: var(--white);
 }
 
 .form__field {
@@ -79,7 +134,7 @@
   input,
   textarea {
     padding: 12px 14px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--black-20);
     border-radius: 8px;
     font-size: 14px;
   }
@@ -90,3 +145,5 @@
   font-size: 13px;
   color: var(--muted);
 }
+
+

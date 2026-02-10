@@ -1,7 +1,7 @@
-@use '../abstracts/mixins' as m;
+﻿@use '../abstracts/mixins' as m;
 
 html {
-  background: var(--page-bg, #f5f4f1);
+  background: var(--page-bg);
   background-image: none;
   height: 100%;
 }
@@ -30,3 +30,4 @@ body[data-route='about'] {
   position: relative;
   flex: 1 0 auto;
 }
+

@@ -1,4 +1,4 @@
-@use '../abstracts/mixins' as m;
+﻿@use '../abstracts/mixins' as m;
 
 .btn {
   border: 0;
@@ -11,7 +11,7 @@
 
 .btn--primary {
   background: var(--green);
-  color: #fff;
+  color: var(--btn-primary-text);
 
   &:hover {
     filter: brightness(1.05);
@@ -27,3 +27,4 @@
     filter: brightness(1.05);
   }
 }
+

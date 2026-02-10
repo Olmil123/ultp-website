@@ -1,34 +1,36 @@
 import { el } from '@/utils/createElement';
+import { createPracticeCards } from '@/templates/practicesCards';
 
 export const createMain = () => {
   const hero = el('section', { class: 'hero', id: 'about' }, [
     el('div', { class: 'container hero__inner' }, [
       el('div', { class: 'hero__content' }, [
         el('p', { class: 'hero__subtitle', 'data-lang': 'home.hero.subtitle' }),
-        el('h1', { class: 'hero__title hero__title--blur', 'data-lang': 'home.hero.lead' }),
+        el('h2', { class: 'hero__title hero__title--blur', 'data-lang': 'home.hero.lead' }),
+        el('p', { class: 'hero__lead', 'data-lang': 'home.hero.tagline' }),
 
         el('ul', { class: 'hero__bullets' }, [
           el('li', { class: 'hero__bullet' }, [
-            el('span', { class: 'hero__check' }, '✓'),
+            el('span', { class: 'hero__check' }),
             el('span', { 'data-lang': 'home.hero.p1' }),
           ]),
           el('li', { class: 'hero__bullet' }, [
-            el('span', { class: 'hero__check' }, '✓'),
+            el('span', { class: 'hero__check' }),
             el('span', { 'data-lang': 'home.hero.p2' }),
           ]),
           el('li', { class: 'hero__bullet' }, [
-            el('span', { class: 'hero__check' }, '✓'),
+            el('span', { class: 'hero__check' }),
             el('span', { 'data-lang': 'home.hero.p3' }),
           ]),
           el('li', { class: 'hero__bullet' }, [
-            el('span', { class: 'hero__check' }, '✓'),
+            el('span', { class: 'hero__check' }),
             el('span', { 'data-lang': 'home.hero.cta' }),
           ]),
         ]),
       ]),
 
       el('div', { class: 'hero__photo' }, [
-        el('p', { class: 'hero__brand-side', 'data-lang': 'home.hero.brand' }),
+        el('h1', { class: 'hero__brand-side', 'data-lang': 'home.hero.brand' }),
         el('div', { class: 'hero__photo-wrap' }, [
           el('img', { src: '/assets/ico/logo.jpg', alt: 'Svitlana Rudiuk', class: 'hero__img' }),
         ]),
@@ -48,7 +50,7 @@ export const createMain = () => {
 
   const advantages = el('section', { class: 'section section--advantages', id: 'advantages' }, [
     el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title', 'data-lang': 'home.advantages.title' }),
+      el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'home.advantages.title' }),
       el('ul', { class: 'advantages__list' }, [
         el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a1' }),
         el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a2' }),
@@ -57,16 +59,11 @@ export const createMain = () => {
     ]),
   ]);
 
-  const practices = el('section', { class: 'section section--alt', id: 'practices' }, [
+  const activePracticeId = window.location.hash ? window.location.hash.slice(1) : '';
+  const practices = el('section', { class: 'section page-practices', id: 'practices' }, [
     el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title', 'data-lang': 'home.practices.title' }),
-      el('ul', { class: 'chips' }, [
-        el('li', { class: 'chip', 'data-lang': 'home.practices.p1' }),
-        el('li', { class: 'chip', 'data-lang': 'home.practices.p2' }),
-        el('li', { class: 'chip', 'data-lang': 'home.practices.p3' }),
-        el('li', { class: 'chip', 'data-lang': 'home.practices.p4' }),
-        el('li', { class: 'chip', 'data-lang': 'home.practices.p5' }),
-      ]),
+      el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'home.practices.title' }),
+      createPracticeCards(activePracticeId),
     ]),
   ]);
 
@@ -131,8 +128,8 @@ export const createMain = () => {
   ]);
 };
 
-export const createModal = () =>
-  el(
+export const createModal = () => {
+  const questionModal = el(
     'div',
     {
       class: 'modal is-hidden',
@@ -140,7 +137,7 @@ export const createModal = () =>
       'aria-hidden': 'true',
     },
     [
-      el('div', { class: 'modal__backdrop', 'data-close-modal': '' }),
+      el('div', { class: 'modal__backdrop', 'data-close-modal': 'question' }),
       el('div', { class: 'modal__dialog', role: 'dialog', 'aria-modal': 'true' }, [
         el('div', { class: 'modal__head' }, [
           el('h3', { class: 'modal__title', 'data-lang': 'modal.title' }),
@@ -149,9 +146,9 @@ export const createModal = () =>
             {
               class: 'modal__close',
               type: 'button',
-              'data-close-modal': '',
+              'data-close-modal': 'question',
             },
-            '✕',
+            '×',
           ),
         ]),
         el('form', { class: 'form', id: 'questionForm' }, [
@@ -173,3 +170,33 @@ export const createModal = () =>
       ]),
     ],
   );
+
+  const practiceModal = el(
+    'div',
+    {
+      class: 'modal modal--details is-hidden',
+      id: 'practiceModal',
+      'aria-hidden': 'true',
+    },
+    [
+      el('div', { class: 'modal__backdrop', 'data-close-modal': 'practice' }),
+      el('div', { class: 'modal__dialog modal__dialog--wide', role: 'dialog', 'aria-modal': 'true' }, [
+        el('div', { class: 'modal__head' }, [
+          el('h3', { class: 'modal__title', id: 'practiceModalTitle' }),
+          el(
+            'button',
+            {
+              class: 'modal__close',
+              type: 'button',
+              'data-close-modal': 'practice',
+            },
+            '×',
+          ),
+        ]),
+        el('div', { class: 'modal__body', id: 'practiceModalBody' }),
+      ]),
+    ],
+  );
+
+  return el('div', { class: 'modal-stack' }, [questionModal, practiceModal]);
+};

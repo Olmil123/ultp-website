@@ -1,4 +1,4 @@
-@use '../abstracts/mixins' as m;
+﻿@use '../abstracts/mixins' as m;
 
 .site-header {
   position: sticky;
@@ -38,7 +38,7 @@
   height: 42px;
   border-radius: 50%;
   background: var(--green);
-  color: #fff;
+  color: var(--header-logo-text);
   font-size: 12px;
   font-weight: 900;
   flex: 0 0 auto;
@@ -131,3 +131,4 @@
   transform: translateY(0);
   pointer-events: auto;
 }
+

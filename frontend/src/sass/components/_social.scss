@@ -1,4 +1,4 @@
-@use '../abstracts/mixins' as m;
+﻿@use '../abstracts/mixins' as m;
 
 .social {
   @include m.flex(center, center, 8px);
@@ -31,3 +31,4 @@
   display: block;
   filter: brightness(0) invert(1);
 }
+

@@ -1,4 +1,4 @@
-// Abstracts
+﻿// Abstracts
 @use './abstracts/variables';
 @use './abstracts/mixins';
 
@@ -19,7 +19,7 @@
 
 // Pages
 @use './pages/home';
-@use './pages/about';
-
-// Responsive (single file for breakpoints)
+@use './pages/services';
+@use './pages/about';//! RESPONSIVE (single file for breakpoints)
 @use './layout/responsive';
+
