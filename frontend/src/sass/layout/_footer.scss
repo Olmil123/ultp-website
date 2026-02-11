@@ -11,9 +11,21 @@
   flex-direction: column;
 }
 
-.footer__copy p {
+.footer__copy-line {
   margin: 0 0 4px;
   font-size: 14px;
+}
+
+.footer__copy-line:last-child {
+  margin-bottom: 0;
+}
+
+html[lang='uk'] .footer__copy-line--en {
+  display: none;
+}
+
+html[lang='en'] .footer__copy-line--uk {
+  display: none;
 }
 
 .footer__text {
@@ -38,4 +50,3 @@
     text-decoration: underline;
   }
 }
-

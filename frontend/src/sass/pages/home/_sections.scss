@@ -2,7 +2,7 @@
 
 /* Sections */
 .section {
-  @include m.section(64px);
+  @include m.section(72px);
   background: var(--surface);
 }
 
@@ -78,6 +78,20 @@
   line-height: 1.65;
   color: var(--text);
   @include m.tr(transform, box-shadow, border-color);
+}
+
+.advantages__item::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--advantages-accent);
+  box-shadow: var(--advantages-accent-shadow);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .advantages__item:hover {
@@ -170,7 +184,23 @@
 /* Practices page cards */
 .page-practices {
   @include m.section(72px);
-  @include m.page-background;
+  background-color: var(--practices-bg);
+  background-image:
+    var(--practices-gradient),
+    radial-gradient(circle at 20% 10%, var(--practices-noise), transparent 45%),
+    radial-gradient(circle at 80% 30%, var(--practices-noise), transparent 50%),
+    repeating-linear-gradient(
+      0deg,
+      var(--practices-lines) 0px,
+      var(--practices-lines) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+}
+
+.page-practices .section__title--bracket {
+  color: var(--practices-title-color);
+  text-shadow: var(--practices-title-shadow);
 }
 
 .page-practices .cards {
@@ -228,6 +258,7 @@
   &:hover {
     transform: translateY(-4px);
     border-color: var(--white-18);
+    box-shadow: var(--practice-card-shadow-hover);
   }
 }
 
@@ -338,6 +369,14 @@
 }
 
 @include m.respond(768px) {
+  .section {
+    @include m.section(56px);
+  }
+
+  .page-practices {
+    @include m.section(56px);
+  }
+
   .page-practices .cards {
     grid-template-columns: 1fr;
   }
@@ -348,6 +387,16 @@
 
   .card__title {
     font-size: 18px;
+  }
+}
+
+@include m.respond(480px) {
+  .section {
+    @include m.section(44px);
+  }
+
+  .page-practices {
+    @include m.section(44px);
   }
 }
 
