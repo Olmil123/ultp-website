@@ -1,4 +1,4 @@
-{
+﻿{
   "header": {
     "ask": "Make a question"
   },
@@ -58,6 +58,8 @@
     "lead": "<strong>Ukrainian Legal and Tech Partners</strong> is a unique project that unites <strong>legal</strong>, <strong>technological</strong> and <strong>compliance</strong> expertise.",
     "founder": {
       "title": "Founder",
+      "name": "Svitlana Rudiuk",
+      "role": "Founder, tax law and WEB3",
       "text": "Founder - <strong>Svitlana Rudiuk</strong>, an expert in <strong>national</strong> and <strong>international taxation</strong> and <strong>WEB.3.0 solutions</strong> practices.",
       "experience": "Experience in national and international taxation practices, WEB.3 solutions practices is <strong>more than twelve years</strong>.",
       "specialization": "Specializes in solving issues related to international and national taxation, including, but not limited to: <strong>corporate and personal tax planning</strong>, <strong>tax structuring</strong>, <strong>constructing of holding structures</strong>, <strong>structuring of M&A deals</strong>, <strong>attracting financing</strong>, and <strong>personal tax declaration</strong> measures."
@@ -68,7 +70,7 @@
     },
     "speaker": "<strong>Speaker, author of publications.</strong>",
     "credits": {
-      "title": "Partnerships and expertise",
+      "title": "Partnerships and professional associations",
       "partner": "UA Tech Network Community Partner",
       "association": "Expert of the International Association of Tax Advisors",
       "beps": "BEPS.space expert"
@@ -170,3 +172,4 @@
     "ctaBtn": "Ask a question"
   }
 }
+

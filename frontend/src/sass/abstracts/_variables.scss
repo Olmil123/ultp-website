@@ -71,6 +71,8 @@
   --yellow: #f2c94c;
   --green-2: #1f5748;
   --white: #ffffff;
+  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
 
   //? White transparency tokens
   --white-92: rgba(255, 255, 255, 0.92);
@@ -105,9 +107,6 @@
   --section-alt-bg: #eaeae6;
   --section-title-bracket: rgba(28, 36, 34, 0.7);
   --chip-border: rgba(22, 63, 52, 0.25);
-  --about-subtitle-border: rgba(242, 201, 76, 0.5);
-  --about-photo-shadow: 0 20px 50px var(--black-18);
-  --about-list-border: var(--black-08);
   --advantages-card-border-hover: rgba(21, 60, 47, 0.24);
   --advantages-card-shadow-hover: 0 22px 38px rgba(21, 60, 47, 0.18);
 
@@ -158,17 +157,54 @@
   //! About page
   --about-bg: var(--page-bg);
   --about-overlay:
-    linear-gradient(120deg, rgba(21, 60, 47, 0.06), transparent 40%),
-    radial-gradient(circle at 18% 18%, rgba(242, 201, 76, 0.12), transparent 45%),
-    radial-gradient(circle at 85% 12%, rgba(21, 60, 47, 0.08), transparent 40%);
-  --about-texture:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.02) 0px,
-      rgba(0, 0, 0, 0.02) 1px,
-      transparent 1px,
-      transparent 7px
+    radial-gradient(900px 420px at 12% -6%, rgba(242, 201, 76, 0.12), transparent 60%),
+    radial-gradient(820px 380px at 85% 0%, rgba(21, 60, 47, 0.07), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(248, 246, 242, 0.98) 52%,
+      rgba(245, 247, 244, 0.98) 100%
     );
+  --about-grid-line: rgba(0, 0, 0, 0.02);
+  --about-texture:
+    repeating-linear-gradient(90deg, var(--about-grid-line) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(0deg, var(--about-grid-line) 0 1px, transparent 1px 26px);
+  --about-divider: rgba(21, 60, 47, 0.1);
+  --about-header-divider: rgba(21, 60, 47, 0.18);
+  --about-layout-glow: radial-gradient(620px 260px at 70% 0%, rgba(242, 201, 76, 0.08), transparent 62%);
+  --about-heading-color: #0f2f24;
+  --about-subtitle-color: #1f3b32;
+  --about-text-color: #5b5b5b;
+  --about-accent-color: var(--green);
+  --about-subtitle-border: rgba(21, 60, 47, 0.18);
+  --about-subtitle-accent: var(--yellow);
+  --about-photo-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(236, 243, 240, 0.94));
+  --about-photo-border: var(--white-18);
+  --about-photo-overlay:
+    radial-gradient(circle at 20% 15%, rgba(242, 201, 76, 0.22), transparent 55%),
+    radial-gradient(circle at 80% 25%, rgba(21, 60, 47, 0.12), transparent 60%);
+  --about-photo-shadow: 0 18px 50px var(--black-18);
+  --about-aside-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(239, 245, 241, 0.92));
+  --about-aside-border: rgba(21, 60, 47, 0.1);
+  --about-aside-shadow: 0 24px 52px var(--black-12);
+  --about-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 245, 241, 0.92));
+  --about-card-border: rgba(21, 60, 47, 0.1);
+  --about-card-shadow: 0 20px 40px var(--black-08);
+  --about-logo-bg: rgba(255, 255, 255, 0.6);
+  --about-logo-border: rgba(21, 60, 47, 0.08);
+  --about-logo-shadow: none;
+  --about-logo-color: rgba(21, 60, 47, 0.6);
+  --about-credits-bg: linear-gradient(160deg, rgba(248, 245, 239, 0.92), rgba(244, 247, 244, 0.9));
+  --about-credits-border: rgba(21, 60, 47, 0.1);
+  --about-credits-shadow: 0 14px 28px var(--black-06);
+  --about-credits-title: rgba(21, 60, 47, 0.82);
+  --about-badge-bg: rgba(255, 255, 255, 0.82);
+  --about-badge-bg-hover: rgba(255, 255, 255, 0.92);
+  --about-badge-border: rgba(21, 60, 47, 0.16);
+  --about-badge-border-hover: rgba(21, 60, 47, 0.24);
+  --about-badge-shadow: 0 8px 16px rgba(21, 60, 47, 0.08);
+  --about-badge-shadow-hover: 0 12px 24px rgba(21, 60, 47, 0.14);
+  --about-list-border: var(--black-08);
 
   //! Advantages
   --advantages-bg: linear-gradient(180deg, #f7f4ef 0%, #e9f1ec 50%, #e2ebf1 100%);
@@ -176,6 +212,3 @@
   --advantages-card-border: rgba(21, 60, 47, 0.14);
   --advantages-card-shadow: 0 16px 28px rgba(21, 60, 47, 0.12);
 }
-
-
-

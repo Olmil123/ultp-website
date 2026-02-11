@@ -34,6 +34,10 @@ export const createAboutPage = () =>
               loading: 'lazy',
             }),
           ]),
+          el('div', { class: 'about__photo-meta' }, [
+            el('p', { class: 'about__photo-name', 'data-lang': 'about.founder.name' }),
+            el('p', { class: 'about__photo-role', 'data-lang': 'about.founder.role' }),
+          ]),
 
           el('div', { class: 'about__credits' }, [
             el('h2', { class: 'about__subtitle', 'data-lang': 'about.credits.title' }),
