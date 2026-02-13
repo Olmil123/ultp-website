@@ -18,8 +18,18 @@ export const createFooter = () => {
       el('p', { class: 'footer__text', 'data-lang': 'footer.disclaimer2' }),
 
       el('div', { class: 'footer__links' }, [
-        el('a', { href: '#', class: 'footer__link', 'data-lang': 'footer.privacy' }),
-        el('a', { href: '#', class: 'footer__link', 'data-lang': 'footer.terms' }),
+        el('a', {
+          href: '/privacy',
+          class: 'footer__link',
+          'data-link': '',
+          'data-lang': 'footer.privacy',
+        }),
+        el('a', {
+          href: '/terms',
+          class: 'footer__link',
+          'data-link': '',
+          'data-lang': 'footer.terms',
+        }),
       ]),
     ]),
   ]);

@@ -32,12 +32,9 @@
   --services-card-bg: linear-gradient(160deg, #ffffff 0%, #f3f7f5 60%, #eef4f3 100%);
   --services-card-border: rgba(21, 60, 47, 0.16);
   --services-card-border-hover: rgba(21, 60, 47, 0.28);
-  --services-card-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.07),
-    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  --services-card-shadow: 0 14px 30px rgba(0, 0, 0, 0.07), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
   --services-card-shadow-hover:
-    0 22px 46px rgba(0, 0, 0, 0.14),
-    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+    0 22px 46px rgba(0, 0, 0, 0.14), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
   --services-card-inner-border: rgba(255, 255, 255, 0.6);
   --services-card-glow-1: rgba(242, 201, 76, 0.16);
   --services-card-glow-2: rgba(21, 60, 47, 0.1);
@@ -45,8 +42,7 @@
   //! Services card icons
   --services-icon-bg: linear-gradient(160deg, var(--green) 0%, var(--green-2) 100%);
   --services-icon-shadow:
-    0 8px 18px rgba(21, 60, 47, 0.25),
-    0 1px 0 rgba(255, 255, 255, 0.15) inset;
+    0 8px 18px rgba(21, 60, 47, 0.25), 0 1px 0 rgba(255, 255, 255, 0.15) inset;
 
   //! Services cta
   --services-cta-bg:
@@ -57,11 +53,9 @@
   --services-cta-btn-bg: linear-gradient(180deg, #ffffff 0%, #f5f6f4 100%);
   --services-cta-btn-border: rgba(255, 255, 255, 0.6);
   --services-cta-btn-shadow:
-    0 10px 22px rgba(0, 0, 0, 0.12),
-    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    0 10px 22px rgba(0, 0, 0, 0.12), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
   --services-cta-btn-shadow-hover:
-    0 14px 28px rgba(0, 0, 0, 0.16),
-    0 1px 0 rgba(255, 255, 255, 0.85) inset;
+    0 14px 28px rgba(0, 0, 0, 0.16), 0 1px 0 rgba(255, 255, 255, 0.85) inset;
 
   //! Global theme base
   --surface: #ffffff;
@@ -125,8 +119,12 @@
       transparent 1px,
       transparent 6px
     );
-  --hero-photo-mask:
-    linear-gradient(180deg, rgba(15, 18, 17, 0) 42%, rgba(15, 18, 17, 0.9) 80%, rgba(15, 18, 17, 0.96) 100%);
+  --hero-photo-mask: linear-gradient(
+    180deg,
+    rgba(15, 18, 17, 0) 42%,
+    rgba(15, 18, 17, 0.9) 80%,
+    rgba(15, 18, 17, 0.96) 100%
+  );
   --modal-details-bg: rgba(15, 18, 17, 0.25);
 
   //!Practice cards
@@ -185,12 +183,21 @@
   --about-overlay:
     radial-gradient(1100px 520px at 12% -8%, rgba(242, 201, 76, 0.08), transparent 68%),
     radial-gradient(920px 520px at 88% 6%, rgba(21, 60, 47, 0.06), transparent 70%),
-    linear-gradient(180deg, rgba(244, 241, 234, 0.98) 0%, rgba(241, 241, 237, 0.98) 52%, rgba(241, 241, 237, 0.98) 100%);
+    linear-gradient(
+      180deg,
+      rgba(244, 241, 234, 0.98) 0%,
+      rgba(241, 241, 237, 0.98) 52%,
+      rgba(241, 241, 237, 0.98) 100%
+    );
   --about-grid-line: rgba(0, 0, 0, 0.02);
   --about-texture: none;
   --about-divider: rgba(21, 60, 47, 0.08);
   --about-header-divider: rgba(21, 60, 47, 0.12);
-  --about-layout-glow: radial-gradient(700px 280px at 70% -4%, rgba(242, 201, 76, 0.06), transparent 66%);
+  --about-layout-glow: radial-gradient(
+    700px 280px at 70% -4%,
+    rgba(242, 201, 76, 0.06),
+    transparent 66%
+  );
   --about-heading-color: #12362c;
   --about-subtitle-color: #2f463c;
   --about-text-color: #6a6f6c;
@@ -225,6 +232,41 @@
   --about-badge-shadow-hover: 0 12px 22px rgba(15, 24, 20, 0.12);
   --about-list-border: var(--black-08);
 
+  //! Privacy page
+  --privacy-bg: #f3f1ec;
+  --privacy-gradient:
+    radial-gradient(1600px 760px at -12% -32%, rgba(242, 201, 76, 0.045), transparent 74%),
+    radial-gradient(1520px 780px at 112% -28%, rgba(21, 60, 47, 0.038), transparent 76%),
+    linear-gradient(180deg, rgba(243, 241, 236, 0.995) 0%, rgba(243, 241, 236, 0.995) 100%);
+  --privacy-noise-1: rgba(0, 0, 0, 0);
+  --privacy-noise-2: rgba(0, 0, 0, 0);
+  --privacy-noise-3: rgba(0, 0, 0, 0);
+  --privacy-lines: rgba(0, 0, 0, 0);
+  --privacy-hero-bg: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(244, 248, 245, 0.92) 100%
+  );
+  --privacy-hero-border: rgba(21, 60, 47, 0.14);
+  --privacy-hero-shadow: 0 16px 30px rgba(16, 26, 22, 0.1);
+  --privacy-icon-bg:
+    radial-gradient(86% 86% at 20% 20%, rgba(242, 201, 76, 0.32), transparent 72%),
+    linear-gradient(150deg, rgba(21, 60, 47, 0.12), rgba(21, 60, 47, 0.02));
+  --privacy-icon-border: rgba(21, 60, 47, 0.16);
+  --privacy-eyebrow-color: rgba(21, 60, 47, 0.72);
+  --privacy-section-bg: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(246, 249, 247, 0.9) 100%
+  );
+  --privacy-section-border: rgba(21, 60, 47, 0.11);
+  --privacy-section-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  --privacy-contact-border: rgba(21, 60, 47, 0.18);
+  --privacy-contact-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  --privacy-subhead-color: rgba(21, 60, 47, 0.9);
+  --privacy-mail-color: var(--green);
+
   //! Advantages
   --advantages-bg: linear-gradient(180deg, #f7f4ef 0%, #e9f1ec 50%, #e2ebf1 100%);
   --advantages-card-bg: linear-gradient(160deg, #ffffff 0%, #eef4f1 55%, #e7eff6 100%);
@@ -241,7 +283,11 @@
     linear-gradient(180deg, rgba(251, 250, 247, 0.98) 0%, rgba(241, 244, 241, 0.98) 100%);
   --cases-lines: rgba(0, 0, 0, 0.015);
   --cases-noise: rgba(0, 0, 0, 0.02);
-  --cases-card-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(239, 244, 242, 0.95) 100%);
+  --cases-card-bg: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(239, 244, 242, 0.95) 100%
+  );
   --cases-card-border: rgba(21, 60, 47, 0.12);
   --cases-card-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
   --cases-card-shadow-hover: 0 22px 42px rgba(0, 0, 0, 0.12);
@@ -260,8 +306,18 @@
     radial-gradient(1200px 760px at 50% 28%, rgba(255, 255, 255, 0.8), transparent 60%),
     radial-gradient(900px 560px at 18% 18%, rgba(242, 201, 76, 0.08), transparent 62%),
     radial-gradient(900px 560px at 82% 16%, rgba(18, 54, 44, 0.08), transparent 64%),
-    radial-gradient(1400px 900px at 50% 50%, transparent 55%, rgba(10, 50, 60, 0.08) 75%, rgba(10, 50, 60, 0.12) 100%),
-    linear-gradient(180deg, rgba(236, 244, 248, 0.98) 0%, rgba(227, 236, 244, 0.98) 60%, rgba(219, 229, 238, 0.98) 100%);
+    radial-gradient(
+      1400px 900px at 50% 50%,
+      transparent 55%,
+      rgba(10, 50, 60, 0.08) 75%,
+      rgba(10, 50, 60, 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(236, 244, 248, 0.98) 0%,
+      rgba(227, 236, 244, 0.98) 60%,
+      rgba(219, 229, 238, 0.98) 100%
+    );
   --case-page-lines: rgba(0, 0, 0, 0);
   --case-page-noise: rgba(0, 0, 0, 0.006);
 }

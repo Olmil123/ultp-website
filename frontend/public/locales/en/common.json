@@ -217,12 +217,258 @@
       "p5": "I am fluent in Ukrainian and English and work with clients from different countries. If you need support or consultation, I am always ready to provide professional assistance."
     }
   },
+  "privacy": {
+    "hero": {
+      "eyebrow": "Document",
+      "title": "Privacy Notice",
+      "lead": "This notice explains how personal data is collected, used, and protected."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Data Controller",
+        "p1": "This privacy notice explains how personal data is collected, used, and protected.",
+        "p2": "Data Controller:",
+        "items": {
+          "i1": "Svitlana Rudiuk, Sole Proprietor (Ukraine)",
+          "i2": "Activities: legal, advisory, compliance, and technology services",
+          "i3": "Contact email:"
+        },
+        "p3": "The Controller complies with applicable data protection laws, including GDPR (EU), U.S. federal and state privacy laws, as well as relevant privacy laws in Asian jurisdictions (for example, Singapore, Hong Kong, Japan)."
+      },
+      "s2": {
+        "title": "2. Scope",
+        "p1": "This privacy notice applies to:",
+        "items": {
+          "i1": "clients and prospective clients",
+          "i2": "business partners and their representatives",
+          "i3": "website visitors",
+          "i4": "individuals contacting the Controller for professional services"
+        },
+        "p2": "It applies to individuals located in the EU, USA, Asia, and other jurisdictions."
+      },
+      "s3": {
+        "title": "3. Categories of Personal Data",
+        "p1": "The Controller may collect and process the following categories of personal data:",
+        "items": {
+          "i1": "identification data: first name, last name, position",
+          "i2": "contact data: email address, phone number",
+          "i3": "professional data: company name, role, type of activity",
+          "i4": "contractual and payment information",
+          "i5": "communication data: emails and messages",
+          "i6": "technical data: IP address, browser type, access logs",
+          "i7": "compliance-related data provided within legal or advisory services"
+        },
+        "p2": "Special categories of data are not collected unless required by law or voluntarily provided by the client."
+      },
+      "s4": {
+        "title": "4. Purposes of Processing",
+        "p1": "Personal data is processed for the following purposes:",
+        "items": {
+          "i1": "provision of professional services",
+          "i2": "client communication and support",
+          "i3": "contract performance and administration",
+          "i4": "compliance with legal and regulatory obligations",
+          "i5": "invoicing, accounting, and tax records",
+          "i6": "risk assessment and conflict checks",
+          "i7": "protection of legitimate business interests"
+        },
+        "p2": "Personal data is not used for automated decision-making or profiling."
+      },
+      "s5": {
+        "title": "5. Legal Basis for Processing",
+        "p1": "For EU residents, data processing is carried out under Article 6 GDPR:",
+        "items": {
+          "i1": "performance of a contract",
+          "i2": "compliance with legal obligations",
+          "i3": "legitimate interests of the Controller",
+          "i4": "consent, where explicitly required"
+        },
+        "p2": "For U.S. and Asian residents, processing is carried out in accordance with applicable laws in their jurisdictions."
+      },
+      "s6": {
+        "title": "6. Data Sharing and Disclosure",
+        "p1": "Personal data may be shared only where necessary and limited to:",
+        "items": {
+          "i1": "professional advisors and confidentiality-bound service providers",
+          "i2": "accounting, legal, and compliance partners",
+          "i3": "technology and hosting providers",
+          "i4": "regulatory or governmental authorities where required by law"
+        },
+        "p2": "Personal data is not sold and is not disclosed for marketing purposes."
+      },
+      "s7": {
+        "title": "7. International Data Transfers",
+        "p1": "Personal data may be processed or stored outside the user's jurisdiction, including Ukraine, the USA, and other regions.",
+        "p2": "Appropriate safeguards are implemented, such as:",
+        "items": {
+          "i1": "contractual confidentiality obligations",
+          "i2": "data processing agreements compliant with GDPR where required",
+          "i3": "technical and organizational security measures"
+        }
+      },
+      "s8": {
+        "title": "8. Data Retention",
+        "p1": "Personal data is retained only as long as necessary for:",
+        "items": {
+          "i1": "fulfilling contractual and legal obligations",
+          "i2": "meeting accounting and regulatory requirements",
+          "i3": "protecting legitimate interests"
+        },
+        "p2": "Retention periods depend on the nature of services and applicable law."
+      },
+      "s9": {
+        "title": "9. Data Subject Rights",
+        "p1": "Depending on your place of residence, you may have the following rights:",
+        "eu": {
+          "title": "EU residents:",
+          "items": {
+            "i1": "access, rectification, erasure, restriction, objection, data portability",
+            "i2": "withdrawal of consent",
+            "i3": "lodging a complaint with a supervisory authority"
+          }
+        },
+        "us": {
+          "title": "U.S. residents:",
+          "items": {
+            "i1": "access, correction, or deletion of data",
+            "i2": "opt-out of certain data uses where applicable"
+          }
+        },
+        "asia": {
+          "title": "Asian residents (Singapore, Hong Kong, Japan, etc.):",
+          "items": {
+            "i1": "access, correction, or deletion of data",
+            "i2": "objection to certain processing where applicable"
+          }
+        },
+        "p2": "Requests can be sent to the contact email below."
+      },
+      "s10": {
+        "title": "10. Data Security",
+        "p1": "The Controller implements appropriate technical and organizational measures to protect personal data, including:",
+        "items": {
+          "i1": "access control and confidentiality obligations",
+          "i2": "secure communication channels",
+          "i3": "restricted access to client information",
+          "i4": "data minimization principle"
+        }
+      },
+      "s11": {
+        "title": "11. Notice Updates",
+        "p1": "This notice may be updated from time to time to reflect changes in law or the Controller's activities. The latest version is always available upon request or on the official website."
+      },
+      "s12": {
+        "title": "12. Contacts",
+        "p1": "For privacy-related requests, please contact:"
+      }
+    }
+  },
+  "termsPage": {
+    "hero": {
+      "eyebrow": "Document",
+      "title": "Terms of Service",
+      "lead": "These terms govern the use of legal, advisory, compliance, and technology services."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Introduction",
+        "p1": "These Terms of Service (\"Terms\") govern the use of services provided by:",
+        "p2": "Service provider:",
+        "items": {
+          "i1": "Svitlana Rudiuk, Sole Proprietor (Ukraine)",
+          "i2": "Business activities: legal, advisory, compliance, and technology-related consulting services",
+          "i3": "Contact email: Rudiuksvitlana@gmail.com"
+        },
+        "p3": "By engaging with the services, you agree to be bound by these Terms. If you do not agree, you may not use the services.",
+        "p4": "These Terms apply to clients, prospective clients, business partners, and website users located in the European Union, the United States, Asia, and other jurisdictions."
+      },
+      "s2": {
+        "title": "2. Services",
+        "p1": "The services provided may include, but are not limited to:",
+        "items": {
+          "i1": "legal and compliance advisory",
+          "i2": "technology consulting and tokenization solutions",
+          "i3": "risk assessment and governance solutions",
+          "i4": "contract drafting and review",
+          "i5": "other professional services agreed with the client"
+        },
+        "p2": "Specific service agreements may include additional terms, which take precedence over these general Terms."
+      },
+      "s3": {
+        "title": "3. Client Responsibilities",
+        "p1": "Clients agree to:",
+        "items": {
+          "i1": "provide accurate and complete information",
+          "i2": "comply with applicable laws and regulations",
+          "i3": "cooperate in a timely manner to enable the provision of services",
+          "i4": "ensure that any information provided does not violate third-party rights"
+        }
+      },
+      "s4": {
+        "title": "4. Fees and Payment",
+        "items": {
+          "i1": "Fees for services are set out in individual agreements or proposals.",
+          "i2": "Invoices are payable according to the terms specified in the agreement.",
+          "i3": "Late payments may incur interest or suspension of services."
+        }
+      },
+      "s5": {
+        "title": "5. Confidentiality",
+        "items": {
+          "i1": "All information shared between the client and the service provider is treated as confidential.",
+          "i2": "Confidential information may only be disclosed if required by law, regulatory authority, or with client consent.",
+          "i3": "This confidentiality obligation survives termination of the service agreement."
+        }
+      },
+      "s6": {
+        "title": "6. Intellectual Property",
+        "items": {
+          "i1": "All intellectual property created by the service provider remains the property of the service provider unless explicitly assigned.",
+          "i2": "Clients may use deliverables only for the purposes agreed in the service agreement."
+        }
+      },
+      "s7": {
+        "title": "7. Liability",
+        "items": {
+          "i1": "The service provider acts with professional care and in accordance with applicable laws.",
+          "i2": "Liability is limited to direct damages caused by gross negligence or willful misconduct.",
+          "i3": "The service provider is not liable for indirect, incidental, or consequential damages."
+        }
+      },
+      "s8": {
+        "title": "8. Termination",
+        "items": {
+          "i1": "Either party may terminate the engagement according to the terms of the service agreement.",
+          "i2": "Upon termination, fees for services rendered up to the date of termination remain payable."
+        }
+      },
+      "s9": {
+        "title": "9. Governing Law and Jurisdiction",
+        "items": {
+          "i1": "These Terms are governed by the laws of Ukraine.",
+          "i2": "Disputes will be resolved primarily through negotiation. If unresolved, disputes may be submitted to the competent court in Ukraine.",
+          "i3": "For EU clients, GDPR rights and remedies remain unaffected."
+        }
+      },
+      "s10": {
+        "title": "10. Amendments",
+        "items": {
+          "i1": "These Terms may be updated periodically.",
+          "i2": "Clients will be notified of significant changes, and continued use of services constitutes acceptance of the updated Terms."
+        }
+      },
+      "s11": {
+        "title": "11. Contact",
+        "p1": "For questions regarding these Terms or the services, please contact:"
+      }
+    }
+  },
   "footer": {
     "copy2": "PE Svitlana Rudiuk 2025",
     "disclaimer1": "The information which is provided on this website is not legal advice and needs to be used for informational purposes only.",
     "disclaimer2": "All materials are protected by copyright law. Using and/or copying is permitted only with the consent of the website owner.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
+    "terms": "Terms of Service"
   },
   "modal": {
     "title": "Make a question",
@@ -312,4 +558,3 @@
     "ctaBtn": "Ask a question"
   }
 }
-
