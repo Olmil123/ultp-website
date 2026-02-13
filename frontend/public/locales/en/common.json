@@ -7,7 +7,7 @@
     "services": "Services and their cost",
     "about": "About Us",
     "news": "News",
-    "cases": "Cases and references"
+    "cases": "Cases"
   },
   "home": {
     "hero": {
@@ -41,7 +41,22 @@
       "placeholder": "News and updates coming soon."
     },
     "cases": {
-      "placeholder": "Cases and references coming soon."
+      "title": "Cases",
+      "more": "Read more",
+      "items": {
+        "c1": {
+          "title": "Tokenization of premium real estate",
+          "desc": "Launching a Security Token Offering for a community of 20 villas and creating a digital token for real estate investment on blockchain."
+        },
+        "c2": {
+          "title": "Blockchain-based digital identity platform",
+          "desc": "Developing a solution for access to tokenized assets and DeFi services in compliance with KYC and AML requirements."
+        },
+        "c3": {
+          "title": "Subscription-based crypto education platform",
+          "desc": "Building a platform for crypto education with GDPR compliance and a mobile app launch."
+        }
+      }
     },
     "contacts": {
       "title": "Contacts",
@@ -51,6 +66,124 @@
       "email": "rudiuksvitlana@gmail.com",
       "tel": "+380633966786",
       "telegram": "dont_tax_me"
+    }
+  },
+  "cases": {
+    "title": "Cases",
+    "lead": "A selection of projects and approaches we apply in practice.",
+    "items": {
+      "c1": {
+        "title": "Tokenization of premium real estate",
+        "desc": "Launching a Security Token Offering for a community of 20 villas and creating a digital token for real estate investment on blockchain."
+      },
+      "c2": {
+        "title": "Blockchain-based digital identity platform",
+        "desc": "Developing a solution for access to tokenized assets and DeFi services in compliance with KYC and AML requirements."
+      },
+      "c3": {
+        "title": "Subscription-based crypto education platform",
+        "desc": "Building a platform for crypto education with GDPR compliance and a mobile app launch."
+      }
+    }
+  },
+  "case1": {
+    "hero": {
+      "eyebrow": "Case 1",
+      "title": "Tokenization of premium real estate in a prestigious tourist destination",
+      "subtitle": "Launching a Security Token Offering (STO) for a community of 20 luxury villas and creating a digital token for real estate investment on blockchain.",
+      "lead": "The project enabled investors to participate in premium real estate ownership with minimal entry, using blockchain technology.",
+      "mediaLabel": "Real Estate + Blockchain"
+    },
+    "overview": {
+      "title": "Project overview",
+      "text": "A boutique community of twenty luxury villas in a prestigious tourist destination partnered with Ukrainian Legal and Tech Partners to launch a Security Token Offering (STO). The project created a digital token that allows investors to participate in real estate ownership using blockchain."
+    },
+    "solution": {
+      "title": "Solution",
+      "text": "The tokenization initiative used modern blockchain technologies to ensure:",
+      "items": {
+        "i1": "investment accessibility",
+        "i2": "transparency",
+        "i3": "liquidity",
+        "i4": "security"
+      },
+      "benefitsTitle": "Investors also received additional benefits:",
+      "benefits": {
+        "b1": "accommodation discounts",
+        "b2": "access to events",
+        "b3": "rental income"
+      }
+    },
+    "result": {
+      "title": "Result",
+      "text": "The STO was presented at an international crypto and blockchain festival that gathered over 50,000 investors. The project demonstrated how tokenization can transform real estate investments by improving accessibility and efficiency."
+    },
+    "cta": {
+      "title": "Discuss a similar project",
+      "button": "Make a question"
+    }
+  },
+  "case2": {
+    "hero": {
+      "eyebrow": "Case 2",
+      "title": "Building an innovative blockchain-based digital identity platform",
+      "subtitle": "A solution to simplify and secure access to tokenized assets and DeFi services.",
+      "lead": "A unified, interoperable entry point that makes tokenization accessible for investors and businesses.",
+      "mediaLabel": "Digital Identity + Blockchain"
+    },
+    "overview": {
+      "title": "Project overview",
+      "text": "Ukrainian Legal and Tech Partners created a transformational blockchain-based digital identity solution designed to simplify and secure access to tokenized assets and decentralized finance (DeFi) services. This innovative product offers a single, interoperable entry point so users can interact with a broad range of virtual assets, making tokenization accessible to both individual investors and businesses. The solution, currently in beta testing within a large blockchain network, eliminates repetitive verification processes and enables seamless navigation across offerings."
+    },
+    "solution": {
+      "title": "Solution",
+      "text": "For businesses, the platform:",
+      "items": {
+        "i1": "simplifies token issuance",
+        "i2": "ensures compliance with KYC and AML regulations",
+        "i3": "reduces operational complexity",
+        "i4": "creates a single entry point for working with digital assets"
+      }
+    },
+    "result": {
+      "title": "Result",
+      "text": "Delivered to a global audience, the digital identity solution lays the foundation for future expansion, including support for additional blockchain networks and enhanced security features. Its launch demonstrates a commitment to bridging traditional finance and web3, enabling users to unlock new investment opportunities with transparency and efficiency. This project shows how advanced blockchain technology can reshape user interaction in digital finance, offering a scalable, secure, and user-friendly solution that paves the way for the future of tokenized assets."
+    },
+    "cta": {
+      "title": "Discuss a similar project",
+      "button": "Make a question"
+    }
+  },
+  "case3": {
+    "hero": {
+      "eyebrow": "Case 3",
+      "title": "Subscription-based crypto education platform",
+      "subtitle": "Building a crypto learning platform with GDPR compliance and a mobile app launch.",
+      "lead": "The platform provides secure, subscription-based access to educational materials.",
+      "mediaLabel": "GDPR + crypto education"
+    },
+    "overview": {
+      "title": "Project overview",
+      "text": "The company developed a cryptocurrency education platform that provides subscription-based access to ensure a seamless, secure, and compliant user experience. The platform was created to offer enthusiasts an educational space and convenient access to materials and services. To ensure compliance, the project underwent comprehensive technical and legal review, following App Store Guidelines and the EU General Data Protection Regulation (GDPR), as well as other applicable laws."
+    },
+    "solution": {
+      "title": "Solution",
+      "text": "To deliver the project, the team completed:",
+      "items": {
+        "i1": "data and processing audits",
+        "i2": "third-party service checks for GDPR compliance",
+        "i3": "implementation of transparent user consent flows",
+        "i4": "creation of an intuitive and secure interface"
+      },
+      "outcome": "This ensured a high level of privacy, security, and user trust."
+    },
+    "result": {
+      "title": "Result",
+      "text": "A successful App Store launch demonstrated the team’s ability to build a high-quality mobile app aligned with regulatory requirements and tailored for a global audience. The initiative highlighted the power of combining innovation with strict compliance, creating a safe and user-friendly platform that enables confident learning in the crypto space."
+    },
+    "cta": {
+      "title": "Discuss a similar project",
+      "button": "Make a question"
     }
   },
   "about": {
@@ -74,6 +207,14 @@
       "partner": "UA Tech Network Community Partner",
       "association": "Expert of the International Association of Tax Advisors",
       "beps": "BEPS.space expert"
+    },
+    "approach": {
+      "title": "Work approach",
+      "p1": "I have been working in national and international taxation and WEB 3.0 solutions for over twelve years. During this time, I have helped businesses and investors solve complex legal and technological issues by combining legal expertise with an understanding of modern technologies.",
+      "p2": "My practice covers a wide range of tasks, from tax planning, business structuring, and building holding structures to legal support for projects in blockchain, tokenization, and virtual assets.",
+      "p3": "I support clients at all project stages, assist with compliance, obtaining VASP statuses, as well as opening accounts and building legal structures.",
+      "p4": "In addition to practical work, I speak publicly, publish professional materials, contribute to legislative initiatives, and take part in legal training and mentoring.",
+      "p5": "I am fluent in Ukrainian and English and work with clients from different countries. If you need support or consultation, I am always ready to provide professional assistance."
     }
   },
   "footer": {

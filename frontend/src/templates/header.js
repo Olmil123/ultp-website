@@ -22,6 +22,12 @@ const PRACTICES = [
   { key: 'compliance', path: '/#practice-compliance' },
 ];
 
+const CASES = [
+  { key: 'c1', path: '/cases/tokenization' },
+  { key: 'c2', path: '/cases/digital-identity' },
+  { key: 'c3', path: '/cases/crypto-education' },
+];
+
 const langBtn = (code, label) =>
   el(
     'button',
@@ -88,7 +94,20 @@ export const createHeader = () => {
         el('a', { href: '/services', 'data-link': '', 'data-lang': 'nav.services' }),
         el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
         el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),
-        el('a', { href: '/#cases', 'data-link': '', 'data-lang': 'nav.cases' }),
+        el('div', { class: 'nav-item nav-item--has-dropdown' }, [
+          el('a', { href: '/#cases', 'data-link': '', 'data-lang': 'nav.cases' }),
+          el(
+            'div',
+            { class: 'nav-dropdown' },
+            CASES.map((c) =>
+              el('a', {
+                href: c.path,
+                'data-link': '',
+                'data-lang': `home.cases.items.${c.key}.title`,
+              }),
+            ),
+          ),
+        ]),
       ]),
 
       el('div', { class: 'header__right' }, [

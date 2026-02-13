@@ -44,11 +44,15 @@ const updateTranslations = () => {
   });
 };
 
-i18next.on('initialized', updateTranslations);
-i18next.on('languageChanged', updateTranslations);
+const refreshTranslations = () => {
+  i18next.reloadResources().then(updateTranslations);
+};
+
+i18next.on('initialized', refreshTranslations);
+i18next.on('languageChanged', refreshTranslations);
 i18next.on('loaded', updateTranslations);
-document.addEventListener('app:render', updateTranslations);
-updateTranslations();
+document.addEventListener('app:render', refreshTranslations);
+refreshTranslations();
 
 const modal = () => document.getElementById('questionModal');
 const practiceModal = () => document.getElementById('practiceModal');

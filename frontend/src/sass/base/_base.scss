@@ -1,7 +1,7 @@
 ﻿@use '../abstracts/mixins' as m;
 
 html {
-  background: var(--page-bg);
+  background-color: transparent;
   background-image: none;
   height: 100%;
 }
@@ -13,7 +13,23 @@ body {
   flex-direction: column;
 }
 
+body[data-route='home'] {
+  background-color: var(--page-bg);
+  background-image: var(--hero-glow), var(--hero-texture);
+}
+
+body[data-route='home'] .hero::before,
+body[data-route='home'] .hero::after {
+  display: none;
+}
+
 body[data-route='about'] {
+  background-color: var(--about-bg);
+  background-image: var(--about-overlay), var(--about-texture);
+}
+
+body[data-route='about'] .app-main {
+  flex: 0 0 auto;
   background-color: var(--about-bg);
   background-image: var(--about-overlay), var(--about-texture);
 }

@@ -17,7 +17,12 @@ export const initRouter = (mountNode) => {
       const id = window.location.hash.slice(1);
       const target = document.getElementById(id);
       if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
+      return;
     }
+
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, 0);
   };
 
   document.addEventListener('click', (e) => {

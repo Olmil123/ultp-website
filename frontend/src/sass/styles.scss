@@ -20,5 +20,8 @@
 // Pages
 @use './pages/home';
 @use './pages/services';
-@use './pages/about';//! RESPONSIVE (single file for breakpoints)
+@use './pages/_cases.scss';
+@use './pages/about';
+
+//! RESPONSIVE (single file for breakpoints)
 @use './layout/responsive';

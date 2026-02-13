@@ -9,21 +9,37 @@ export const createAboutPage = () =>
         el('p', { class: 'about__lead', 'data-lang': 'about.lead', 'data-lang-html': '' }),
       ]),
 
-      el('div', { class: 'about__layout' }, [
-        el('div', { class: 'about__content' }, [
-          el('h2', { class: 'about__subtitle', 'data-lang': 'about.founder.title' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.founder.text', 'data-lang-html': '' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.founder.experience', 'data-lang-html': '' }),
-          el('p', {
-            class: 'about__text',
-            'data-lang': 'about.founder.specialization',
-            'data-lang-html': '',
-          }),
+        el('div', { class: 'about__layout' }, [
+          el('div', { class: 'about__content' }, [
+          el('div', { class: 'about__block about__block--founder' }, [
+            el('h2', { class: 'about__subtitle', 'data-lang': 'about.founder.title' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.founder.text', 'data-lang-html': '' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.founder.experience', 'data-lang-html': '' }),
+            el('p', {
+              class: 'about__text',
+              'data-lang': 'about.founder.specialization',
+              'data-lang-html': '',
+            }),
+          ]),
 
-          el('h2', { class: 'about__subtitle', 'data-lang': 'about.web3.title' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.web3.text', 'data-lang-html': '' }),
-          el('p', { class: 'about__text', 'data-lang': 'about.speaker', 'data-lang-html': '' }),
-        ]),
+          el('div', { class: 'about__block about__block--web3' }, [
+            el('h2', { class: 'about__subtitle', 'data-lang': 'about.web3.title' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.web3.text', 'data-lang-html': '' }),
+          ]),
+
+          el('div', { class: 'about__block about__block--speaker' }, [
+            el('p', { class: 'about__text', 'data-lang': 'about.speaker', 'data-lang-html': '' }),
+          ]),
+
+          el('div', { class: 'about__block about__block--approach' }, [
+            el('h2', { class: 'about__subtitle', 'data-lang': 'about.approach.title' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.approach.p1' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.approach.p2' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.approach.p3' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.approach.p4' }),
+            el('p', { class: 'about__text', 'data-lang': 'about.approach.p5' }),
+          ]),
+          ]),
 
         el('aside', { class: 'about__aside' }, [
           el('div', { class: 'about__photo' }, [
@@ -46,8 +62,9 @@ export const createAboutPage = () =>
               el('li', { 'data-lang': 'about.credits.association' }),
               el('li', { 'data-lang': 'about.credits.beps' }),
             ]),
+            ]),
           ]),
         ]),
-      ]),
+
     ]),
   ]);

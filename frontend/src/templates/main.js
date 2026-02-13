@@ -1,5 +1,6 @@
 import { el } from '@/utils/createElement';
 import { createPracticeCards } from '@/templates/practicesCards';
+import { createCasesCards } from '@/templates/casesCards';
 
 export const createMain = () => {
   const hero = el('section', { class: 'hero', id: 'about' }, [
@@ -67,17 +68,26 @@ export const createMain = () => {
     ]),
   ]);
 
+  const cases = el('section', { class: 'section section--cases', id: 'cases' }, [
+    el('div', { class: 'container' }, [
+      el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'home.cases.title' }),
+      createCasesCards({
+        baseKey: 'home.cases',
+        withButton: true,
+        buttonHref: '/cases',
+        links: {
+          c1: '/cases/tokenization',
+          c2: '/cases/digital-identity',
+          c3: '/cases/crypto-education',
+        },
+      }),
+    ]),
+  ]);
+
   const news = el('section', { class: 'section section--alt', id: 'news' }, [
     el('div', { class: 'container' }, [
       el('h2', { class: 'section__title', 'data-lang': 'nav.news' }),
       el('p', { class: 'section__placeholder', 'data-lang': 'home.news.placeholder' }),
-    ]),
-  ]);
-
-  const cases = el('section', { class: 'section', id: 'cases' }, [
-    el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title', 'data-lang': 'nav.cases' }),
-      el('p', { class: 'section__placeholder', 'data-lang': 'home.cases.placeholder' }),
     ]),
   ]);
 
@@ -122,8 +132,8 @@ export const createMain = () => {
     hero,
     advantages,
     practices,
-    news,
     cases,
+    news,
     contacts,
   ]);
 };

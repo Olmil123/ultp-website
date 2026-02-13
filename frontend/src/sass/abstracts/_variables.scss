@@ -151,6 +151,7 @@
 
   //! Layout
   --container: 1200px;
+  --about-container: 1240px;
   --radius-xl: 16px;
   --radius-lg: 12px;
   --header-h: 72px;
@@ -180,55 +181,48 @@
   --header-panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 
   //! About page
-  --about-bg: var(--page-bg);
+  --about-bg: #f3efe8;
   --about-overlay:
-    radial-gradient(900px 420px at 12% -6%, rgba(242, 201, 76, 0.12), transparent 60%),
-    radial-gradient(820px 380px at 85% 0%, rgba(21, 60, 47, 0.07), transparent 60%),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.94) 0%,
-      rgba(248, 246, 242, 0.98) 52%,
-      rgba(245, 247, 244, 0.98) 100%
-    );
+    radial-gradient(1100px 520px at 12% -8%, rgba(242, 201, 76, 0.08), transparent 68%),
+    radial-gradient(920px 520px at 88% 6%, rgba(21, 60, 47, 0.06), transparent 70%),
+    linear-gradient(180deg, rgba(244, 241, 234, 0.98) 0%, rgba(241, 241, 237, 0.98) 52%, rgba(241, 241, 237, 0.98) 100%);
   --about-grid-line: rgba(0, 0, 0, 0.02);
-  --about-texture:
-    repeating-linear-gradient(90deg, var(--about-grid-line) 0 1px, transparent 1px 26px),
-    repeating-linear-gradient(0deg, var(--about-grid-line) 0 1px, transparent 1px 26px);
-  --about-divider: rgba(21, 60, 47, 0.1);
-  --about-header-divider: rgba(21, 60, 47, 0.18);
-  --about-layout-glow: radial-gradient(620px 260px at 70% 0%, rgba(242, 201, 76, 0.08), transparent 62%);
-  --about-heading-color: #0f2f24;
-  --about-subtitle-color: #1f3b32;
-  --about-text-color: #5b5b5b;
+  --about-texture: none;
+  --about-divider: rgba(21, 60, 47, 0.08);
+  --about-header-divider: rgba(21, 60, 47, 0.12);
+  --about-layout-glow: radial-gradient(700px 280px at 70% -4%, rgba(242, 201, 76, 0.06), transparent 66%);
+  --about-heading-color: #12362c;
+  --about-subtitle-color: #2f463c;
+  --about-text-color: #6a6f6c;
   --about-accent-color: var(--green);
-  --about-subtitle-border: rgba(21, 60, 47, 0.18);
+  --about-subtitle-border: rgba(21, 60, 47, 0.12);
   --about-subtitle-accent: var(--yellow);
-  --about-photo-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(236, 243, 240, 0.94));
-  --about-photo-border: var(--white-18);
+  --about-photo-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 246, 243, 0.96));
+  --about-photo-border: rgba(21, 60, 47, 0.08);
   --about-photo-overlay:
-    radial-gradient(circle at 20% 15%, rgba(242, 201, 76, 0.22), transparent 55%),
-    radial-gradient(circle at 80% 25%, rgba(21, 60, 47, 0.12), transparent 60%);
-  --about-photo-shadow: 0 18px 50px var(--black-18);
-  --about-aside-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(239, 245, 241, 0.92));
-  --about-aside-border: rgba(21, 60, 47, 0.1);
-  --about-aside-shadow: 0 24px 52px var(--black-12);
-  --about-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 245, 241, 0.92));
-  --about-card-border: rgba(21, 60, 47, 0.1);
-  --about-card-shadow: 0 20px 40px var(--black-08);
+    radial-gradient(circle at 20% 15%, rgba(242, 201, 76, 0.16), transparent 55%),
+    radial-gradient(circle at 80% 25%, rgba(21, 60, 47, 0.07), transparent 60%);
+  --about-photo-shadow: 0 16px 34px rgba(15, 24, 20, 0.14);
+  --about-aside-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(242, 246, 243, 0.96));
+  --about-aside-border: rgba(21, 60, 47, 0.08);
+  --about-aside-shadow: 0 22px 42px rgba(15, 24, 20, 0.12);
+  --about-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(242, 246, 242, 0.94));
+  --about-card-border: rgba(21, 60, 47, 0.08);
+  --about-card-shadow: 0 16px 30px rgba(15, 24, 20, 0.08);
   --about-logo-bg: rgba(255, 255, 255, 0.6);
   --about-logo-border: rgba(21, 60, 47, 0.08);
   --about-logo-shadow: none;
-  --about-logo-color: rgba(21, 60, 47, 0.6);
-  --about-credits-bg: linear-gradient(160deg, rgba(248, 245, 239, 0.92), rgba(244, 247, 244, 0.9));
-  --about-credits-border: rgba(21, 60, 47, 0.1);
-  --about-credits-shadow: 0 14px 28px var(--black-06);
-  --about-credits-title: rgba(21, 60, 47, 0.82);
-  --about-badge-bg: rgba(255, 255, 255, 0.82);
-  --about-badge-bg-hover: rgba(255, 255, 255, 0.92);
-  --about-badge-border: rgba(21, 60, 47, 0.16);
-  --about-badge-border-hover: rgba(21, 60, 47, 0.24);
-  --about-badge-shadow: 0 8px 16px rgba(21, 60, 47, 0.08);
-  --about-badge-shadow-hover: 0 12px 24px rgba(21, 60, 47, 0.14);
+  --about-logo-color: rgba(21, 60, 47, 0.7);
+  --about-credits-bg: linear-gradient(180deg, rgba(249, 247, 242, 0.92), rgba(243, 247, 244, 0.92));
+  --about-credits-border: rgba(21, 60, 47, 0.08);
+  --about-credits-shadow: 0 12px 26px rgba(15, 24, 20, 0.08);
+  --about-credits-title: rgba(21, 60, 47, 0.7);
+  --about-badge-bg: rgba(255, 255, 255, 0.9);
+  --about-badge-bg-hover: rgba(255, 255, 255, 0.98);
+  --about-badge-border: rgba(21, 60, 47, 0.12);
+  --about-badge-border-hover: rgba(21, 60, 47, 0.2);
+  --about-badge-shadow: 0 8px 16px rgba(15, 24, 20, 0.08);
+  --about-badge-shadow-hover: 0 12px 22px rgba(15, 24, 20, 0.12);
   --about-list-border: var(--black-08);
 
   //! Advantages
@@ -238,4 +232,36 @@
   --advantages-card-shadow: 0 16px 28px rgba(21, 60, 47, 0.12);
   --advantages-accent: linear-gradient(135deg, rgba(242, 201, 76, 0.35), rgba(21, 60, 47, 0.18));
   --advantages-accent-shadow: 0 10px 22px rgba(21, 60, 47, 0.12);
+
+  //! Cases
+  --cases-bg: #f3f2ee;
+  --cases-gradient:
+    radial-gradient(920px 520px at 8% -10%, rgba(242, 201, 76, 0.12), transparent 60%),
+    radial-gradient(860px 520px at 92% 0%, rgba(21, 60, 47, 0.08), transparent 62%),
+    linear-gradient(180deg, rgba(251, 250, 247, 0.98) 0%, rgba(241, 244, 241, 0.98) 100%);
+  --cases-lines: rgba(0, 0, 0, 0.015);
+  --cases-noise: rgba(0, 0, 0, 0.02);
+  --cases-card-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(239, 244, 242, 0.95) 100%);
+  --cases-card-border: rgba(21, 60, 47, 0.12);
+  --cases-card-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  --cases-card-shadow-hover: 0 22px 42px rgba(0, 0, 0, 0.12);
+  --cases-title-color: var(--green);
+  --cases-text-color: rgba(25, 28, 27, 0.72);
+  --case-card-gradient-a:
+    radial-gradient(140px 120px at 20% 0%, rgba(90, 170, 200, 0.22), transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(230, 238, 244, 0.98) 100%);
+  --case-card-gradient-b:
+    radial-gradient(140px 120px at 80% 0%, rgba(60, 130, 180, 0.22), transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(226, 234, 240, 0.98) 100%);
+  --case-card-icon-bg: rgba(255, 255, 255, 0.92);
+  --case-card-icon-border: rgba(21, 60, 47, 0.16);
+  --case-page-bg: #e5edf3;
+  --case-page-gradient:
+    radial-gradient(1200px 760px at 50% 28%, rgba(255, 255, 255, 0.8), transparent 60%),
+    radial-gradient(900px 560px at 18% 18%, rgba(242, 201, 76, 0.08), transparent 62%),
+    radial-gradient(900px 560px at 82% 16%, rgba(18, 54, 44, 0.08), transparent 64%),
+    radial-gradient(1400px 900px at 50% 50%, transparent 55%, rgba(10, 50, 60, 0.08) 75%, rgba(10, 50, 60, 0.12) 100%),
+    linear-gradient(180deg, rgba(236, 244, 248, 0.98) 0%, rgba(227, 236, 244, 0.98) 60%, rgba(219, 229, 238, 0.98) 100%);
+  --case-page-lines: rgba(0, 0, 0, 0);
+  --case-page-noise: rgba(0, 0, 0, 0.006);
 }
