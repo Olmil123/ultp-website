@@ -10,8 +10,18 @@
     <link rel="icon" href="/assets/ico/logo.jpg" />
     <title>ULTP</title>
   </head>
-  <body>
-    <div id="app">Loading...</div>
+  <body class="is-boot-loading">
+    <div
+      id="boot-loader"
+      class="boot-loader"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading page"
+    >
+      <span class="boot-loader__spinner" aria-hidden="true"></span>
+      <span class="boot-loader__label" aria-hidden="true"></span>
+    </div>
+    <div id="app"></div>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

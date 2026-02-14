@@ -64,6 +64,58 @@ const socialLink = (href, iconName, label) =>
     ],
   );
 
+const mobileDropdown = ({ id, labelKey, href, items, itemLangKey }) =>
+  el('div', { class: 'mobile-dropdown' }, [
+    el('div', { class: 'mobile-dropdown__head' }, [
+      el('a', { href, 'data-link': '', class: 'mobile-dropdown__link', 'data-lang': labelKey }),
+      el(
+        'button',
+        {
+          type: 'button',
+          class: 'mobile-dropdown__toggle',
+          'data-mobile-dropdown-toggle': id,
+          'aria-expanded': 'false',
+          'aria-controls': id,
+          'aria-label': 'Toggle submenu',
+        },
+        [
+          el(
+            'svg',
+            {
+              class: 'mobile-dropdown__icon',
+              viewBox: '0 0 12 12',
+              'aria-hidden': 'true',
+              focusable: 'false',
+              svg: true,
+            },
+            [
+              el('path', {
+                d: 'M3 4.5L6 7.5L9 4.5',
+                fill: 'none',
+                stroke: 'currentColor',
+                'stroke-width': '1.5',
+                'stroke-linecap': 'round',
+                'stroke-linejoin': 'round',
+                svg: true,
+              }),
+            ],
+          ),
+        ],
+      ),
+    ]),
+    el(
+      'div',
+      { class: 'mobile-dropdown__panel', id },
+      items.map((item) =>
+        el('a', {
+          href: item.path,
+          'data-link': '',
+          'data-lang': itemLangKey(item),
+        }),
+      ),
+    ),
+  ]);
+
 export const createHeader = () => {
   const header = el('header', { class: 'site-header' }, [
     el('div', { class: 'header__inner' }, [
@@ -77,7 +129,30 @@ export const createHeader = () => {
       el('nav', { class: 'header__nav' }, [
         // Practices dropdown
         el('div', { class: 'nav-item nav-item--has-dropdown' }, [
-          el('a', { href: '/#practices', 'data-link': '', 'data-lang': 'nav.practices' }),
+          el('a', { href: '/#practices', 'data-link': '', class: 'nav-item__trigger' }, [
+            el('span', { 'data-lang': 'nav.practices' }),
+            el(
+              'svg',
+              {
+                class: 'nav-item__chevron',
+                viewBox: '0 0 12 12',
+                'aria-hidden': 'true',
+                focusable: 'false',
+                svg: true,
+              },
+              [
+                el('path', {
+                  d: 'M3 4.5L6 7.5L9 4.5',
+                  fill: 'none',
+                  stroke: 'currentColor',
+                  'stroke-width': '1.5',
+                  'stroke-linecap': 'round',
+                  'stroke-linejoin': 'round',
+                  svg: true,
+                }),
+              ],
+            ),
+          ]),
           el(
             'div',
             { class: 'nav-dropdown' },
@@ -95,7 +170,30 @@ export const createHeader = () => {
         el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
         el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),
         el('div', { class: 'nav-item nav-item--has-dropdown' }, [
-          el('a', { href: '/#cases', 'data-link': '', 'data-lang': 'nav.cases' }),
+          el('a', { href: '/#cases', 'data-link': '', class: 'nav-item__trigger' }, [
+            el('span', { 'data-lang': 'nav.cases' }),
+            el(
+              'svg',
+              {
+                class: 'nav-item__chevron',
+                viewBox: '0 0 12 12',
+                'aria-hidden': 'true',
+                focusable: 'false',
+                svg: true,
+              },
+              [
+                el('path', {
+                  d: 'M3 4.5L6 7.5L9 4.5',
+                  fill: 'none',
+                  stroke: 'currentColor',
+                  'stroke-width': '1.5',
+                  'stroke-linecap': 'round',
+                  'stroke-linejoin': 'round',
+                  svg: true,
+                }),
+              ],
+            ),
+          ]),
           el(
             'div',
             { class: 'nav-dropdown' },
@@ -126,26 +224,35 @@ export const createHeader = () => {
           'data-lang': 'header.ask',
         }),
 
-        el(
-          'button',
-          {
-            class: 'header__hamburger',
-            type: 'button',
-            'aria-label': 'Menu',
-            'aria-expanded': 'false',
-            'data-menu-toggle': '',
-          },
-        ),
+        el('button', {
+          class: 'header__hamburger',
+          type: 'button',
+          'aria-label': 'Menu',
+          'aria-expanded': 'false',
+          'data-menu-toggle': '',
+        }),
       ]),
     ]),
 
     //* Mobile nav
     el('nav', { class: 'header__nav header__nav--mobile' }, [
-      el('a', { href: '/#practices', 'data-link': '', 'data-lang': 'nav.practices' }),
+      mobileDropdown({
+        id: 'mobile-practices-menu',
+        labelKey: 'nav.practices',
+        href: '/#practices',
+        items: PRACTICES,
+        itemLangKey: (p) => `practices.items.${p.key}`,
+      }),
       el('a', { href: '/services', 'data-link': '', 'data-lang': 'nav.services' }),
       el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
       el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),
-      el('a', { href: '/#cases', 'data-link': '', 'data-lang': 'nav.cases' }),
+      mobileDropdown({
+        id: 'mobile-cases-menu',
+        labelKey: 'nav.cases',
+        href: '/#cases',
+        items: CASES,
+        itemLangKey: (c) => `home.cases.items.${c.key}.title`,
+      }),
 
       el('button', {
         class: 'btn btn--primary',

@@ -1,10 +1,12 @@
-﻿@use '../abstracts/mixins' as m;
+@use '../abstracts/mixins' as m;
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
-  padding: 18px 0;
+  inset: 0 0 auto 0;
+  width: 100%;
+  padding: 8px 0;
   background: transparent;
 }
 
@@ -86,6 +88,25 @@
   right: 0;
   top: 100%;
   height: 8px;
+}
+
+.nav-item__trigger {
+  gap: 6px;
+}
+
+.nav-item__chevron {
+  width: 10px;
+  height: 10px;
+  display: block;
+  color: currentColor;
+  opacity: 0.85;
+  @include m.tr(transform, opacity);
+}
+
+.nav-item--has-dropdown:hover .nav-item__chevron,
+.nav-item--has-dropdown:focus-within .nav-item__chevron {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 
 .nav-dropdown {

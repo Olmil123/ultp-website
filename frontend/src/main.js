@@ -8,11 +8,21 @@ import { createModal } from '@/templates/main.js';
 import { createFooter } from '@/templates/footer.js';
 import { createLayout } from '@/templates/layout.js';
 import { initRouter } from '@/router.js';
+import { initScrollReveal } from '@/utils/scrollReveal.js';
 
 const mount = document.getElementById('app');
+const bootLoader = document.getElementById('boot-loader');
+
+const finishBootLoading = () => {
+  document.body.classList.remove('is-boot-loading');
+  if (!bootLoader) return;
+  bootLoader.classList.add('is-leaving');
+  window.setTimeout(() => bootLoader.remove(), 320);
+};
 
 if (!mount) {
   document.body.innerHTML = '<p style="padding:20px;color:red;">#app not found</p>';
+  finishBootLoading();
 } else {
   try {
     mount.innerHTML = '';
@@ -21,10 +31,12 @@ if (!mount) {
     mount.appendChild(mainContainer);
     mount.appendChild(createFooter());
     mount.appendChild(createModal());
+    document.addEventListener('app:render', finishBootLoading, { once: true });
     initRouter(mainContainer);
   } catch (err) {
     mount.innerHTML = `<p style="padding:20px;color:red;">Error: ${err.message}</p>`;
     console.error(err);
+    finishBootLoading();
   }
 }
 
@@ -52,6 +64,7 @@ i18next.on('initialized', refreshTranslations);
 i18next.on('languageChanged', refreshTranslations);
 i18next.on('loaded', updateTranslations);
 document.addEventListener('app:render', refreshTranslations);
+document.addEventListener('app:render', initScrollReveal);
 refreshTranslations();
 
 const modal = () => document.getElementById('questionModal');
@@ -61,16 +74,39 @@ const practiceBody = () => document.getElementById('practiceModalBody');
 const mobileNav = () => document.querySelector('.header__nav--mobile');
 const burger = () => document.querySelector('[data-menu-toggle]');
 
+const closeMobileDropdowns = () => {
+  document.querySelectorAll('.mobile-dropdown.is-open').forEach((item) => {
+    item.classList.remove('is-open');
+  });
+  document.querySelectorAll('[data-mobile-dropdown-toggle]').forEach((btn) => {
+    btn.setAttribute('aria-expanded', 'false');
+  });
+};
+
 const closeMobileNav = () => {
   mobileNav()?.classList.remove('is-open');
   burger()?.setAttribute('aria-expanded', 'false');
+  closeMobileDropdowns();
+};
+
+const toggleMobileDropdown = (trigger) => {
+  const dropdown = trigger.closest('.mobile-dropdown');
+  if (!dropdown) return;
+
+  const willOpen = !dropdown.classList.contains('is-open');
+  closeMobileDropdowns();
+  if (!willOpen) return;
+
+  dropdown.classList.add('is-open');
+  trigger.setAttribute('aria-expanded', 'true');
 };
 
 const toggleMobileNav = () => {
   const nav = mobileNav();
   if (!nav) return;
-  nav.classList.toggle('is-open');
-  burger()?.setAttribute('aria-expanded', nav.classList.contains('is-open'));
+  const isOpen = nav.classList.toggle('is-open');
+  burger()?.setAttribute('aria-expanded', isOpen);
+  if (!isOpen) closeMobileDropdowns();
 };
 
 const openModal = () => {
@@ -157,6 +193,13 @@ document.addEventListener('click', (e) => {
   const menuToggle = e.target.closest('[data-menu-toggle]');
   if (menuToggle) {
     toggleMobileNav();
+    return;
+  }
+
+  const mobileDropdownToggle = e.target.closest('[data-mobile-dropdown-toggle]');
+  if (mobileDropdownToggle) {
+    e.preventDefault();
+    toggleMobileDropdown(mobileDropdownToggle);
     return;
   }
 

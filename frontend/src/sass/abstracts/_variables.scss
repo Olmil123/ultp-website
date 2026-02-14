@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   //! Palette
   --bg: #f6f5f2;
   --page-bg: #f5f4f1;
@@ -153,11 +153,28 @@
   --radius-xl: 16px;
   --radius-lg: 12px;
   --header-h: 72px;
+  --header-offset: 84px;
+  --header-offset-tablet: 72px;
+  --header-offset-mobile: 64px;
   --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.08);
 
   //! Motion
   --t: 220ms;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --reveal-distance: 16px;
+  --reveal-duration: 520ms;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  //! Loaders
+  --loader-accent: var(--green);
+  --loader-track: rgba(21, 60, 47, 0.2);
+  --loader-text: 'Loading ULTP...';
+  --boot-loader-gradient:
+    radial-gradient(220px 220px at 50% 44%, rgba(255, 255, 255, 0.42), transparent 72%),
+    linear-gradient(180deg, rgba(248, 247, 244, 0.98) 0%, rgba(243, 242, 238, 0.98) 100%);
+  --page-loader-overlay:
+    radial-gradient(220px 220px at 50% 46%, rgba(255, 255, 255, 0.32), transparent 70%),
+    linear-gradient(180deg, rgba(245, 244, 241, 0.72) 0%, rgba(245, 244, 241, 0.9) 100%);
 
   //? Texture layers
   --bg-noise-1: rgba(0, 0, 0, 0.04);
@@ -321,3 +338,4 @@
   --case-page-lines: rgba(0, 0, 0, 0);
   --case-page-noise: rgba(0, 0, 0, 0.006);
 }
+

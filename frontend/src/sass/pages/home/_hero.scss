@@ -4,6 +4,7 @@
 .hero {
   position: relative;
   @include m.section(48px);
+  padding-top: 18px;
   min-height: 0;
   isolation: isolate;
 }
@@ -276,6 +277,7 @@
 @include m.respond(768px) {
   .hero {
     @include m.section(36px);
+    padding-top: 14px;
   }
 
   .hero__title {
@@ -322,6 +324,7 @@
 @include m.respond(480px) {
   .hero {
     @include m.section(32px);
+    padding-top: 12px;
   }
 
   .hero__title {
