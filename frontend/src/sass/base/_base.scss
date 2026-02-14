@@ -1,9 +1,10 @@
-﻿@use '../abstracts/mixins' as m;
+@use '../abstracts/mixins' as m;
 
 html {
   background-color: transparent;
   background-image: none;
   height: 100%;
+  scroll-padding-top: var(--header-offset);
 }
 
 body {
@@ -45,5 +46,25 @@ body[data-route='about'] .app-main {
   display: block;
   position: relative;
   flex: 1 0 auto;
+  padding-top: var(--header-offset);
 }
 
+@include m.respond(900px) {
+  html {
+    scroll-padding-top: var(--header-offset-tablet);
+  }
+
+  .app-main {
+    padding-top: var(--header-offset-tablet);
+  }
+}
+
+@include m.respond(480px) {
+  html {
+    scroll-padding-top: var(--header-offset-mobile);
+  }
+
+  .app-main {
+    padding-top: var(--header-offset-mobile);
+  }
+}

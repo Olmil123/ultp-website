@@ -51,7 +51,10 @@ export const createMain = () => {
 
   const advantages = el('section', { class: 'section section--advantages', id: 'advantages' }, [
     el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'home.advantages.title' }),
+      el('h2', {
+        class: 'section__title section__title--bracket',
+        'data-lang': 'home.advantages.title',
+      }),
       el('ul', { class: 'advantages__list' }, [
         el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a1' }),
         el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a2' }),
@@ -63,14 +66,20 @@ export const createMain = () => {
   const activePracticeId = window.location.hash ? window.location.hash.slice(1) : '';
   const practices = el('section', { class: 'section page-practices', id: 'practices' }, [
     el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'home.practices.title' }),
+      el('h2', {
+        class: 'section__title section__title--bracket',
+        'data-lang': 'home.practices.title',
+      }),
       createPracticeCards(activePracticeId),
     ]),
   ]);
 
   const cases = el('section', { class: 'section section--cases', id: 'cases' }, [
     el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'home.cases.title' }),
+      el('h2', {
+        class: 'section__title section__title--bracket',
+        'data-lang': 'home.cases.title',
+      }),
       createCasesCards({
         baseKey: 'home.cases',
         withButton: true,
@@ -190,21 +199,25 @@ export const createModal = () => {
     },
     [
       el('div', { class: 'modal__backdrop', 'data-close-modal': 'practice' }),
-      el('div', { class: 'modal__dialog modal__dialog--wide', role: 'dialog', 'aria-modal': 'true' }, [
-        el('div', { class: 'modal__head' }, [
-          el('h3', { class: 'modal__title', id: 'practiceModalTitle' }),
-          el(
-            'button',
-            {
-              class: 'modal__close',
-              type: 'button',
-              'data-close-modal': 'practice',
-            },
-            '×',
-          ),
-        ]),
-        el('div', { class: 'modal__body', id: 'practiceModalBody' }),
-      ]),
+      el(
+        'div',
+        { class: 'modal__dialog modal__dialog--wide', role: 'dialog', 'aria-modal': 'true' },
+        [
+          el('div', { class: 'modal__head' }, [
+            el('h3', { class: 'modal__title', id: 'practiceModalTitle' }),
+            el(
+              'button',
+              {
+                class: 'modal__close',
+                type: 'button',
+                'data-close-modal': 'practice',
+              },
+              '×',
+            ),
+          ]),
+          el('div', { class: 'modal__body', id: 'practiceModalBody' }),
+        ],
+      ),
     ],
   );
 

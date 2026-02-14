@@ -45,7 +45,7 @@ export default defineConfig({
     fs: {
       allow: ['.', 'src', 'public', 'node_modules'],
     },
-    proxy: {  
+    proxy: {
       '/api': {
         target: 'http://127.0.0.1:8000',
         changeOrigin: true,
@@ -58,7 +58,6 @@ export default defineConfig({
     host: '0.0.0.0',
     allowedHosts: ['.ngrok-free.dev'],
   },
-
 
   build: {
     outDir: 'dist',

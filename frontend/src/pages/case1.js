@@ -16,9 +16,7 @@ export const createCaseTokenizationPage = () =>
             class: 'case-hero__media',
             style: { '--case-hero-image': "url('/assets/ico/blockChain.jpg')" },
           },
-          [
-          el('span', { class: 'case-hero__badge', 'data-lang': 'case1.hero.mediaLabel' }),
-          ],
+          [el('span', { class: 'case-hero__badge', 'data-lang': 'case1.hero.mediaLabel' })],
         ),
       ]),
 
@@ -36,7 +34,10 @@ export const createCaseTokenizationPage = () =>
           el('li', { 'data-lang': 'case1.solution.items.i3' }),
           el('li', { 'data-lang': 'case1.solution.items.i4' }),
         ]),
-        el('p', { class: 'case-section__text case-section__text--muted', 'data-lang': 'case1.solution.benefitsTitle' }),
+        el('p', {
+          class: 'case-section__text case-section__text--muted',
+          'data-lang': 'case1.solution.benefitsTitle',
+        }),
         el('ul', { class: 'case-section__list' }, [
           el('li', { 'data-lang': 'case1.solution.benefits.b1' }),
           el('li', { 'data-lang': 'case1.solution.benefits.b2' }),

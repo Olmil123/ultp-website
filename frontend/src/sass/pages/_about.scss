@@ -348,7 +348,6 @@
   .about__layout::before {
     inset: -16px 0 auto 0;
   }
-
 }
 
 @include m.respond(600px) {
@@ -385,6 +384,4 @@
   .about__list {
     flex-direction: column;
   }
-
 }
-

@@ -24,29 +24,47 @@ export const createServicesPage = () =>
       ]),
 
       el('section', { class: 'services-section' }, [
-        el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'services.work.title' }),
+        el('h2', {
+          class: 'section__title section__title--bracket',
+          'data-lang': 'services.work.title',
+        }),
         el(
           'div',
           { class: 'services-grid services-grid--work' },
           WORK_STEPS.map((step) =>
             el('article', { class: 'service-card' }, [
-              el('div', { class: 'service-card__icon', style: { '--icon': `url('${step.icon}')` } }),
-              el('h3', { class: 'service-card__title', 'data-lang': `services.work.${step.key}.title` }),
-              el('p', { class: 'service-card__text', 'data-lang': `services.work.${step.key}.text` }),
+              el('div', {
+                class: 'service-card__icon',
+                style: { '--icon': `url('${step.icon}')` },
+              }),
+              el('h3', {
+                class: 'service-card__title',
+                'data-lang': `services.work.${step.key}.title`,
+              }),
+              el('p', {
+                class: 'service-card__text',
+                'data-lang': `services.work.${step.key}.text`,
+              }),
             ]),
           ),
         ),
       ]),
 
       el('section', { class: 'services-section' }, [
-        el('h2', { class: 'section__title section__title--bracket', 'data-lang': 'services.cost.title' }),
+        el('h2', {
+          class: 'section__title section__title--bracket',
+          'data-lang': 'services.cost.title',
+        }),
         el('p', { class: 'services__lead', 'data-lang': 'services.cost.lead' }),
         el(
           'div',
           { class: 'services-grid services-grid--cost' },
           COST_ITEMS.map((item) =>
             el('article', { class: 'service-card' }, [
-              el('div', { class: 'service-card__icon', style: { '--icon': `url('${item.icon}')` } }),
+              el('div', {
+                class: 'service-card__icon',
+                style: { '--icon': `url('${item.icon}')` },
+              }),
               el('h3', { class: 'service-card__title', 'data-lang': `services.cost.${item.key}` }),
             ]),
           ),

@@ -65,8 +65,7 @@
 @mixin page-background {
   background-color: var(--page-bg);
   background-image:
-    var(--page-gradient),
-    radial-gradient(circle at 20% 10%, var(--bg-noise-1), transparent 45%),
+    var(--page-gradient), radial-gradient(circle at 20% 10%, var(--bg-noise-1), transparent 45%),
     radial-gradient(circle at 80% 30%, var(--bg-noise-2), transparent 50%),
     radial-gradient(circle at 40% 90%, var(--bg-noise-3), transparent 55%),
     repeating-linear-gradient(
@@ -85,4 +84,3 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-

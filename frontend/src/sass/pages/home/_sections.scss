@@ -20,8 +20,7 @@
   position: relative;
   background-color: var(--cases-bg);
   background-image:
-    var(--cases-gradient),
-    radial-gradient(circle at 20% 10%, var(--cases-noise), transparent 45%),
+    var(--cases-gradient), radial-gradient(circle at 20% 10%, var(--cases-noise), transparent 45%),
     radial-gradient(circle at 80% 30%, var(--cases-noise), transparent 50%),
     repeating-linear-gradient(
       0deg,
@@ -536,5 +535,3 @@
     @include m.section(44px);
   }
 }
-
-

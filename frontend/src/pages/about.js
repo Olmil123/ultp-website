@@ -9,12 +9,20 @@ export const createAboutPage = () =>
         el('p', { class: 'about__lead', 'data-lang': 'about.lead', 'data-lang-html': '' }),
       ]),
 
-        el('div', { class: 'about__layout' }, [
-          el('div', { class: 'about__content' }, [
+      el('div', { class: 'about__layout' }, [
+        el('div', { class: 'about__content' }, [
           el('div', { class: 'about__block about__block--founder' }, [
             el('h2', { class: 'about__subtitle', 'data-lang': 'about.founder.title' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.founder.text', 'data-lang-html': '' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.founder.experience', 'data-lang-html': '' }),
+            el('p', {
+              class: 'about__text',
+              'data-lang': 'about.founder.text',
+              'data-lang-html': '',
+            }),
+            el('p', {
+              class: 'about__text',
+              'data-lang': 'about.founder.experience',
+              'data-lang-html': '',
+            }),
             el('p', {
               class: 'about__text',
               'data-lang': 'about.founder.specialization',
@@ -39,7 +47,7 @@ export const createAboutPage = () =>
             el('p', { class: 'about__text', 'data-lang': 'about.approach.p4' }),
             el('p', { class: 'about__text', 'data-lang': 'about.approach.p5' }),
           ]),
-          ]),
+        ]),
 
         el('aside', { class: 'about__aside' }, [
           el('div', { class: 'about__photo' }, [
@@ -62,9 +70,8 @@ export const createAboutPage = () =>
               el('li', { 'data-lang': 'about.credits.association' }),
               el('li', { 'data-lang': 'about.credits.beps' }),
             ]),
-            ]),
           ]),
         ]),
-
+      ]),
     ]),
   ]);

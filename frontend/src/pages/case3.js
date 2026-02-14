@@ -34,7 +34,10 @@ export const createCaseCryptoEducationPage = () =>
           el('li', { 'data-lang': 'case3.solution.items.i3' }),
           el('li', { 'data-lang': 'case3.solution.items.i4' }),
         ]),
-        el('p', { class: 'case-section__text case-section__text--muted', 'data-lang': 'case3.solution.outcome' }),
+        el('p', {
+          class: 'case-section__text case-section__text--muted',
+          'data-lang': 'case3.solution.outcome',
+        }),
       ]),
 
       el('section', { class: 'case-section' }, [
