@@ -168,7 +168,6 @@ export const createHeader = () => {
 
         el('a', { href: '/services', 'data-link': '', 'data-lang': 'nav.services' }),
         el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
-        el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),
         el('div', { class: 'nav-item nav-item--has-dropdown' }, [
           el('a', { href: '/#cases', 'data-link': '', class: 'nav-item__trigger' }, [
             el('span', { 'data-lang': 'nav.cases' }),
@@ -245,7 +244,6 @@ export const createHeader = () => {
       }),
       el('a', { href: '/services', 'data-link': '', 'data-lang': 'nav.services' }),
       el('a', { href: '/about', 'data-link': '', 'data-lang': 'nav.about' }),
-      el('a', { href: '/#news', 'data-link': '', 'data-lang': 'nav.news' }),
       mobileDropdown({
         id: 'mobile-cases-menu',
         labelKey: 'nav.cases',

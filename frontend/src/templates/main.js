@@ -2,6 +2,29 @@ import { el } from '@/utils/createElement';
 import { createPracticeCards } from '@/templates/practicesCards';
 import { createCasesCards } from '@/templates/casesCards';
 
+const REVIEW_SHOTS = [
+  {
+    src: '/assets/ico/view1.jpg',
+    alt: 'Client review 1',
+    width: 789,
+    height: 217,
+  },
+  {
+    src: '/assets/ico/view2.jpg',
+    alt: 'Client review 2',
+    width: 785,
+    height: 202,
+  },
+  {
+    src: '/assets/ico/view3.jpg',
+    alt: 'Client review 3',
+    width: 781,
+    height: 184,
+  },
+];
+
+const REVIEWS_LINK = 'https://www.linkedin.com/in/svitlana-rudiuk-8b77929b';
+
 export const createMain = () => {
   const hero = el('section', { class: 'hero', id: 'about' }, [
     el('div', { class: 'container hero__inner' }, [
@@ -93,46 +116,66 @@ export const createMain = () => {
     ]),
   ]);
 
-  const news = el('section', { class: 'section section--alt', id: 'news' }, [
+  const reviews = el('section', { class: 'section section--reviews', id: 'reviews' }, [
     el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title', 'data-lang': 'nav.news' }),
-      el('p', { class: 'section__placeholder', 'data-lang': 'home.news.placeholder' }),
-    ]),
-  ]);
-
-  const contacts = el('section', { class: 'section', id: 'contacts' }, [
-    el('div', { class: 'container' }, [
-      el('h2', { class: 'section__title', 'data-lang': 'home.contacts.title' }),
-      el('div', { class: 'contacts' }, [
-        el('p', {}, [
-          el('span', { 'data-lang': 'home.contacts.emailLabel' }),
-          ' rudiuksvitlana@gmail.com',
-        ]),
-        el('p', {}, [
-          el('span', { 'data-lang': 'home.contacts.telLabel' }),
-          ' ',
-          el(
-            'a',
-            {
-              href: 'https://wa.me/380633966786',
+      el('div', { class: 'reviews-cluster' }, [
+        el('p', { class: 'reviews__eyebrow', 'data-lang': 'home.reviews.eyebrow' }),
+        el('h2', { class: 'reviews__title', 'data-lang': 'home.reviews.title' }),
+        el(
+          'div',
+          { class: 'reviews-previews' },
+          REVIEW_SHOTS.map((item) =>
+            el('figure', { class: 'reviews-preview' }, [
+              el('div', { class: 'reviews-preview__viewport' }, [
+                el('img', {
+                  src: item.src,
+                  alt: item.alt,
+                  class: 'reviews-preview__image',
+                  'data-review-image': item.src,
+                  width: item.width,
+                  height: item.height,
+                  loading: 'lazy',
+                }),
+              ]),
+            ]),
+          ),
+        ),
+        el('div', { class: 'reviews-more' }, [
+          el('p', { class: 'reviews-more__lead', 'data-lang': 'home.reviews.moreLead' }),
+          el('div', { class: 'reviews-more__actions' }, [
+            el('a', {
+              class: 'reviews-more__btn',
+              href: REVIEWS_LINK,
               target: '_blank',
               rel: 'noreferrer',
-              class: 'contacts__icon-link',
-              'aria-label': 'WhatsApp',
-            },
-            [
-              el('img', {
-                src: '/assets/icons/whatsapp.svg',
-                alt: '',
-                class: 'contacts__icon',
-                width: 16,
-                height: 16,
-              }),
-            ],
-          ),
-          ' +380633966786',
+              'data-lang': 'home.reviews.moreButton',
+            }),
+          ]),
         ]),
-        el('p', {}, [el('span', { 'data-lang': 'home.contacts.tgLabel' }), ' dont_tax_me']),
+      ]),
+      el('div', { class: 'reviews-consult' }, [
+        el('div', { class: 'reviews-consult__content' }, [
+          el('p', {
+            class: 'reviews-consult__eyebrow',
+            'data-lang': 'home.reviews.consult.eyebrow',
+          }),
+          el('h3', { class: 'reviews-consult__title', 'data-lang': 'home.reviews.consult.title' }),
+          el('p', { class: 'reviews-consult__lead', 'data-lang': 'home.reviews.consult.lead' }),
+          el('button', {
+            class: 'reviews-consult__btn',
+            type: 'button',
+            'data-open-modal': 'question',
+            'data-lang': 'home.reviews.consult.button',
+          }),
+        ]),
+        el('div', { class: 'reviews-consult__media', 'aria-hidden': 'true' }, [
+          el('img', {
+            src: '/assets/ico/author.png',
+            alt: '',
+            class: 'reviews-consult__img',
+            loading: 'lazy',
+          }),
+        ]),
       ]),
     ]),
   ]);
@@ -142,8 +185,7 @@ export const createMain = () => {
     advantages,
     practices,
     cases,
-    news,
-    contacts,
+    reviews,
   ]);
 };
 
@@ -167,7 +209,7 @@ export const createModal = () => {
               type: 'button',
               'data-close-modal': 'question',
             },
-            '×',
+            'x',
           ),
         ]),
         el('form', { class: 'form', id: 'questionForm' }, [
@@ -212,7 +254,7 @@ export const createModal = () => {
                 type: 'button',
                 'data-close-modal': 'practice',
               },
-              '×',
+              'x',
             ),
           ]),
           el('div', { class: 'modal__body', id: 'practiceModalBody' }),
@@ -221,5 +263,44 @@ export const createModal = () => {
     ],
   );
 
-  return el('div', { class: 'modal-stack' }, [questionModal, practiceModal]);
+  const reviewImageModal = el(
+    'div',
+    {
+      class: 'modal modal--review is-hidden',
+      id: 'reviewImageModal',
+      'aria-hidden': 'true',
+    },
+    [
+      el('div', { class: 'modal__backdrop', 'data-close-modal': 'review' }),
+      el(
+        'div',
+        { class: 'modal__dialog modal__dialog--wide', role: 'dialog', 'aria-modal': 'true' },
+        [
+          el('div', { class: 'modal__head' }, [
+            el('h3', { class: 'modal__title', 'data-lang': 'home.reviews.title' }),
+            el(
+              'button',
+              {
+                class: 'modal__close',
+                type: 'button',
+                'data-close-modal': 'review',
+              },
+              'x',
+            ),
+          ]),
+          el('div', { class: 'review-image-modal__stage' }, [
+            el('img', {
+              class: 'review-image-modal__img',
+              id: 'reviewImageModalImg',
+              src: '',
+              alt: 'Review screenshot',
+              loading: 'lazy',
+            }),
+          ]),
+        ],
+      ),
+    ],
+  );
+
+  return el('div', { class: 'modal-stack' }, [questionModal, practiceModal, reviewImageModal]);
 };

@@ -66,6 +66,56 @@
       "email": "rudiuksvitlana@gmail.com",
       "tel": "+380633966786",
       "telegram": "dont_tax_me"
+    },
+    "reviews": {
+      "eyebrow": "Reviews",
+      "title": "Client reviews",
+      "moreLead": "You can view more reviews here",
+      "moreButton": "View all reviews",
+      "consult": {
+        "eyebrow": "Consultation",
+        "title": "Have questions? Ask away.",
+        "lead": "We will quickly review your case, highlight the risks, and suggest a clear action plan.",
+        "button": "Ask a question"
+      },
+      "items": {
+        "r1": {
+          "name": "Artem Plohii",
+          "role": "Legal Advisor for Tech Entrepreneurs",
+          "date": "February 19, 2025",
+          "text": "We collaborated on several matters. Roman quickly understood the context and consistently delivered clear, practical solutions that kept us moving."
+        },
+        "r2": {
+          "name": "Anastasia Herman",
+          "role": "Founder, Exective of Herman Family Group",
+          "date": "February 9, 2025",
+          "text": "Excellent communication, strong attention to detail, and a responsible approach throughout the project. It was a smooth and reliable cooperation."
+        },
+        "r3": {
+          "name": "Aliona K.",
+          "role": "Family Office Director / International Lawyer",
+          "date": "February 11, 2025",
+          "text": "We received strong support on international corporate and tax matters. The key advantage was the ability to explain complex issues in a practical way."
+        },
+        "r4": {
+          "name": "Andrii Harkusha",
+          "role": "Head of Legal at JatApp",
+          "date": "September 19, 2024",
+          "text": "Roman effectively covered our requests on international structuring and transaction support. The team was responsive and met deadlines."
+        },
+        "r5": {
+          "name": "Ruslan Riabko",
+          "role": "Attorney-at-Law",
+          "date": "February 29, 2024",
+          "text": "I appreciated the structured approach and careful risk analysis. Recommendations were clear, practical, and adapted to the business context."
+        },
+        "r6": {
+          "name": "Stefanii Martynenko",
+          "role": "Legal Counsel - Nexus Ltd.",
+          "date": "March 18, 2024",
+          "text": "A strong expert in IP, international tax planning, and compliance. The engagement was well organized, transparent, and result-oriented."
+        }
+      }
     }
   },
   "cases": {
@@ -206,7 +256,10 @@
       "title": "Partnerships and professional associations",
       "partner": "UA Tech Network Community Partner",
       "association": "Expert of the International Association of Tax Advisors",
-      "beps": "BEPS.space expert"
+      "beps": "BEPS.space expert",
+      "elit": "Elit-Web",
+      "sabai": "Sabai Protocol",
+      "zon": "Zon Art Group"
     },
     "approach": {
       "title": "Work approach",
@@ -464,7 +517,7 @@
     }
   },
   "footer": {
-    "copy2": "PE Svitlana Rudiuk 2025",
+    "copy": "PE \"Rudiuk S.A.\" 2025",
     "disclaimer1": "The information which is provided on this website is not legal advice and needs to be used for informational purposes only.",
     "disclaimer2": "All materials are protected by copyright law. Using and/or copying is permitted only with the consent of the website owner.",
     "privacy": "Privacy Policy",

@@ -56,21 +56,19 @@ const updateTranslations = () => {
   });
 };
 
-const refreshTranslations = () => {
-  i18next.reloadResources().then(updateTranslations);
-};
-
-i18next.on('initialized', refreshTranslations);
-i18next.on('languageChanged', refreshTranslations);
+i18next.on('initialized', updateTranslations);
+i18next.on('languageChanged', updateTranslations);
 i18next.on('loaded', updateTranslations);
-document.addEventListener('app:render', refreshTranslations);
+document.addEventListener('app:render', updateTranslations);
 document.addEventListener('app:render', initScrollReveal);
-refreshTranslations();
+updateTranslations();
 
 const modal = () => document.getElementById('questionModal');
 const practiceModal = () => document.getElementById('practiceModal');
 const practiceTitle = () => document.getElementById('practiceModalTitle');
 const practiceBody = () => document.getElementById('practiceModalBody');
+const reviewImageModal = () => document.getElementById('reviewImageModal');
+const reviewImageModalImg = () => document.getElementById('reviewImageModalImg');
 const mobileNav = () => document.querySelector('.header__nav--mobile');
 const burger = () => document.querySelector('[data-menu-toggle]');
 
@@ -161,6 +159,30 @@ const closePracticeModal = () => {
   node.setAttribute('aria-hidden', 'true');
 };
 
+const openReviewImageModal = (trigger) => {
+  const node = reviewImageModal();
+  const image = reviewImageModalImg();
+  if (!node || !image) return;
+
+  const src = trigger?.dataset.reviewImage || trigger?.getAttribute('src');
+  const alt = trigger?.getAttribute('alt') || 'Review screenshot';
+  if (!src) return;
+
+  image.setAttribute('src', src);
+  image.setAttribute('alt', alt);
+
+  node.classList.remove('is-hidden');
+  node.setAttribute('aria-hidden', 'false');
+  node.querySelector('button')?.focus();
+};
+
+const closeReviewImageModal = () => {
+  const node = reviewImageModal();
+  if (!node) return;
+  node.classList.add('is-hidden');
+  node.setAttribute('aria-hidden', 'true');
+};
+
 document.addEventListener('click', (e) => {
   const btnLang = e.target.closest('[data-lang-switch]');
   if (btnLang) {
@@ -182,10 +204,17 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  const openReviewImageBtn = e.target.closest('[data-review-image]');
+  if (openReviewImageBtn) {
+    openReviewImageModal(openReviewImageBtn);
+    return;
+  }
+
   const closeBtn = e.target.closest('[data-close-modal]');
   if (closeBtn) {
     const type = closeBtn.dataset.closeModal;
     if (type === 'practice') closePracticeModal();
+    else if (type === 'review') closeReviewImageModal();
     else closeModal();
     return;
   }
@@ -236,6 +265,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeModal();
     closePracticeModal();
+    closeReviewImageModal();
   }
 });
 

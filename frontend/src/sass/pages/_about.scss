@@ -335,6 +335,24 @@
     0 0 0 1px rgba(242, 201, 76, 0.16);
 }
 
+.about__badge-link,
+.about__badge-text {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  color: inherit;
+}
+
+.about__badge-link {
+  text-decoration: none;
+}
+
+.about__badge-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 60, 47, 0.22);
+  border-radius: 8px;
+}
+
 @include m.respond(980px) {
   .about__layout {
     grid-template-columns: 1fr;

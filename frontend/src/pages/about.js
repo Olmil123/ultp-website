@@ -66,9 +66,72 @@ export const createAboutPage = () =>
           el('div', { class: 'about__credits' }, [
             el('h2', { class: 'about__subtitle', 'data-lang': 'about.credits.title' }),
             el('ul', { class: 'about__list' }, [
-              el('li', { 'data-lang': 'about.credits.partner' }),
-              el('li', { 'data-lang': 'about.credits.association' }),
-              el('li', { 'data-lang': 'about.credits.beps' }),
+              el('li', {}, [
+                el(
+                  'a',
+                  {
+                    class: 'about__badge-link',
+                    href: 'https://www.linkedin.com/company/ua-tech-network/?originalSubdomain=ua',
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                  [el('span', { 'data-lang': 'about.credits.partner' })],
+                ),
+              ]),
+              el('li', {}, [
+                el('span', {
+                  class: 'about__badge-text',
+                  'data-lang': 'about.credits.association',
+                }),
+              ]),
+              el('li', {}, [
+                el(
+                  'a',
+                  {
+                    class: 'about__badge-link',
+                    href: 'https://www.instagram.com/beps_space/',
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                  [el('span', { 'data-lang': 'about.credits.beps' })],
+                ),
+              ]),
+              el('li', {}, [
+                el(
+                  'a',
+                  {
+                    class: 'about__badge-link',
+                    href: 'https://elit-web.ua/ua/',
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                  [el('span', { 'data-lang': 'about.credits.elit' })],
+                ),
+              ]),
+              el('li', {}, [
+                el(
+                  'a',
+                  {
+                    class: 'about__badge-link',
+                    href: 'https://sabaiprotocol.com/about',
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                  [el('span', { 'data-lang': 'about.credits.sabai' })],
+                ),
+              ]),
+              el('li', {}, [
+                el(
+                  'a',
+                  {
+                    class: 'about__badge-link',
+                    href: 'https://zon-group.com/',
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                  [el('span', { 'data-lang': 'about.credits.zon' })],
+                ),
+              ]),
             ]),
           ]),
         ]),

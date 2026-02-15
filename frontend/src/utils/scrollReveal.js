@@ -18,6 +18,7 @@ const TARGET_SELECTOR = [
   '.page-practices .cards .card',
   '.page-practices .section__title',
   '.cases-grid .case-card',
+  '.reviews-previews .reviews-preview',
 ].join(', ');
 
 const clearObserver = () => {

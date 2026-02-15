@@ -6,10 +6,6 @@
   background: var(--surface);
 }
 
-.section--alt {
-  background: var(--section-alt-bg);
-}
-
 .section--advantages {
   position: relative;
   overflow: hidden;
@@ -62,13 +58,6 @@
   margin-left: 6px;
 }
 
-.section__placeholder {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 0;
-}
-
 .advantages__list {
   list-style: none;
   margin: 0;
@@ -113,87 +102,6 @@
   transform: translateY(-6px);
   border-color: var(--advantages-card-border-hover);
   box-shadow: var(--advantages-card-shadow-hover);
-}
-
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    position: relative;
-    padding-left: 28px;
-    margin-bottom: 14px;
-    font-size: 15px;
-    line-height: 1.55;
-    color: var(--text);
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--yellow);
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.chips {
-  @include m.flex(center, flex-start, 12px);
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.chip {
-  padding: 12px 20px;
-  background: var(--surface);
-  border: 2px solid var(--chip-border);
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--green);
-}
-
-.contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.5;
-    color: var(--text);
-
-    a {
-      color: var(--green);
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.contacts__icon {
-  vertical-align: middle;
-  margin: 0 6px 0 0;
-  filter: brightness(0);
-}
-
-.contacts__icon-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Practices page cards */
@@ -282,11 +190,54 @@
   z-index: 1;
 }
 
+@keyframes practice-select-shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-4px);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes practice-select-glow {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(242, 201, 76, 0.42),
+      var(--practice-card-selected-shadow);
+  }
+  100% {
+    box-shadow:
+      0 0 0 2px var(--practice-card-selected-glow),
+      var(--practice-card-selected-shadow);
+  }
+}
+
 .card.is-selected {
   border-color: var(--practice-card-selected-border);
   box-shadow:
     0 0 0 2px var(--practice-card-selected-glow),
     var(--practice-card-selected-shadow);
+  animation:
+    practice-select-shake 0.46s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1,
+    practice-select-glow 0.8s ease-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.is-selected {
+    animation: none;
+  }
 }
 
 .card__meta {

@@ -1,10 +1,9 @@
 /*
   i18next config (EN + UK):
-  - грузим переводы из /public/locales/{{lng}}/{{ns}}.json
-  - язык берется из: querystring -> localStorage -> cookie -> navigator
-  - сохраняем выбор в localStorage/cookie под ключом "language"
-  - fallback: en
-  - без перезагрузки (перевод обновляется через твой код, который дергает i18next.t)
+  - loads translations from /public/locales/{{lng}}/{{ns}}.json
+  - detects language from: querystring -> localStorage -> cookie -> navigator
+  - stores selected language in localStorage/cookie under "language"
+  - fallback language: en
 */
 
 import i18next from 'i18next';
@@ -17,7 +16,7 @@ await i18next
   .init({
     fallbackLng: 'en',
 
-    //! Поддержка только этих языков!
+    //! supported languages only
     supportedLngs: ['en', 'uk'],
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
@@ -32,11 +31,11 @@ await i18next
     },
 
     detection: {
-      //! порядок определения языка
+      //! language detection order
       order: ['querystring', 'localStorage', 'cookie', 'navigator'],
       caches: ['localStorage', 'cookie'],
 
-      //* чтобы не было разных ключей типа i18nextLng
+      //* keep one consistent storage key instead of i18nextLng defaults
       lookupLocalStorage: 'language',
       lookupCookie: 'language',
     },
