@@ -205,6 +205,11 @@ export const createHeader = () => {
             ),
           ),
         ]),
+        el(
+          'a',
+          { href: '/#reviews', 'data-link': '', 'data-lang': 'nav.reviewsConsult' },
+          'Відгуки і консультація',
+        ),
       ]),
 
       el('div', { class: 'header__right' }, [
@@ -251,6 +256,11 @@ export const createHeader = () => {
         items: CASES,
         itemLangKey: (c) => `home.cases.items.${c.key}.title`,
       }),
+      el(
+        'a',
+        { href: '/#reviews', 'data-link': '', 'data-lang': 'nav.reviewsConsult' },
+        'Відгуки і консультація',
+      ),
 
       el('button', {
         class: 'btn btn--primary',

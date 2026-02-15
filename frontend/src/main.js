@@ -48,6 +48,7 @@ const updateTranslations = () => {
     const key = node.dataset.lang;
     if (!key) return;
     const value = i18next.t(key);
+    if (value === key) return;
     if (node.hasAttribute('data-lang-html')) {
       node.innerHTML = value;
       return;
@@ -56,11 +57,17 @@ const updateTranslations = () => {
   });
 };
 
+const setLanguageSwitchState = (active) => {
+  document.body.classList.toggle('is-language-switching', active);
+};
+
 i18next.on('initialized', updateTranslations);
 i18next.on('languageChanged', updateTranslations);
 i18next.on('loaded', updateTranslations);
 document.addEventListener('app:render', updateTranslations);
 document.addEventListener('app:render', initScrollReveal);
+document.addEventListener('app:language-switch-start', () => setLanguageSwitchState(true));
+document.addEventListener('app:language-switch-end', () => setLanguageSwitchState(false));
 updateTranslations();
 
 const modal = () => document.getElementById('questionModal');

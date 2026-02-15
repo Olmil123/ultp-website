@@ -162,6 +162,19 @@
   --reveal-distance: 16px;
   --reveal-duration: 520ms;
   --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --lang-switch-duration: 280ms;
+  --lang-switch-text-duration: 220ms;
+  --lang-switch-shift: 3px;
+  --lang-switch-blur: 0.8px;
+  --lang-switch-veil:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.28) 42%,
+      rgba(242, 201, 76, 0.18) 50%,
+      rgba(21, 60, 47, 0.12) 58%,
+      rgba(255, 255, 255, 0) 100%
+    );
 
   //! Loaders
   --loader-accent: var(--green);

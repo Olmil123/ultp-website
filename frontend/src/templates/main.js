@@ -153,7 +153,7 @@ export const createMain = () => {
           ]),
         ]),
       ]),
-      el('div', { class: 'reviews-consult' }, [
+      el('div', { class: 'reviews-consult', id: 'consultation' }, [
         el('div', { class: 'reviews-consult__content' }, [
           el('p', {
             class: 'reviews-consult__eyebrow',

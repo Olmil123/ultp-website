@@ -7,7 +7,8 @@
     "services": "Services and their cost",
     "about": "About Us",
     "news": "News",
-    "cases": "Cases"
+    "cases": "Cases",
+    "reviewsConsult": "Reviews & Consultation"
   },
   "home": {
     "hero": {
@@ -18,7 +19,7 @@
       "p2": "Comprehensive solutions. A unique combination of legal, technological, and compliance expertise.",
       "p3": "Only the best international practices and expertise. No legal opinions and unfinished technological projects separately. We offer you only comprehensive solutions.",
       "cta": "Create a unique and ergonomic solution that we will analyze together, calculate, minimize risks, and implement.",
-      "brand": "Svitlana Rudiuk",
+      "brand": "Ukrainian Legal and Tech Partners",
       "cardName": "Svitlana Rudiuk",
       "cardDesc": "International legal & tax consultant in fintech, blockchain, compliance.",
       "cardLink": "Read more"
