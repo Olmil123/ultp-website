@@ -1,0 +1,92 @@
+import { defineConfig } from 'vite';
+import { configDefaults } from 'vitest/config';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import autoprefixer from 'autoprefixer';
+
+import { assetFileNamer, chunkSplitter } from './conf';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default defineConfig({
+  root: '.',
+  base: '/',
+  publicDir: 'public',
+
+  define: {
+    global: 'window',
+  },
+
+  cacheDir: 'node_modules/.vite',
+
+  css: {
+    postcss: {
+      plugins: [autoprefixer()],
+    },
+    preprocessorOptions: {
+      scss: {
+        includePaths: ['src/sass'],
+      },
+    },
+  },
+
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+
+  server: {
+    port: 9999,
+    host: '0.0.0.0',
+    allowedHosts: ['.ngrok-free.dev'],
+    fs: {
+      allow: ['.', 'src', 'public', 'node_modules'],
+    },
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+      },
+    },
+  },
+
+  preview: {
+    port: 8888,
+    host: '0.0.0.0',
+    allowedHosts: ['.ngrok-free.dev'],
+  },
+
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: 'esbuild',
+    target: 'es2024',
+    esbuild: {
+      legalComments: 'none',
+    },
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+    rollupOptions: {
+      output: {
+        entryFileNames: 'js/[name]/[hash].js',
+        chunkFileNames: 'js/[name]/[hash].js',
+        assetFileNames: ({ name }) => assetFileNamer({ name }),
+        manualChunks: (id) => chunkSplitter(id),
+      },
+    },
+    chunkSizeWarningLimit: 2000,
+  },
+
+  envDir: '.',
+  envPrefix: 'VITE_',
+
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    exclude: [...configDefaults.exclude, 'e2e/*'],
+  },
+});
