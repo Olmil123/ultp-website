@@ -4,4 +4,5 @@ djangorestframework==3.16.1
 sqlparse==0.5.5
 tzdata==2025.3
 django-cors-headers==4.6.0
+python-dotenv==1.0.1
 
