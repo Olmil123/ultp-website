@@ -9,6 +9,7 @@ import { createFooter } from '@/templates/footer.js';
 import { createLayout } from '@/templates/layout.js';
 import { initRouter } from '@/router.js';
 import { initScrollReveal } from '@/utils/scrollReveal.js';
+import { sendQuestion } from '@/api/request.js';
 
 const mount = document.getElementById('app');
 const bootLoader = document.getElementById('boot-loader');
@@ -55,6 +56,11 @@ const updateTranslations = () => {
     }
     node.textContent = value;
   });
+};
+
+const tSafe = (key, fallback) => {
+  const value = i18next.t(key);
+  return value === key ? fallback : value;
 };
 
 const setLanguageSwitchState = (active) => {
@@ -119,6 +125,11 @@ const openModal = () => {
   if (!node) return;
   node.classList.remove('is-hidden');
   node.setAttribute('aria-hidden', 'false');
+  const nodeHint = hint();
+  if (nodeHint) {
+    nodeHint.textContent = '';
+    delete nodeHint.dataset.state;
+  }
   node.querySelector('input, textarea, button')?.focus();
 };
 
@@ -278,10 +289,68 @@ document.addEventListener('keydown', (e) => {
 
 const form = () => document.getElementById('questionForm');
 const hint = () => document.getElementById('formHint');
+const detectClientTimezone = () => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  } catch {
+    return '';
+  }
+};
 
-document.addEventListener('submit', (e) => {
+document.addEventListener('submit', async (e) => {
   if (e.target !== form()) return;
   e.preventDefault();
+  const formNode = form();
   const node = hint();
-  if (node) node.textContent = 'Sent (stub).';
+  const submitBtn = formNode?.querySelector('button[type="submit"]');
+  if (!formNode || !node || !submitBtn) return;
+
+  const payload = {
+    name: String(formNode.name?.value || '').trim(),
+    email: String(formNode.email?.value || '').trim(),
+    message: String(formNode.message?.value || '').trim(),
+    website: String(formNode.website?.value || '').trim(),
+    client_timezone: detectClientTimezone(),
+  };
+
+  if (payload.website) {
+    node.dataset.state = 'success';
+    node.textContent = tSafe('modal.sent', 'Message sent successfully.');
+    formNode.reset();
+    return;
+  }
+
+  if (!payload.name || !payload.email || !payload.message) {
+    node.dataset.state = 'error';
+    node.textContent = tSafe('modal.required', 'Please fill in all fields.');
+    return;
+  }
+
+  if (!formNode.checkValidity()) {
+    node.dataset.state = 'error';
+    node.textContent = tSafe('modal.invalid', 'Please check entered data.');
+    formNode.reportValidity();
+    return;
+  }
+
+  submitBtn.disabled = true;
+  node.dataset.state = 'info';
+  node.textContent = tSafe('modal.sending', 'Sending...');
+
+  try {
+    await sendQuestion(payload);
+    node.dataset.state = 'success';
+    node.textContent = tSafe('modal.sent', 'Message sent successfully.');
+    formNode.reset();
+  } catch (err) {
+    console.error(err);
+    node.dataset.state = 'error';
+    const message = String(err?.message || '');
+    const isThrottled = message.includes('HTTP 429') || /throttled/i.test(message);
+    node.textContent = isThrottled
+      ? tSafe('modal.throttled', 'Too many requests. Please wait and try again.')
+      : tSafe('modal.error', 'Failed to send message. Please try again later.');
+  } finally {
+    submitBtn.disabled = false;
+  }
 });

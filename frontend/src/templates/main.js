@@ -225,6 +225,15 @@ export const createModal = () => {
             el('span', { 'data-lang': 'modal.message' }),
             el('textarea', { name: 'message', rows: 4, required: true }),
           ]),
+          el('label', { class: 'form__honeypot', 'aria-hidden': 'true' }, [
+            el('span', {}, 'Website'),
+            el('input', {
+              type: 'text',
+              name: 'website',
+              autocomplete: 'off',
+              tabindex: '-1',
+            }),
+          ]),
           el('button', { class: 'btn', type: 'submit', 'data-lang': 'modal.send' }),
           el('p', { class: 'form__hint', id: 'formHint' }),
         ]),

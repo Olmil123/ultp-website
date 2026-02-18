@@ -173,8 +173,31 @@
   }
 }
 
+.form__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .form__hint {
   margin-top: 12px;
   font-size: 13px;
   color: var(--muted);
+}
+
+.form__hint[data-state='success'] {
+  color: var(--green-2);
+}
+
+.form__hint[data-state='error'] {
+  color: var(--error);
+}
+
+.form button[type='submit'][disabled] {
+  opacity: 0.72;
+  cursor: not-allowed;
 }

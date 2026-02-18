@@ -529,7 +529,13 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "required": "Please fill in all fields.",
+    "invalid": "Please check entered data.",
+    "sending": "Sending...",
+    "sent": "Message sent successfully.",
+    "throttled": "Too many requests. Please wait and try again.",
+    "error": "Failed to send message. Please try again later."
   },
   "practices": {
     "title": "Practices",

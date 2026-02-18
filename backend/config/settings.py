@@ -117,8 +117,35 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # CORS
-CORS_ALLOW_ALL_ORIGINS = env_bool("CORS_ALLOW_ALL_ORIGINS", DEBUG)
-CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS")
+dev_origins = "http://127.0.0.1:9999,http://localhost:9999"
+origin_defaults = dev_origins if DEBUG else ""
+
+CORS_ALLOW_ALL_ORIGINS = env_bool("CORS_ALLOW_ALL_ORIGINS", False)
+CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", origin_defaults)
+CSRF_TRUSTED_ORIGINS = env_list("CSRF_TRUSTED_ORIGINS", origin_defaults)
+
+# Security
+SESSION_COOKIE_SECURE = env_bool("SESSION_COOKIE_SECURE", not DEBUG)
+CSRF_COOKIE_SECURE = env_bool("CSRF_COOKIE_SECURE", not DEBUG)
+SECURE_SSL_REDIRECT = env_bool("SECURE_SSL_REDIRECT", False if DEBUG else True)
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_HSTS_SECONDS = int(
+    os.getenv("SECURE_HSTS_SECONDS", "0" if DEBUG else "31536000")
+)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = env_bool("SECURE_HSTS_INCLUDE_SUBDOMAINS", not DEBUG)
+SECURE_HSTS_PRELOAD = env_bool("SECURE_HSTS_PRELOAD", False)
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = "DENY"
+
+# DRF
+REST_FRAMEWORK = {
+    "DEFAULT_THROTTLE_RATES": {
+        "anon": os.getenv("DRF_THROTTLE_ANON", "300/day"),
+        "questions_burst": os.getenv("DRF_THROTTLE_QUESTIONS_BURST", "3/minute"),
+        "questions_hour": os.getenv("DRF_THROTTLE_QUESTIONS_HOUR", "20/hour"),
+        "questions_day": os.getenv("DRF_THROTTLE_QUESTIONS_DAY", "40/day"),
+    },
+}
 
 # Email (questions notification)
 EMAIL_BACKEND = os.getenv(
@@ -134,3 +161,7 @@ DEFAULT_FROM_EMAIL = os.getenv(
     "DEFAULT_FROM_EMAIL", EMAIL_HOST_USER or "no-reply@example.com"
 )
 QUESTION_NOTIFY_EMAIL = os.getenv("QUESTION_NOTIFY_EMAIL", "")
+QUESTION_TIMEZONE = os.getenv("QUESTION_TIMEZONE", "Europe/Kyiv")
+QUESTION_IP_COOLDOWN_SECONDS = int(os.getenv("QUESTION_IP_COOLDOWN_SECONDS", "30"))
+QUESTION_EMAIL_COOLDOWN_SECONDS = int(os.getenv("QUESTION_EMAIL_COOLDOWN_SECONDS", "60"))
+QUESTION_DUPLICATE_TTL_SECONDS = int(os.getenv("QUESTION_DUPLICATE_TTL_SECONDS", "21600"))
