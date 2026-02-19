@@ -212,7 +212,7 @@ export const createModal = () => {
             'x',
           ),
         ]),
-        el('form', { class: 'form', id: 'questionForm' }, [
+        el('form', { class: 'form', id: 'questionForm', 'aria-busy': 'false' }, [
           el('label', { class: 'form__field' }, [
             el('span', { 'data-lang': 'modal.name' }),
             el('input', { type: 'text', name: 'name', required: true }),
@@ -235,7 +235,7 @@ export const createModal = () => {
             }),
           ]),
           el('button', { class: 'btn', type: 'submit', 'data-lang': 'modal.send' }),
-          el('p', { class: 'form__hint', id: 'formHint' }),
+          el('p', { class: 'form__hint', id: 'formHint', role: 'status', 'aria-live': 'polite' }),
         ]),
       ]),
     ],

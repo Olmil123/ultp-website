@@ -297,6 +297,29 @@ const detectClientTimezone = () => {
   }
 };
 
+const setFormHint = (node, state, text) => {
+  node.dataset.state = state;
+  node.textContent = text;
+};
+
+const setFormPending = (formNode, submitBtn, pending) => {
+  formNode.setAttribute('aria-busy', pending ? 'true' : 'false');
+  formNode.classList.toggle('is-loading', pending);
+
+  formNode.querySelectorAll('input, textarea, button').forEach((control) => {
+    if (control.name === 'website') return;
+    control.disabled = pending;
+  });
+
+  submitBtn.classList.toggle('is-loading', pending);
+  if (pending) {
+    submitBtn.textContent = tSafe('modal.sending', 'Sending...');
+    return;
+  }
+
+  submitBtn.textContent = tSafe('modal.send', 'Send');
+};
+
 document.addEventListener('submit', async (e) => {
   if (e.target !== form()) return;
   e.preventDefault();
@@ -314,43 +337,50 @@ document.addEventListener('submit', async (e) => {
   };
 
   if (payload.website) {
-    node.dataset.state = 'success';
-    node.textContent = tSafe('modal.sent', 'Message sent successfully.');
+    setFormHint(node, 'success', tSafe('modal.sent', 'Message sent successfully.'));
     formNode.reset();
     return;
   }
 
   if (!payload.name || !payload.email || !payload.message) {
-    node.dataset.state = 'error';
-    node.textContent = tSafe('modal.required', 'Please fill in all fields.');
+    setFormHint(node, 'error', tSafe('modal.required', 'Please fill in all fields.'));
     return;
   }
 
   if (!formNode.checkValidity()) {
-    node.dataset.state = 'error';
-    node.textContent = tSafe('modal.invalid', 'Please check entered data.');
+    setFormHint(node, 'error', tSafe('modal.invalid', 'Please check entered data.'));
     formNode.reportValidity();
     return;
   }
 
-  submitBtn.disabled = true;
-  node.dataset.state = 'info';
-  node.textContent = tSafe('modal.sending', 'Sending...');
+  setFormPending(formNode, submitBtn, true);
+  setFormHint(node, 'info', tSafe('modal.sending', 'Sending...'));
 
   try {
     await sendQuestion(payload);
-    node.dataset.state = 'success';
-    node.textContent = tSafe('modal.sent', 'Message sent successfully.');
+    setFormHint(node, 'success', tSafe('modal.sent', 'Message sent successfully.'));
     formNode.reset();
   } catch (err) {
     console.error(err);
-    node.dataset.state = 'error';
+
     const message = String(err?.message || '');
-    const isThrottled = message.includes('HTTP 429') || /throttled/i.test(message);
-    node.textContent = isThrottled
-      ? tSafe('modal.throttled', 'Too many requests. Please wait and try again.')
-      : tSafe('modal.error', 'Failed to send message. Please try again later.');
+    const statusCode = Number(err?.status || 0);
+    const isThrottled =
+      statusCode === 429 || message.includes('HTTP 429') || /throttled/i.test(message);
+    const shouldUseServerMessage =
+      statusCode === 400 &&
+      message &&
+      !message.startsWith('HTTP ') &&
+      !/spam detected/i.test(message);
+
+    if (isThrottled) {
+      setFormHint(node, 'error', tSafe('modal.throttled', 'Too many requests. Please wait and try again.'));
+    } else if (shouldUseServerMessage) {
+      setFormHint(node, 'error', message);
+    } else {
+      setFormHint(node, 'error', tSafe('modal.error', 'Failed to send message. Please try again later.'));
+    }
   } finally {
-    submitBtn.disabled = false;
+    setFormPending(formNode, submitBtn, false);
   }
 });

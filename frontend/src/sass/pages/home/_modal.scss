@@ -189,6 +189,10 @@
   color: var(--muted);
 }
 
+.form__hint[data-state='info'] {
+  color: var(--muted);
+}
+
 .form__hint[data-state='success'] {
   color: var(--green-2);
 }
@@ -197,7 +201,37 @@
   color: var(--error);
 }
 
+.form.is-loading .form__field input,
+.form.is-loading .form__field textarea {
+  background: var(--black-04);
+}
+
 .form button[type='submit'][disabled] {
   opacity: 0.72;
   cursor: not-allowed;
+}
+
+.form button[type='submit'].is-loading {
+  position: relative;
+  color: transparent;
+}
+
+.form button[type='submit'].is-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--black-20);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: modal-btn-spin 0.8s linear infinite;
+}
+
+@keyframes modal-btn-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
