@@ -64,3 +64,19 @@ class QuestionAPITests(APITestCase):
                     "website": ""}
         res2 = self.client.post(url, payload2, format='json')
         self.assertEqual(res2.status_code, status.HTTP_429_TOO_MANY_REQUESTS)
+
+    @override_settings(QUESTION_NOTIFY_EMAIL="")
+    def test_message_too_long_returns_400(self):
+        cache.clear()
+        url = reverse("question-create")
+        payload = {
+            "name": "Sasha4",
+            "email": "limit@gmail.com",
+            "message": "x" * 2001,
+            "website": "",
+        }
+
+        res = self.client.post(url, payload, format="json")
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("message", res.json())
+        self.assertEqual(Question.objects.count(), 0)

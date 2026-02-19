@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Item, Question
 
+MESSAGE_MAX_LENGTH = Question._meta.get_field("message").max_length or 2000
+
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,6 +11,13 @@ class ItemSerializer(serializers.ModelSerializer):
 
 
 class QuestionSerializer(serializers.ModelSerializer):
+    message = serializers.CharField(
+        max_length=MESSAGE_MAX_LENGTH,
+        trim_whitespace=True,
+        error_messages={
+            "max_length": f"Message is too long. Maximum is {MESSAGE_MAX_LENGTH} characters.",
+        },
+    )
     website = serializers.CharField(
         required=False,
         allow_blank=True,
