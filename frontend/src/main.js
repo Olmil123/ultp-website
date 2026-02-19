@@ -123,6 +123,7 @@ const toggleMobileNav = () => {
 const openModal = () => {
   const node = modal();
   if (!node) return;
+  document.body.classList.add('is-modal-open');
   node.classList.remove('is-hidden');
   node.setAttribute('aria-hidden', 'false');
   const nodeHint = hint();
@@ -136,6 +137,7 @@ const openModal = () => {
 const closeModal = () => {
   const node = modal();
   if (!node) return;
+  document.body.classList.remove('is-modal-open');
   node.classList.add('is-hidden');
   node.setAttribute('aria-hidden', 'true');
 };
@@ -231,6 +233,10 @@ document.addEventListener('click', (e) => {
   const closeBtn = e.target.closest('[data-close-modal]');
   if (closeBtn) {
     const type = closeBtn.dataset.closeModal;
+    const isBackdrop = closeBtn.classList.contains('modal__backdrop');
+    if (type === 'question' && isBackdrop) {
+      return;
+    }
     if (type === 'practice') closePracticeModal();
     else if (type === 'review') closeReviewImageModal();
     else closeModal();
