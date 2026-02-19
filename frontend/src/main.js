@@ -230,6 +230,11 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  const questionModalPageLink = e.target.closest('#questionModal a[data-link]');
+  if (questionModalPageLink) {
+    closeModal();
+  }
+
   const closeBtn = e.target.closest('[data-close-modal]');
   if (closeBtn) {
     const type = closeBtn.dataset.closeModal;

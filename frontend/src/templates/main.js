@@ -227,7 +227,7 @@ export const createModal = () => {
             ]),
             el('label', { class: 'form__field' }, [
               el('span', { 'data-lang': 'modal.message' }),
-              el('textarea', { name: 'message', rows: 4, required: true }),
+              el('textarea', { name: 'message', rows: 4, maxlength: 2000, required: true }),
             ]),
             el('label', { class: 'form__honeypot', 'aria-hidden': 'true' }, [
               el('span', {}, 'Website'),
@@ -239,6 +239,7 @@ export const createModal = () => {
               }),
             ]),
             el('button', { class: 'btn', type: 'submit', 'data-lang': 'modal.send' }),
+            el('p', { class: 'form__consent', 'data-lang': 'modal.consentHtml', 'data-lang-html': true }),
             el('p', { class: 'form__hint', id: 'formHint', role: 'status', 'aria-live': 'polite' }),
           ]),
         ]),

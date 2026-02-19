@@ -531,6 +531,7 @@
     "email": "Email",
     "message": "Message",
     "send": "Send",
+    "consentHtml": "By clicking the button, I agree with the <a href=\"/privacy\" data-link=\"\">Privacy Policy</a>",
     "required": "Please fill in all fields.",
     "invalid": "Please check entered data.",
     "sending": "Sending...",
