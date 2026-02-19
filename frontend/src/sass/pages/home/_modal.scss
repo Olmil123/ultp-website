@@ -74,8 +74,10 @@ body.is-modal-open {
 }
 
 .modal--question .modal__dialog--question {
-  max-width: min(var(--question-modal-max-width), calc(100vw - 28px));
-  min-height: min(var(--question-modal-min-height), calc(100dvh - 28px));
+  max-width: min(960px, calc(100vw - 28px));
+  width: 100%;
+  min-height: var(--question-modal-min-height);
+  height: auto;
   max-height: none;
   padding: 0;
   border-radius: var(--question-modal-radius);
@@ -88,7 +90,10 @@ body.is-modal-open {
 }
 
 .modal--question {
-  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  padding-block: clamp(10px, 2vh, 20px);
+  overflow: hidden;
   overscroll-behavior: contain;
 }
 
@@ -98,14 +103,14 @@ body.is-modal-open {
 
 .modal--question .modal__visual {
   flex: 0 0 auto;
-  height: var(--question-modal-visual-height);
+  height: clamp(156px, 19vh, var(--question-modal-visual-height));
   background: var(--question-modal-visual);
 }
 
 .modal--question .modal__content {
   flex: 1 1 auto;
   overflow: visible;
-  padding: clamp(24px, 3vw, 44px) clamp(18px, 4vw, 52px) clamp(24px, 3vw, 38px);
+  padding: clamp(18px, 2.2vw, 34px) clamp(18px, 4vw, 46px) clamp(18px, 2.4vw, 30px);
   background:
     radial-gradient(220px 100px at 92% 2%, rgba(21, 60, 47, 0.06), transparent 75%),
     radial-gradient(260px 120px at 6% 10%, rgba(242, 201, 76, 0.09), transparent 76%),
@@ -140,14 +145,14 @@ body.is-modal-open {
 
 .modal--question .modal__head {
   max-width: 760px;
-  margin: 0 auto clamp(16px, 1.8vw, 22px);
+  margin: 0 auto clamp(12px, 1.4vw, 18px);
   padding-right: 0;
 }
 
 .modal--question .modal__title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(34px, 4.2vw, 52px);
+  font-size: clamp(32px, 3.6vw, 46px);
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--question-modal-title);
@@ -158,17 +163,17 @@ body.is-modal-open {
 .modal--question .modal__subtitle {
   margin: 0;
   max-width: 44ch;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.35;
   color: rgba(15, 17, 20, 0.66);
 }
 
 .modal--question .modal__dialog--question .modal__close {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 56px;
-  height: 56px;
+  top: 10px;
+  right: 10px;
+  width: 52px;
+  height: 52px;
   border-radius: 999px;
   border: none;
   background: #0b0f12;
@@ -321,10 +326,10 @@ body.is-modal-open {
 
 .modal--question .form {
   display: grid;
-  gap: clamp(10px, 1.2vw, 14px);
+  gap: clamp(8px, 1vw, 12px);
   max-width: 760px;
   margin: 0 auto;
-  padding: clamp(14px, 1.5vw, 18px);
+  padding: clamp(12px, 1.3vw, 16px);
   border-radius: 18px;
   border: 1px solid rgba(15, 17, 20, 0.08);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.22));
@@ -335,7 +340,7 @@ body.is-modal-open {
   margin-bottom: 0;
 
   span {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--text);
   }
@@ -343,12 +348,12 @@ body.is-modal-open {
   input,
   textarea {
     width: 100%;
-    min-height: 54px;
-    padding: 16px 18px;
+    min-height: 50px;
+    padding: 14px 16px;
     border-radius: 14px;
     border: 1px solid var(--question-modal-input-border);
     background: var(--question-modal-input-bg);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.35;
     transition:
       border-color 0.2s var(--ease),
@@ -356,7 +361,7 @@ body.is-modal-open {
   }
 
   textarea {
-    min-height: 154px;
+    min-height: clamp(112px, 16vh, 142px);
     resize: vertical;
   }
 
@@ -371,12 +376,12 @@ body.is-modal-open {
 .modal--question .form .btn {
   margin-top: 8px;
   width: 100%;
-  min-height: 56px;
+  min-height: 52px;
   border-radius: 12px;
   border: none;
   background: var(--question-modal-btn-bg);
   color: var(--question-modal-btn-text);
-  font-size: clamp(17px, 1.4vw, 20px);
+  font-size: clamp(16px, 1.2vw, 18px);
   font-weight: 700;
   transition:
     transform 0.2s var(--ease),
@@ -451,14 +456,36 @@ body.is-modal-open {
 }
 
 @media (max-width: 900px) {
+  .modal--question {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
   .modal--question .modal__dialog--question {
     max-width: calc(100vw - 16px);
+    width: calc(100vw - 16px);
+    height: auto;
     min-height: min(680px, calc(100dvh - 16px));
     max-height: calc(100dvh - 16px);
   }
 
   .modal--question .modal__visual {
     height: clamp(170px, 28vw, 230px);
+  }
+}
+
+@media (max-height: 900px) and (min-width: 901px) {
+  .modal--question {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .modal--question .modal__dialog--question {
+    max-height: calc(100dvh - 16px);
+  }
+
+  .modal--question .modal__content {
+    overflow: auto;
   }
 }
 
@@ -484,7 +511,7 @@ body.is-modal-open {
   }
 
   .modal--question .modal__content {
-    overflow: visible;
+    overflow: auto;
     padding: 16px 14px 16px;
   }
 

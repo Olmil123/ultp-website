@@ -213,7 +213,7 @@ export const createModal = () => {
                 'data-close-modal': 'question',
                 'aria-label': 'Close',
               },
-              '',
+              'x',
             ),
           ]),
           el('form', { class: 'form', id: 'questionForm', 'aria-busy': 'false' }, [
