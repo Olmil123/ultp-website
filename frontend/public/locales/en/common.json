@@ -526,10 +526,18 @@
   },
   "modal": {
     "title": "Make a question",
+    "subtitle": "Briefly describe your case - we will get back to you quickly.",
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "consentHtml": "By clicking the button, I agree with the <a href=\"/privacy\" data-link=\"\">Privacy Policy</a>",
+    "required": "Please fill in all fields.",
+    "invalid": "Please check entered data.",
+    "sending": "Sending...",
+    "sent": "Message sent successfully.",
+    "throttled": "Too many requests. Please wait and try again.",
+    "error": "Failed to send message. Please try again later."
   },
   "practices": {
     "title": "Practices",

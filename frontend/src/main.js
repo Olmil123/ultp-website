@@ -9,6 +9,7 @@ import { createFooter } from '@/templates/footer.js';
 import { createLayout } from '@/templates/layout.js';
 import { initRouter } from '@/router.js';
 import { initScrollReveal } from '@/utils/scrollReveal.js';
+import { sendQuestion } from '@/api/request.js';
 
 const mount = document.getElementById('app');
 const bootLoader = document.getElementById('boot-loader');
@@ -55,6 +56,11 @@ const updateTranslations = () => {
     }
     node.textContent = value;
   });
+};
+
+const tSafe = (key, fallback) => {
+  const value = i18next.t(key);
+  return value === key ? fallback : value;
 };
 
 const setLanguageSwitchState = (active) => {
@@ -117,14 +123,21 @@ const toggleMobileNav = () => {
 const openModal = () => {
   const node = modal();
   if (!node) return;
+  document.body.classList.add('is-modal-open');
   node.classList.remove('is-hidden');
   node.setAttribute('aria-hidden', 'false');
+  const nodeHint = hint();
+  if (nodeHint) {
+    nodeHint.textContent = '';
+    delete nodeHint.dataset.state;
+  }
   node.querySelector('input, textarea, button')?.focus();
 };
 
 const closeModal = () => {
   const node = modal();
   if (!node) return;
+  document.body.classList.remove('is-modal-open');
   node.classList.add('is-hidden');
   node.setAttribute('aria-hidden', 'true');
 };
@@ -217,9 +230,18 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  const questionModalPageLink = e.target.closest('#questionModal a[data-link]');
+  if (questionModalPageLink) {
+    closeModal();
+  }
+
   const closeBtn = e.target.closest('[data-close-modal]');
   if (closeBtn) {
     const type = closeBtn.dataset.closeModal;
+    const isBackdrop = closeBtn.classList.contains('modal__backdrop');
+    if (type === 'question' && isBackdrop) {
+      return;
+    }
     if (type === 'practice') closePracticeModal();
     else if (type === 'review') closeReviewImageModal();
     else closeModal();
@@ -278,10 +300,98 @@ document.addEventListener('keydown', (e) => {
 
 const form = () => document.getElementById('questionForm');
 const hint = () => document.getElementById('formHint');
+const detectClientTimezone = () => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  } catch {
+    return '';
+  }
+};
 
-document.addEventListener('submit', (e) => {
+const setFormHint = (node, state, text) => {
+  node.dataset.state = state;
+  node.textContent = text;
+};
+
+const setFormPending = (formNode, submitBtn, pending) => {
+  formNode.setAttribute('aria-busy', pending ? 'true' : 'false');
+  formNode.classList.toggle('is-loading', pending);
+
+  formNode.querySelectorAll('input, textarea, button').forEach((control) => {
+    if (control.name === 'website') return;
+    control.disabled = pending;
+  });
+
+  submitBtn.classList.toggle('is-loading', pending);
+  if (pending) {
+    submitBtn.textContent = tSafe('modal.sending', 'Sending...');
+    return;
+  }
+
+  submitBtn.textContent = tSafe('modal.send', 'Send');
+};
+
+document.addEventListener('submit', async (e) => {
   if (e.target !== form()) return;
   e.preventDefault();
+  const formNode = form();
   const node = hint();
-  if (node) node.textContent = 'Sent (stub).';
+  const submitBtn = formNode?.querySelector('button[type="submit"]');
+  if (!formNode || !node || !submitBtn) return;
+
+  const payload = {
+    name: String(formNode.name?.value || '').trim(),
+    email: String(formNode.email?.value || '').trim(),
+    message: String(formNode.message?.value || '').trim(),
+    website: String(formNode.website?.value || '').trim(),
+    client_timezone: detectClientTimezone(),
+  };
+
+  if (payload.website) {
+    setFormHint(node, 'success', tSafe('modal.sent', 'Message sent successfully.'));
+    formNode.reset();
+    return;
+  }
+
+  if (!payload.name || !payload.email || !payload.message) {
+    setFormHint(node, 'error', tSafe('modal.required', 'Please fill in all fields.'));
+    return;
+  }
+
+  if (!formNode.checkValidity()) {
+    setFormHint(node, 'error', tSafe('modal.invalid', 'Please check entered data.'));
+    formNode.reportValidity();
+    return;
+  }
+
+  setFormPending(formNode, submitBtn, true);
+  setFormHint(node, 'info', tSafe('modal.sending', 'Sending...'));
+
+  try {
+    await sendQuestion(payload);
+    setFormHint(node, 'success', tSafe('modal.sent', 'Message sent successfully.'));
+    formNode.reset();
+  } catch (err) {
+    console.error(err);
+
+    const message = String(err?.message || '');
+    const statusCode = Number(err?.status || 0);
+    const isThrottled =
+      statusCode === 429 || message.includes('HTTP 429') || /throttled/i.test(message);
+    const shouldUseServerMessage =
+      statusCode === 400 &&
+      message &&
+      !message.startsWith('HTTP ') &&
+      !/spam detected/i.test(message);
+
+    if (isThrottled) {
+      setFormHint(node, 'error', tSafe('modal.throttled', 'Too many requests. Please wait and try again.'));
+    } else if (shouldUseServerMessage) {
+      setFormHint(node, 'error', message);
+    } else {
+      setFormHint(node, 'error', tSafe('modal.error', 'Failed to send message. Please try again later.'));
+    }
+  } finally {
+    setFormPending(formNode, submitBtn, false);
+  }
 });

@@ -61,6 +61,7 @@
   --surface: #ffffff;
   --text: #111111;
   --muted: #4b4b4b;
+  --error: #b42318;
   --green: #153c2f;
   --yellow: #f2c94c;
   --green-2: #1f5748;
@@ -124,6 +125,30 @@
     rgba(15, 18, 17, 0.96) 100%
   );
   --modal-details-bg: rgba(15, 18, 17, 0.25);
+
+  //! Question modal
+  --question-modal-radius: 24px;
+  --question-modal-border: rgba(255, 255, 255, 0.38);
+  --question-modal-surface: #f6f7f8;
+  --question-modal-shadow:
+    0 34px 80px rgba(5, 12, 14, 0.42), 0 1px 0 rgba(255, 255, 255, 0.52) inset;
+  --question-modal-max-width: 860px;
+  --question-modal-min-height: 660px;
+  --question-modal-visual-height: 196px;
+  --question-modal-visual:
+    radial-gradient(120% 120% at 10% 0%, rgba(162, 216, 203, 0.7) 0%, rgba(162, 216, 203, 0) 56%),
+    radial-gradient(120% 180% at 95% 10%, rgba(10, 24, 31, 0.82) 0%, rgba(10, 24, 31, 0.28) 62%, rgba(10, 24, 31, 0.08) 100%),
+    linear-gradient(122deg, #d9ebe7 0%, #f2f5f5 36%, #183036 100%);
+  --question-modal-title: #0f1114;
+  --question-modal-close-bg: rgba(255, 255, 255, 0.9);
+  --question-modal-close-bg-hover: rgba(255, 255, 255, 1);
+  --question-modal-close-border: rgba(18, 30, 36, 0.12);
+  --question-modal-input-bg: #f1f2f3;
+  --question-modal-input-border: rgba(13, 17, 20, 0.16);
+  --question-modal-input-border-focus: rgba(19, 60, 48, 0.5);
+  --question-modal-btn-bg: #101417;
+  --question-modal-btn-bg-hover: #0b0f12;
+  --question-modal-btn-text: #ffffff;
 
   //!Practice cards
   --practice-card-bg: #1f2524;

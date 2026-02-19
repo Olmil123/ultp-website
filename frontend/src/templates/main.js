@@ -193,40 +193,55 @@ export const createModal = () => {
   const questionModal = el(
     'div',
     {
-      class: 'modal is-hidden',
+      class: 'modal modal--question is-hidden',
       id: 'questionModal',
       'aria-hidden': 'true',
     },
     [
       el('div', { class: 'modal__backdrop', 'data-close-modal': 'question' }),
-      el('div', { class: 'modal__dialog', role: 'dialog', 'aria-modal': 'true' }, [
-        el('div', { class: 'modal__head' }, [
-          el('h3', { class: 'modal__title', 'data-lang': 'modal.title' }),
-          el(
-            'button',
-            {
-              class: 'modal__close',
-              type: 'button',
-              'data-close-modal': 'question',
-            },
-            'x',
-          ),
-        ]),
-        el('form', { class: 'form', id: 'questionForm' }, [
-          el('label', { class: 'form__field' }, [
-            el('span', { 'data-lang': 'modal.name' }),
-            el('input', { type: 'text', name: 'name', required: true }),
+      el('div', { class: 'modal__dialog modal__dialog--question', role: 'dialog', 'aria-modal': 'true' }, [
+        el('div', { class: 'modal__visual', 'aria-hidden': 'true' }),
+        el('div', { class: 'modal__content' }, [
+          el('div', { class: 'modal__head' }, [
+            el('h3', { class: 'modal__title', 'data-lang': 'modal.title' }),
+            el('p', { class: 'modal__subtitle', 'data-lang': 'modal.subtitle' }),
+            el(
+              'button',
+              {
+                class: 'modal__close',
+                type: 'button',
+                'data-close-modal': 'question',
+                'aria-label': 'Close',
+              },
+              'x',
+            ),
           ]),
-          el('label', { class: 'form__field' }, [
-            el('span', { 'data-lang': 'modal.email' }),
-            el('input', { type: 'email', name: 'email', required: true }),
+          el('form', { class: 'form', id: 'questionForm', 'aria-busy': 'false' }, [
+            el('label', { class: 'form__field' }, [
+              el('span', { 'data-lang': 'modal.name' }),
+              el('input', { type: 'text', name: 'name', required: true }),
+            ]),
+            el('label', { class: 'form__field' }, [
+              el('span', { 'data-lang': 'modal.email' }),
+              el('input', { type: 'email', name: 'email', required: true }),
+            ]),
+            el('label', { class: 'form__field' }, [
+              el('span', { 'data-lang': 'modal.message' }),
+              el('textarea', { name: 'message', rows: 4, maxlength: 2000, required: true }),
+            ]),
+            el('label', { class: 'form__honeypot', 'aria-hidden': 'true' }, [
+              el('span', {}, 'Website'),
+              el('input', {
+                type: 'text',
+                name: 'website',
+                autocomplete: 'off',
+                tabindex: '-1',
+              }),
+            ]),
+            el('button', { class: 'btn', type: 'submit', 'data-lang': 'modal.send' }),
+            el('p', { class: 'form__consent', 'data-lang': 'modal.consentHtml', 'data-lang-html': true }),
+            el('p', { class: 'form__hint', id: 'formHint', role: 'status', 'aria-live': 'polite' }),
           ]),
-          el('label', { class: 'form__field' }, [
-            el('span', { 'data-lang': 'modal.message' }),
-            el('textarea', { name: 'message', rows: 4, required: true }),
-          ]),
-          el('button', { class: 'btn', type: 'submit', 'data-lang': 'modal.send' }),
-          el('p', { class: 'form__hint', id: 'formHint' }),
         ]),
       ]),
     ],
