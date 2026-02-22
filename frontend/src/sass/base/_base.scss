@@ -15,8 +15,11 @@ body {
 }
 
 body[data-route='home'] {
-  background-color: var(--page-bg);
-  background-image: var(--hero-glow), var(--hero-texture);
+  @include m.home-background;
+}
+
+body[data-route='home'] .app-main {
+  background: transparent;
 }
 
 body[data-route='home'] .hero::before,

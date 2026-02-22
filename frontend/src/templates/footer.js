@@ -9,7 +9,7 @@ export const createFooter = () => {
           {
             class: 'footer__to-top',
             type: 'button',
-            'aria-label': 'Back to top',
+            'aria-label': 'Повернутися вгору',
             onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
           },
           [

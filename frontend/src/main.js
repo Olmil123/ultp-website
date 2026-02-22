@@ -22,7 +22,7 @@ const finishBootLoading = () => {
 };
 
 if (!mount) {
-  document.body.innerHTML = '<p style="padding:20px;color:red;">#app not found</p>';
+  document.body.innerHTML = '<p style="padding:20px;color:red;">#app не знайдено</p>';
   finishBootLoading();
 } else {
   try {
@@ -35,7 +35,7 @@ if (!mount) {
     document.addEventListener('app:render', finishBootLoading, { once: true });
     initRouter(mainContainer);
   } catch (err) {
-    mount.innerHTML = `<p style="padding:20px;color:red;">Error: ${err.message}</p>`;
+    mount.innerHTML = `<p style="padding:20px;color:red;">Помилка: ${err.message}</p>`;
     console.error(err);
     finishBootLoading();
   }
@@ -185,7 +185,7 @@ const openReviewImageModal = (trigger) => {
   if (!node || !image) return;
 
   const src = trigger?.dataset.reviewImage || trigger?.getAttribute('src');
-  const alt = trigger?.getAttribute('alt') || 'Review screenshot';
+  const alt = trigger?.getAttribute('alt') || 'Скріншот відгуку';
   if (!src) return;
 
   image.setAttribute('src', src);
@@ -324,11 +324,11 @@ const setFormPending = (formNode, submitBtn, pending) => {
 
   submitBtn.classList.toggle('is-loading', pending);
   if (pending) {
-    submitBtn.textContent = tSafe('modal.sending', 'Sending...');
+    submitBtn.textContent = tSafe('modal.sending', 'Надсилаємо...');
     return;
   }
 
-  submitBtn.textContent = tSafe('modal.send', 'Send');
+  submitBtn.textContent = tSafe('modal.send', 'Надіслати');
 };
 
 document.addEventListener('submit', async (e) => {
@@ -348,28 +348,28 @@ document.addEventListener('submit', async (e) => {
   };
 
   if (payload.website) {
-    setFormHint(node, 'success', tSafe('modal.sent', 'Message sent successfully.'));
+    setFormHint(node, 'success', tSafe('modal.sent', 'Повідомлення успішно надіслано.'));
     formNode.reset();
     return;
   }
 
   if (!payload.name || !payload.email || !payload.message) {
-    setFormHint(node, 'error', tSafe('modal.required', 'Please fill in all fields.'));
+    setFormHint(node, 'error', tSafe('modal.required', 'Будь ласка, заповніть усі поля.'));
     return;
   }
 
   if (!formNode.checkValidity()) {
-    setFormHint(node, 'error', tSafe('modal.invalid', 'Please check entered data.'));
+    setFormHint(node, 'error', tSafe('modal.invalid', 'Перевірте, будь ласка, коректність введених даних.'));
     formNode.reportValidity();
     return;
   }
 
   setFormPending(formNode, submitBtn, true);
-  setFormHint(node, 'info', tSafe('modal.sending', 'Sending...'));
+  setFormHint(node, 'info', tSafe('modal.sending', 'Надсилаємо...'));
 
   try {
     await sendQuestion(payload);
-    setFormHint(node, 'success', tSafe('modal.sent', 'Message sent successfully.'));
+    setFormHint(node, 'success', tSafe('modal.sent', 'Повідомлення успішно надіслано.'));
     formNode.reset();
   } catch (err) {
     console.error(err);
@@ -385,11 +385,11 @@ document.addEventListener('submit', async (e) => {
       !/spam detected/i.test(message);
 
     if (isThrottled) {
-      setFormHint(node, 'error', tSafe('modal.throttled', 'Too many requests. Please wait and try again.'));
+      setFormHint(node, 'error', tSafe('modal.throttled', 'Забагато запитів. Зачекайте трохи та спробуйте ще раз.'));
     } else if (shouldUseServerMessage) {
       setFormHint(node, 'error', message);
     } else {
-      setFormHint(node, 'error', tSafe('modal.error', 'Failed to send message. Please try again later.'));
+      setFormHint(node, 'error', tSafe('modal.error', 'Не вдалося надіслати повідомлення. Спробуйте пізніше.'));
     }
   } finally {
     setFormPending(formNode, submitBtn, false);

@@ -5,31 +5,72 @@ import { createCasesCards } from '@/templates/casesCards';
 const REVIEW_SHOTS = [
   {
     src: '/assets/ico/view1.jpg',
-    alt: 'Client review 1',
+    alt: 'Відгук клієнта 1',
     width: 789,
     height: 217,
   },
   {
     src: '/assets/ico/view2.jpg',
-    alt: 'Client review 2',
+    alt: 'Відгук клієнта 2',
     width: 785,
     height: 202,
   },
   {
     src: '/assets/ico/view3.jpg',
-    alt: 'Client review 3',
+    alt: 'Відгук клієнта 3',
     width: 781,
     height: 184,
   },
 ];
 
+const HERO_JURISDICTIONS = [
+  { key: 'ua', flag: 'ua' },
+  { key: 'uk', flag: 'gb' },
+  { key: 'cayman', flag: 'ky' },
+  { key: 'bvi', flag: 'vg' },
+  { key: 'cyprus', flag: 'cy' },
+  { key: 'lithuania', flag: 'lt' },
+  { key: 'estonia', flag: 'ee' },
+  { key: 'uae', flag: 'ae' },
+  { key: 'singapore', flag: 'sg' },
+  { key: 'hongKong', flag: 'hk' },
+  { key: 'luxembourg', flag: 'lu' },
+  { key: 'usa', flag: 'us' },
+];
+
 const REVIEWS_LINK = 'https://www.linkedin.com/in/svitlana-rudiuk-8b77929b';
+
+const createHeroJurisdictions = () =>
+  el(
+    'ul',
+    { class: 'hero__jurisdictions-list' },
+    HERO_JURISDICTIONS.map(({ key, flag }) =>
+      el('li', { class: 'hero__jurisdiction-item' }, [
+        el('img', {
+          class: 'hero__jurisdiction-flag',
+          src: `https://flagcdn.com/w40/${flag}.png`,
+          srcset: `https://flagcdn.com/w80/${flag}.png 2x`,
+          width: 20,
+          height: 15,
+          loading: 'lazy',
+          decoding: 'async',
+          alt: '',
+          'aria-hidden': 'true',
+        }),
+        el('span', { class: 'hero__jurisdiction-name', 'data-lang': `home.hero.jurisdictions.${key}` }),
+      ]),
+    ),
+  );
 
 export const createMain = () => {
   const hero = el('section', { class: 'hero', id: 'about' }, [
     el('div', { class: 'container hero__inner' }, [
       el('div', { class: 'hero__content' }, [
         el('p', { class: 'hero__subtitle', 'data-lang': 'home.hero.subtitle' }),
+        el('div', { class: 'hero__meta' }, [
+          el('span', { class: 'hero__badge', 'data-lang': 'home.hero.badge' }),
+          el('span', { class: 'hero__metric', 'data-lang': 'home.hero.metric' }),
+        ]),
         el('h2', { class: 'hero__title hero__title--blur', 'data-lang': 'home.hero.lead' }),
         el('p', { class: 'hero__lead', 'data-lang': 'home.hero.tagline' }),
 
@@ -51,12 +92,17 @@ export const createMain = () => {
             el('span', { 'data-lang': 'home.hero.cta' }),
           ]),
         ]),
+        el('div', { class: 'hero__jurisdictions' }, [
+          el('span', { class: 'hero__jurisdictions-label', 'data-lang': 'home.hero.jurisdictionsLabel' }),
+          createHeroJurisdictions(),
+          el('p', { class: 'hero__credibility', 'data-lang': 'home.hero.credibility' }),
+        ]),
       ]),
 
       el('div', { class: 'hero__photo' }, [
         el('h1', { class: 'hero__brand-side', 'data-lang': 'home.hero.brand' }),
         el('div', { class: 'hero__photo-wrap' }, [
-          el('img', { src: '/assets/ico/logo.jpg', alt: 'Svitlana Rudiuk', class: 'hero__img' }),
+          el('img', { src: '/assets/ico/logo.jpg', alt: 'Світлана Рудюк', class: 'hero__img' }),
         ]),
         el('div', { class: 'hero__card' }, [
           el('strong', { class: 'hero__card-title', 'data-lang': 'home.hero.cardName' }),
@@ -79,9 +125,22 @@ export const createMain = () => {
         'data-lang': 'home.advantages.title',
       }),
       el('ul', { class: 'advantages__list' }, [
-        el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a1' }),
-        el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a2' }),
-        el('li', { class: 'advantages__item', 'data-lang': 'home.advantages.a3' }),
+        el('li', { class: 'advantages__item' }, [
+          el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i1Title' }),
+          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i1Text' }),
+        ]),
+        el('li', { class: 'advantages__item' }, [
+          el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i2Title' }),
+          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i2Text' }),
+        ]),
+        el('li', { class: 'advantages__item' }, [
+          el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i3Title' }),
+          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i3Text' }),
+        ]),
+        el('li', { class: 'advantages__item' }, [
+          el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i4Title' }),
+          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i4Text' }),
+        ]),
       ]),
     ]),
   ]);
@@ -211,7 +270,7 @@ export const createModal = () => {
                 class: 'modal__close',
                 type: 'button',
                 'data-close-modal': 'question',
-                'aria-label': 'Close',
+                'aria-label': 'Закрити',
               },
               'x',
             ),
@@ -230,7 +289,7 @@ export const createModal = () => {
               el('textarea', { name: 'message', rows: 4, maxlength: 2000, required: true }),
             ]),
             el('label', { class: 'form__honeypot', 'aria-hidden': 'true' }, [
-              el('span', {}, 'Website'),
+              el('span', {}, 'Вебсайт'),
               el('input', {
                 type: 'text',
                 name: 'website',
@@ -268,6 +327,7 @@ export const createModal = () => {
                 class: 'modal__close',
                 type: 'button',
                 'data-close-modal': 'practice',
+                'aria-label': 'Закрити',
               },
               'x',
             ),
@@ -299,6 +359,7 @@ export const createModal = () => {
                 class: 'modal__close',
                 type: 'button',
                 'data-close-modal': 'review',
+                'aria-label': 'Закрити',
               },
               'x',
             ),
@@ -308,7 +369,7 @@ export const createModal = () => {
               class: 'review-image-modal__img',
               id: 'reviewImageModalImg',
               src: '',
-              alt: 'Review screenshot',
+              alt: 'Скріншот відгуку',
               loading: 'lazy',
             }),
           ]),

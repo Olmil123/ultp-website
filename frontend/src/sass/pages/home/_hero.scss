@@ -2,11 +2,14 @@
 
 /* Hero */
 .hero {
+  --hero-card-overlap: 58px;
   position: relative;
-  @include m.section(48px);
+  @include m.section(40px);
   padding-top: 18px;
+  padding-bottom: calc(40px + var(--hero-card-overlap));
   min-height: 0;
   isolation: isolate;
+  background: var(--home-bg);
 }
 
 .hero::before,
@@ -20,12 +23,12 @@
 
 .hero::before {
   background: var(--hero-glow);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .hero::after {
   background: var(--hero-texture);
-  opacity: 0.35;
+  opacity: 0.42;
 }
 
 .hero__inner {
@@ -55,6 +58,36 @@
   margin: 0;
 }
 
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 2px;
+}
+
+.hero__badge,
+.hero__metric {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(21, 60, 47, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.hero__metric {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(21, 60, 47, 0.86);
+}
+
 .hero__title {
   font-size: clamp(26px, 3.2vw, 36px);
   font-weight: 700;
@@ -64,14 +97,10 @@
   font-family: var(--font-heading);
   margin: 0;
   max-width: 100%;
-  min-height: 2.6em;
   text-wrap: balance;
-  overflow-wrap: anywhere;
-  hyphens: auto;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .hero__lead {
@@ -159,12 +188,79 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
+}
+
+.hero__jurisdictions {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(21, 60, 47, 0.12);
+}
+
+.hero__jurisdictions-label {
+  display: block;
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(21, 60, 47, 0.8);
+}
+
+.hero__jurisdictions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 760px;
+}
+
+.hero__jurisdiction-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  max-width: 100%;
+  padding: 4px 10px 4px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(21, 60, 47, 0.14);
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: 0 8px 20px rgba(12, 31, 26, 0.07);
+}
+
+.hero__jurisdiction-flag {
+  width: 20px;
+  height: 15px;
+  display: block;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid rgba(21, 60, 47, 0.16);
+  box-shadow: 0 1px 3px rgba(4, 17, 14, 0.16);
+  flex-shrink: 0;
+}
+
+.hero__jurisdiction-name {
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: rgba(21, 60, 47, 0.88);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.hero__credibility {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(21, 60, 47, 0.72);
+  max-width: 760px;
 }
 
 .hero__brand-side {
   margin: 0 0 10px;
-  font-size: clamp(24px, 2.1vw, 30px);
+  font-size: clamp(21px, 1.8vw, 27px);
   font-weight: 700;
   line-height: 1.16;
   letter-spacing: 0.01em;
@@ -182,9 +278,9 @@
 
 .hero__photo-wrap {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: clamp(18px, 2.2vw, 30px);
   overflow: hidden;
-  box-shadow: 0 18px 40px var(--black-12);
+  box-shadow: 0 22px 46px rgba(7, 14, 17, 0.22);
   border: 1px solid var(--black-08);
   background: var(--surface);
   isolation: isolate;
@@ -212,54 +308,65 @@
 
 .hero__img {
   width: 100%;
-  height: 380px;
+  height: clamp(320px, 34vw, 460px);
   object-fit: cover;
-  object-position: 70% 20%;
+  object-position: center 18%;
   display: block;
-  filter: saturate(1.05) contrast(1.04);
+  filter: saturate(1.04) contrast(1.03);
 }
 
 .hero__card {
   position: relative;
-  margin: -58px 14px 0;
-  padding: 12px 14px;
+  width: min(74%, 340px);
+  margin: calc(-1 * var(--hero-card-overlap)) auto 0;
+  padding: 12px 14px 14px;
   border-radius: 12px;
   background: var(--hero-card-bg);
-  box-shadow: 0 18px 40px var(--black-22);
-  border: 1px solid var(--white-08);
-  color: var(--white);
-  z-index: 2;
+  box-shadow: var(--hero-card-shadow);
+  border: 1px solid var(--hero-card-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--hero-card-text);
+  z-index: 4;
 }
 
 .hero__card-title {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
 
 .hero__card-desc {
   display: block;
-  font-size: 12px;
-  line-height: 1.5;
-  opacity: 0.95;
-  margin-bottom: 6px;
-  @include m.clamp(2);
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--hero-card-desc);
+  opacity: 1;
+  margin-bottom: 8px;
+  @include m.clamp(4);
 }
 
 .hero__card-link {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--yellow);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--hero-card-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 
   &:hover {
-    text-decoration: underline;
+    opacity: 0.9;
   }
 }
 
 @include m.respond(1100px) {
+  .hero {
+    --hero-card-overlap: 52px;
+  }
+
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -271,27 +378,58 @@
   }
 
   .hero__img {
-    height: 320px;
+    height: 360px;
   }
 
   .hero__card {
-    margin: -48px 12px 0;
+    width: min(78%, 330px);
   }
 }
 
 @include m.respond(768px) {
   .hero {
+    --hero-card-overlap: 42px;
     @include m.section(36px);
     padding-top: 14px;
+    padding-bottom: calc(36px + var(--hero-card-overlap));
   }
 
   .hero__title {
     font-size: clamp(22px, 4.2vw, 28px);
-    min-height: 2.4em;
   }
 
   .hero__lead {
     font-size: 15px;
+  }
+
+  .hero__badge,
+  .hero__metric {
+    min-height: 26px;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .hero__jurisdictions-list {
+    gap: 6px;
+  }
+
+  .hero__jurisdiction-item {
+    min-height: 24px;
+    gap: 6px;
+    padding: 3px 9px 3px 5px;
+  }
+
+  .hero__jurisdiction-flag {
+    width: 17px;
+    height: 13px;
+  }
+
+  .hero__jurisdiction-name {
+    font-size: 12px;
+  }
+
+  .hero__credibility {
+    font-size: 12px;
   }
 
   .hero__brand-side {
@@ -317,23 +455,61 @@
   }
 
   .hero__card {
-    margin: -38px 10px 0;
-    padding: 10px 12px;
+    width: min(80%, 320px);
+    padding: 11px 12px 13px;
   }
 
   .hero__img {
-    height: 260px;
+    height: 320px;
   }
 }
 
 @include m.respond(480px) {
   .hero {
+    --hero-card-overlap: 30px;
     @include m.section(32px);
     padding-top: 12px;
+    padding-bottom: calc(32px + var(--hero-card-overlap));
   }
 
-  .hero__title {
-    min-height: 2.2em;
+  .hero__meta {
+    gap: 6px;
+  }
+
+  .hero__badge,
+  .hero__metric {
+    padding: 5px 9px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero__jurisdictions-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .hero__jurisdictions-list {
+    gap: 5px;
+  }
+
+  .hero__jurisdiction-item {
+    min-height: 22px;
+    gap: 5px;
+    padding: 3px 8px 3px 5px;
+  }
+
+  .hero__jurisdiction-flag {
+    width: 15px;
+    height: 11px;
+    border-radius: 2px;
+  }
+
+  .hero__jurisdiction-name {
+    font-size: 11px;
+  }
+
+  .hero__credibility {
+    font-size: 11px;
+    line-height: 1.45;
   }
 
   .hero__bullet > span:last-child {
@@ -341,12 +517,12 @@
   }
 
   .hero__img {
-    height: 220px;
+    height: 260px;
   }
 
   .hero__card {
-    margin: -30px 8px 0;
-    padding: 10px;
+    width: min(84%, 300px);
+    padding: 10px 11px 12px;
   }
 
   .hero__card-title {
@@ -354,7 +530,8 @@
   }
 
   .hero__card-desc {
-    font-size: 11px;
+    font-size: 12px;
+    margin-bottom: 6px;
   }
 
   .hero__brand-side {

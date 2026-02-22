@@ -80,7 +80,6 @@
   //? Black transparency tokens
   --black-50: rgba(0, 0, 0, 0.5);
   --black-25: rgba(0, 0, 0, 0.25);
-  --black-22: rgba(0, 0, 0, 0.22);
   --black-20: rgba(0, 0, 0, 0.2);
   --black-18: rgba(0, 0, 0, 0.18);
   --black-12: rgba(0, 0, 0, 0.12);
@@ -104,17 +103,31 @@
   --advantages-card-shadow-hover: 0 22px 38px rgba(21, 60, 47, 0.18);
 
   //! Hero and model elements
-  --hero-card-bg: rgba(16, 18, 22, 0.92);
+  --home-bg: #e6efed;
+  --hero-card-bg: linear-gradient(
+    180deg,
+    rgba(249, 251, 252, 0.88) 0%,
+    rgba(242, 246, 248, 0.84) 52%,
+    rgba(236, 241, 245, 0.82) 100%
+  );
+  --hero-card-border: rgba(255, 255, 255, 0.78);
+  --hero-card-shadow:
+    0 16px 34px rgba(16, 26, 24, 0.2), 0 1px 0 rgba(255, 255, 255, 0.78) inset;
+  --hero-card-text: var(--green);
+  --hero-card-desc: rgba(21, 60, 47, 0.92);
+  --hero-card-link: var(--green-2);
   --hero-glow:
-    radial-gradient(520px 420px at 75% 8%, rgba(242, 201, 76, 0.2), transparent 65%),
-    radial-gradient(520px 420px at 90% 35%, rgba(21, 60, 47, 0.12), transparent 70%);
+    radial-gradient(980px 560px at -6% -20%, rgba(242, 201, 76, 0.22), transparent 62%),
+    radial-gradient(920px 620px at 108% 6%, rgba(21, 60, 47, 0.16), transparent 66%),
+    radial-gradient(760px 460px at 58% 92%, rgba(21, 60, 47, 0.08), transparent 74%);
   --hero-texture:
-    radial-gradient(circle at 18% 20%, var(--white-12), transparent 45%),
-    radial-gradient(circle at 80% 10%, var(--white-08), transparent 55%),
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.42), transparent 48%),
+    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.24), transparent 56%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 42%),
     repeating-linear-gradient(
       0deg,
-      var(--bg-lines) 0px,
-      var(--bg-lines) 1px,
+      rgba(13, 22, 19, 0.008) 0px,
+      rgba(13, 22, 19, 0.008) 1px,
       transparent 1px,
       transparent 6px
     );
@@ -132,17 +145,12 @@
   --question-modal-surface: #f6f7f8;
   --question-modal-shadow:
     0 34px 80px rgba(5, 12, 14, 0.42), 0 1px 0 rgba(255, 255, 255, 0.52) inset;
-  --question-modal-max-width: 860px;
-  --question-modal-min-height: 660px;
   --question-modal-visual-height: 196px;
   --question-modal-visual:
     radial-gradient(120% 120% at 10% 0%, rgba(162, 216, 203, 0.7) 0%, rgba(162, 216, 203, 0) 56%),
     radial-gradient(120% 180% at 95% 10%, rgba(10, 24, 31, 0.82) 0%, rgba(10, 24, 31, 0.28) 62%, rgba(10, 24, 31, 0.08) 100%),
     linear-gradient(122deg, #d9ebe7 0%, #f2f5f5 36%, #183036 100%);
   --question-modal-title: #0f1114;
-  --question-modal-close-bg: rgba(255, 255, 255, 0.9);
-  --question-modal-close-bg-hover: rgba(255, 255, 255, 1);
-  --question-modal-close-border: rgba(18, 30, 36, 0.12);
   --question-modal-input-bg: #f1f2f3;
   --question-modal-input-border: rgba(13, 17, 20, 0.16);
   --question-modal-input-border-focus: rgba(19, 60, 48, 0.5);
@@ -174,7 +182,6 @@
   --container: 1200px;
   --about-container: 1240px;
   --radius-xl: 16px;
-  --radius-lg: 12px;
   --header-h: 72px;
   --header-offset: 84px;
   --header-offset-tablet: 72px;
@@ -242,9 +249,7 @@
       rgba(241, 241, 237, 0.98) 52%,
       rgba(241, 241, 237, 0.98) 100%
     );
-  --about-grid-line: rgba(0, 0, 0, 0.02);
   --about-texture: none;
-  --about-divider: rgba(21, 60, 47, 0.08);
   --about-header-divider: rgba(21, 60, 47, 0.12);
   --about-layout-glow: radial-gradient(
     700px 280px at 70% -4%,
@@ -254,9 +259,7 @@
   --about-heading-color: #12362c;
   --about-subtitle-color: #2f463c;
   --about-text-color: #6a6f6c;
-  --about-accent-color: var(--green);
   --about-subtitle-border: rgba(21, 60, 47, 0.12);
-  --about-subtitle-accent: var(--yellow);
   --about-photo-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 246, 243, 0.96));
   --about-photo-border: rgba(21, 60, 47, 0.08);
   --about-photo-overlay:
@@ -269,9 +272,6 @@
   --about-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(242, 246, 242, 0.94));
   --about-card-border: rgba(21, 60, 47, 0.08);
   --about-card-shadow: 0 16px 30px rgba(15, 24, 20, 0.08);
-  --about-logo-bg: rgba(255, 255, 255, 0.6);
-  --about-logo-border: rgba(21, 60, 47, 0.08);
-  --about-logo-shadow: none;
   --about-logo-color: rgba(21, 60, 47, 0.7);
   --about-credits-bg: linear-gradient(180deg, rgba(249, 247, 242, 0.92), rgba(243, 247, 244, 0.92));
   --about-credits-border: rgba(21, 60, 47, 0.08);
@@ -283,8 +283,6 @@
   --about-badge-border-hover: rgba(21, 60, 47, 0.2);
   --about-badge-shadow: 0 8px 16px rgba(15, 24, 20, 0.08);
   --about-badge-shadow-hover: 0 12px 22px rgba(15, 24, 20, 0.12);
-  --about-list-border: var(--black-08);
-
   //! Privacy page
   --privacy-bg: #f3f1ec;
   --privacy-gradient:
@@ -321,12 +319,20 @@
   --privacy-mail-color: var(--green);
 
   //! Advantages
-  --advantages-bg: linear-gradient(180deg, #f7f4ef 0%, #e9f1ec 50%, #e2ebf1 100%);
-  --advantages-card-bg: linear-gradient(160deg, #ffffff 0%, #eef4f1 55%, #e7eff6 100%);
-  --advantages-card-border: rgba(21, 60, 47, 0.14);
-  --advantages-card-shadow: 0 16px 28px rgba(21, 60, 47, 0.12);
-  --advantages-accent: linear-gradient(135deg, rgba(242, 201, 76, 0.35), rgba(21, 60, 47, 0.18));
-  --advantages-accent-shadow: 0 10px 22px rgba(21, 60, 47, 0.12);
+  --advantages-card-bg:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.94) 0%, rgba(241, 247, 245, 0.92) 55%, rgba(234, 241, 247, 0.94) 100%);
+  --advantages-card-border: rgba(21, 60, 47, 0.18);
+  --advantages-card-shadow: 0 18px 30px rgba(15, 33, 29, 0.14);
+  --advantages-accent:
+    radial-gradient(
+      circle at 30% 32%,
+      rgba(242, 201, 76, 0.34) 0%,
+      rgba(242, 201, 76, 0.14) 34%,
+      rgba(21, 60, 47, 0.1) 64%,
+      transparent 82%
+    );
+  --advantages-accent-line: rgba(21, 60, 47, 0.22);
+  --advantages-accent-shadow: 0 12px 28px rgba(21, 60, 47, 0.1);
 
   //! Cases
   --cases-bg: #f3f2ee;

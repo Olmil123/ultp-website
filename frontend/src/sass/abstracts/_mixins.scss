@@ -77,6 +77,10 @@
     );
 }
 
+@mixin home-background($mobile: false) {
+  background: var(--home-bg);
+}
+
 @mixin glass-bar {
   background: var(--header-bg);
   border: 1px solid var(--header-border);
