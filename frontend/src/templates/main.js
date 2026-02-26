@@ -200,7 +200,6 @@ export const createMain = () => {
           ),
         ),
         el('div', { class: 'reviews-more' }, [
-          el('p', { class: 'reviews-more__lead', 'data-lang': 'home.reviews.moreLead' }),
           el('div', { class: 'reviews-more__actions' }, [
             el('a', {
               class: 'reviews-more__btn',

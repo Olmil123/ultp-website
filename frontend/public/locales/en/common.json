@@ -95,7 +95,8 @@
     "reviews": {
       "eyebrow": "Reviews",
       "title": "Client reviews",
-      "moreLead": "You can view more reviews here",
+      "ratingLabel": "Average rating",
+      "ratingMeta": "based on client feedback",
       "moreButton": "View all reviews",
       "consult": {
         "eyebrow": "Consultation",

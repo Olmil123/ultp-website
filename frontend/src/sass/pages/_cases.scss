@@ -9,6 +9,15 @@ body[data-route='casescrypto-education'] {
   --bg-noise-1: var(--case-page-noise);
   --bg-noise-2: var(--case-page-noise);
   --bg-noise-3: var(--case-page-noise);
+  --cases-card-bg:
+    radial-gradient(420px 220px at 14% 4%, rgba(255, 255, 255, 0.52), transparent 72%),
+    radial-gradient(360px 220px at 92% 10%, rgba(186, 160, 102, 0.05), transparent 76%),
+    radial-gradient(420px 240px at 72% 100%, rgba(21, 60, 47, 0.04), transparent 78%),
+    linear-gradient(160deg, rgba(243, 247, 250, 0.84) 0%, rgba(235, 242, 247, 0.86) 56%, rgba(230, 238, 244, 0.88) 100%);
+  --cases-card-border: rgba(22, 49, 49, 0.08);
+  --cases-card-shadow:
+    0 14px 30px rgba(14, 29, 34, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.4) inset;
   background-color: var(--case-page-bg);
   background-image:
     var(--case-page-gradient),
