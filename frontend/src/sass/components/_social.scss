@@ -1,0 +1,33 @@
+﻿@use '../abstracts/mixins' as m;
+
+.social {
+  @include m.flex(center, center, 8px);
+}
+
+.social__btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  border: none;
+
+  @include m.tr(transform, filter);
+
+  &:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+}
+
+.social__icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  filter: brightness(0) invert(1);
+}

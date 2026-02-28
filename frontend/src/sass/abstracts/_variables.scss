@@ -1,0 +1,586 @@
+:root {
+  //! Palette
+  --bg: #f6f5f2;
+  --page-bg: #f5f4f1;
+  --page-gradient: none;
+
+  //! Services page backgorund
+  --services-page-bg: #f7f6f2;
+  --services-page-gradient:
+    radial-gradient(1200px 600px at 8% -10%, rgba(242, 201, 76, 0.18), transparent 55%),
+    radial-gradient(900px 520px at 95% 6%, rgba(21, 60, 47, 0.12), transparent 56%),
+    radial-gradient(700px 420px at 50% 85%, rgba(21, 60, 47, 0.08), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(243, 246, 244, 0.96) 55%,
+      rgba(241, 245, 248, 0.96) 100%
+    );
+
+  //* Services background texture
+  --services-bg-noise-1: rgba(0, 0, 0, 0.03);
+  --services-bg-noise-2: rgba(0, 0, 0, 0.02);
+  --services-bg-noise-3: rgba(0, 0, 0, 0.015);
+  --services-bg-lines: rgba(0, 0, 0, 0.012);
+
+  //! Services titles and text colors
+  --services-title-color: var(--green);
+  --services-subtitle-color: rgba(21, 60, 47, 0.72);
+  --services-section-title-color: rgba(21, 60, 47, 0.7);
+
+  //?Services cards
+  --services-card-bg: linear-gradient(160deg, #ffffff 0%, #f3f7f5 60%, #eef4f3 100%);
+  --services-card-border: rgba(21, 60, 47, 0.16);
+  --services-card-border-hover: rgba(21, 60, 47, 0.28);
+  --services-card-shadow: 0 14px 30px rgba(0, 0, 0, 0.07), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  --services-card-shadow-hover:
+    0 22px 46px rgba(0, 0, 0, 0.14), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  --services-card-inner-border: rgba(255, 255, 255, 0.6);
+  --services-card-glow-1: rgba(242, 201, 76, 0.16);
+  --services-card-glow-2: rgba(21, 60, 47, 0.1);
+
+  //! Services card icons
+  --services-icon-bg: linear-gradient(160deg, var(--green) 0%, var(--green-2) 100%);
+  --services-icon-shadow:
+    0 8px 18px rgba(21, 60, 47, 0.25), 0 1px 0 rgba(255, 255, 255, 0.15) inset;
+
+  //! Services cta
+  --services-cta-bg:
+    radial-gradient(120% 140% at 10% 0%, rgba(242, 201, 76, 0.28), transparent 45%),
+    linear-gradient(140deg, #12362c 0%, #1f5748 60%, #1a4a3d 100%);
+  --services-cta-text: #ffffff;
+  --services-cta-shadow: 0 24px 50px rgba(12, 28, 23, 0.25);
+  --services-cta-btn-bg: linear-gradient(180deg, #ffffff 0%, #f5f6f4 100%);
+  --services-cta-btn-border: rgba(255, 255, 255, 0.6);
+  --services-cta-btn-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.12), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  --services-cta-btn-shadow-hover:
+    0 14px 28px rgba(0, 0, 0, 0.16), 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+
+  //! Global theme base
+  --surface: #ffffff;
+  --text: #111111;
+  --muted: #4b4b4b;
+  --error: #b42318;
+  --green: #153c2f;
+  --yellow: #f2c94c;
+  --green-2: #1f5748;
+  --white: #ffffff;
+  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+
+  //? White transparency tokens
+  --white-92: rgba(255, 255, 255, 0.92);
+  --white-74: rgba(255, 255, 255, 0.74);
+  --white-35: rgba(255, 255, 255, 0.35);
+  --white-18: rgba(255, 255, 255, 0.18);
+  --white-12: rgba(255, 255, 255, 0.12);
+  --white-08: rgba(255, 255, 255, 0.08);
+  --white-06: rgba(255, 255, 255, 0.06);
+  //? Black transparency tokens
+  --black-50: rgba(0, 0, 0, 0.5);
+  --black-25: rgba(0, 0, 0, 0.25);
+  --black-20: rgba(0, 0, 0, 0.2);
+  --black-18: rgba(0, 0, 0, 0.18);
+  --black-12: rgba(0, 0, 0, 0.12);
+  --black-08: rgba(0, 0, 0, 0.08);
+  --black-06: rgba(0, 0, 0, 0.06);
+  --black-04: rgba(0, 0, 0, 0.04);
+
+  //! Default borders and shadows
+  --surface-border: var(--black-06);
+  --shadow-lift: 0 14px 40px var(--black-12);
+
+  //? Common Ui elements
+  --btn-primary-text: var(--white);
+  --lang-switch-active-bg: var(--text);
+  --lang-switch-active-border: var(--text);
+  --lang-switch-active-text: var(--white);
+  --header-logo-text: var(--white);
+  --footer-text: var(--white-92);
+  --section-title-bracket: rgba(28, 36, 34, 0.7);
+  --advantages-card-border-hover: rgba(21, 60, 47, 0.2);
+  --advantages-card-shadow-hover: 0 22px 38px rgba(21, 60, 47, 0.14);
+
+  //! Hero and model elements
+  --home-bg: #f5f4f1;
+  --hero-card-bg: linear-gradient(
+    180deg,
+    rgba(252, 251, 247, 0.9) 0%,
+    rgba(246, 249, 245, 0.86) 52%,
+    rgba(239, 245, 241, 0.84) 100%
+  );
+  --hero-card-border: rgba(255, 255, 255, 0.78);
+  --hero-card-shadow:
+    0 16px 34px rgba(16, 26, 24, 0.16), 0 1px 0 rgba(255, 255, 255, 0.78) inset;
+  --hero-card-text: var(--green);
+  --hero-card-desc: rgba(21, 60, 47, 0.92);
+  --hero-card-link: var(--green-2);
+  --hero-glow: none;
+  --hero-texture: none;
+  --hero-photo-mask: linear-gradient(
+    180deg,
+    rgba(15, 18, 17, 0) 42%,
+    rgba(15, 18, 17, 0.9) 80%,
+    rgba(15, 18, 17, 0.96) 100%
+  );
+  --modal-details-bg: rgba(15, 18, 17, 0.25);
+
+  //! Question modal
+  --question-modal-radius: 24px;
+  --question-modal-border: rgba(255, 255, 255, 0.38);
+  --question-modal-surface: #f6f7f8;
+  --question-modal-shadow:
+    0 34px 80px rgba(5, 12, 14, 0.42), 0 1px 0 rgba(255, 255, 255, 0.52) inset;
+  --question-modal-visual-height: 196px;
+  --question-modal-visual:
+    radial-gradient(34% 84% at 84% 14%, rgba(20, 126, 101, 0.2) 0%, rgba(20, 126, 101, 0.08) 42%, rgba(20, 126, 101, 0) 78%),
+    radial-gradient(38% 90% at 14% 86%, rgba(4, 15, 13, 0.2) 0%, rgba(4, 15, 13, 0.08) 42%, rgba(4, 15, 13, 0) 78%),
+    radial-gradient(28% 76% at 52% 52%, rgba(11, 84, 65, 0.16) 0%, rgba(11, 84, 65, 0.065) 40%, rgba(11, 84, 65, 0) 78%),
+    linear-gradient(154deg, rgba(5, 20, 17, 0.99) 0%, rgba(7, 42, 34, 0.99) 52%, rgba(4, 24, 21, 0.99) 100%);
+  --question-modal-title: #0f1114;
+  --question-modal-input-bg: #f1f2f3;
+  --question-modal-input-border: rgba(13, 17, 20, 0.16);
+  --question-modal-input-border-focus: rgba(19, 60, 48, 0.5);
+  --question-modal-btn-bg: #101417;
+  --question-modal-btn-bg-hover: #0b0f12;
+  --question-modal-btn-text: #ffffff;
+
+  //!Practice cards
+  --practice-card-bg: #1f2524;
+  --practice-card-text: var(--white);
+  --practice-card-shadow: 0 18px 50px var(--black-18);
+  --practice-card-shadow-hover: 0 26px 60px var(--black-25);
+  --practice-card-selected-border: rgba(242, 201, 76, 0.9);
+  --practice-card-selected-glow: rgba(242, 201, 76, 0.35);
+  --practice-card-selected-shadow: 0 18px 50px var(--black-25);
+  --practice-card-list-color: var(--white-74);
+  --practice-card-scrollbar: var(--white-35);
+  --practices-bg: #1c2221;
+  --practices-gradient:
+    radial-gradient(900px 480px at 12% -10%, rgba(242, 201, 76, 0.14), transparent 62%),
+    radial-gradient(880px 520px at 90% 5%, rgba(21, 60, 47, 0.32), transparent 65%),
+    linear-gradient(180deg, rgba(32, 38, 37, 0.98) 0%, rgba(26, 31, 30, 0.98) 100%);
+  --practices-lines: rgba(255, 255, 255, 0.03);
+  --practices-noise: rgba(255, 255, 255, 0.018);
+  --practices-title-color: rgba(255, 255, 255, 0.78);
+  --practices-title-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+
+  //! Layout
+  --container: 1200px;
+  --about-container: 1240px;
+  --radius-xl: 16px;
+  --header-h: 72px;
+  --header-offset: 84px;
+  --header-offset-tablet: 72px;
+  --header-offset-mobile: 64px;
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  //! Motion
+  --t: 220ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --reveal-distance: 16px;
+  --reveal-duration: 520ms;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --lang-switch-duration: 280ms;
+  --lang-switch-text-duration: 220ms;
+  --lang-switch-shift: 3px;
+  --lang-switch-blur: 0.8px;
+  --lang-switch-veil:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.28) 42%,
+      rgba(242, 201, 76, 0.18) 50%,
+      rgba(21, 60, 47, 0.12) 58%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  //! Loaders
+  --loader-accent: var(--green);
+  --loader-track: rgba(21, 60, 47, 0.2);
+  --loader-text: 'Loading ULTP...';
+  --boot-loader-gradient:
+    radial-gradient(220px 220px at 50% 44%, rgba(255, 255, 255, 0.42), transparent 72%),
+    linear-gradient(180deg, rgba(248, 247, 244, 0.98) 0%, rgba(243, 242, 238, 0.98) 100%);
+  --page-loader-overlay:
+    radial-gradient(220px 220px at 50% 46%, rgba(255, 255, 255, 0.32), transparent 70%),
+    linear-gradient(180deg, rgba(245, 244, 241, 0.72) 0%, rgba(245, 244, 241, 0.9) 100%);
+
+  //? Texture layers
+  --bg-noise-1: rgba(0, 0, 0, 0.04);
+  --bg-noise-2: rgba(0, 0, 0, 0.03);
+  --bg-noise-3: rgba(0, 0, 0, 0.02);
+  --bg-lines: rgba(0, 0, 0, 0.015);
+
+  //* Header
+  --header-bg: rgba(255, 255, 255, 0.68);
+  --header-border: rgba(0, 0, 0, 0.06);
+  --header-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  --header-hover-bg: rgba(21, 60, 47, 0.08);
+  --header-control-bg: rgba(255, 255, 255, 0.75);
+  --header-control-border: rgba(0, 0, 0, 0.14);
+  --header-control-hover-bg: rgba(21, 60, 47, 0.06);
+  --header-control-hover-border: rgba(21, 60, 47, 0.18);
+  --header-panel-bg: rgba(255, 255, 255, 0.92);
+  --header-panel-border: rgba(0, 0, 0, 0.06);
+  --header-panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+
+  //! About page
+  --about-bg: #f3efe8;
+  --about-overlay:
+    radial-gradient(1100px 520px at 12% -8%, rgba(242, 201, 76, 0.08), transparent 68%),
+    radial-gradient(920px 520px at 88% 6%, rgba(21, 60, 47, 0.06), transparent 70%),
+    linear-gradient(
+      180deg,
+      rgba(244, 241, 234, 0.98) 0%,
+      rgba(241, 241, 237, 0.98) 52%,
+      rgba(241, 241, 237, 0.98) 100%
+    );
+  --about-texture: none;
+  --about-header-divider: rgba(21, 60, 47, 0.12);
+  --about-layout-glow: radial-gradient(
+    700px 280px at 70% -4%,
+    rgba(242, 201, 76, 0.06),
+    transparent 66%
+  );
+  --about-heading-color: #12362c;
+  --about-subtitle-color: #2f463c;
+  --about-text-color: #6a6f6c;
+  --about-subtitle-border: rgba(21, 60, 47, 0.12);
+  --about-photo-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 246, 243, 0.96));
+  --about-photo-border: rgba(21, 60, 47, 0.08);
+  --about-photo-overlay:
+    radial-gradient(circle at 20% 15%, rgba(242, 201, 76, 0.16), transparent 55%),
+    radial-gradient(circle at 80% 25%, rgba(21, 60, 47, 0.07), transparent 60%);
+  --about-photo-shadow: 0 16px 34px rgba(15, 24, 20, 0.14);
+  --about-aside-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(242, 246, 243, 0.96));
+  --about-aside-border: rgba(21, 60, 47, 0.08);
+  --about-aside-shadow: 0 22px 42px rgba(15, 24, 20, 0.12);
+  --about-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(242, 246, 242, 0.94));
+  --about-card-border: rgba(21, 60, 47, 0.08);
+  --about-card-shadow: 0 16px 30px rgba(15, 24, 20, 0.08);
+  --about-logo-color: rgba(21, 60, 47, 0.7);
+  --about-credits-bg: linear-gradient(180deg, rgba(249, 247, 242, 0.92), rgba(243, 247, 244, 0.92));
+  --about-credits-border: rgba(21, 60, 47, 0.08);
+  --about-credits-shadow: 0 12px 26px rgba(15, 24, 20, 0.08);
+  --about-credits-title: rgba(21, 60, 47, 0.7);
+  --about-badge-bg: rgba(255, 255, 255, 0.9);
+  --about-badge-bg-hover: rgba(255, 255, 255, 0.98);
+  --about-badge-border: rgba(21, 60, 47, 0.12);
+  --about-badge-border-hover: rgba(21, 60, 47, 0.2);
+  --about-badge-shadow: 0 8px 16px rgba(15, 24, 20, 0.08);
+  --about-badge-shadow-hover: 0 12px 22px rgba(15, 24, 20, 0.12);
+  //! Privacy page
+  --privacy-bg: #f3f1ec;
+  --privacy-gradient:
+    radial-gradient(1600px 760px at -12% -32%, rgba(242, 201, 76, 0.045), transparent 74%),
+    radial-gradient(1520px 780px at 112% -28%, rgba(21, 60, 47, 0.038), transparent 76%),
+    linear-gradient(180deg, rgba(243, 241, 236, 0.995) 0%, rgba(243, 241, 236, 0.995) 100%);
+  --privacy-noise-1: rgba(0, 0, 0, 0);
+  --privacy-noise-2: rgba(0, 0, 0, 0);
+  --privacy-noise-3: rgba(0, 0, 0, 0);
+  --privacy-lines: rgba(0, 0, 0, 0);
+  --privacy-hero-bg: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(244, 248, 245, 0.92) 100%
+  );
+  --privacy-hero-border: rgba(21, 60, 47, 0.14);
+  --privacy-hero-shadow: 0 16px 30px rgba(16, 26, 22, 0.1);
+  --privacy-icon-bg:
+    radial-gradient(86% 86% at 20% 20%, rgba(242, 201, 76, 0.32), transparent 72%),
+    linear-gradient(150deg, rgba(21, 60, 47, 0.12), rgba(21, 60, 47, 0.02));
+  --privacy-icon-border: rgba(21, 60, 47, 0.16);
+  --privacy-eyebrow-color: rgba(21, 60, 47, 0.72);
+  --privacy-section-bg: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(246, 249, 247, 0.9) 100%
+  );
+  --privacy-section-border: rgba(21, 60, 47, 0.11);
+  --privacy-section-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  --privacy-contact-border: rgba(21, 60, 47, 0.18);
+  --privacy-contact-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  --privacy-subhead-color: rgba(21, 60, 47, 0.9);
+  --privacy-mail-color: var(--green);
+
+  //! Advantages
+  --advantages-card-bg:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, rgba(243, 248, 244, 0.93) 54%, rgba(238, 244, 240, 0.94) 100%);
+  --advantages-card-border: rgba(21, 60, 47, 0.14);
+  --advantages-card-shadow: 0 18px 30px rgba(15, 33, 29, 0.1);
+  --advantages-accent:
+    radial-gradient(
+      circle at 30% 32%,
+      rgba(186, 160, 102, 0.22) 0%,
+      rgba(186, 160, 102, 0.08) 34%,
+      rgba(21, 60, 47, 0.08) 64%,
+      transparent 82%
+    );
+  --advantages-accent-line: rgba(21, 60, 47, 0.18);
+  --advantages-accent-shadow: 0 12px 28px rgba(21, 60, 47, 0.08);
+
+  //! Cases
+  --cases-bg: #f3f2ee;
+  --cases-gradient:
+    radial-gradient(920px 520px at 8% -10%, rgba(242, 201, 76, 0.12), transparent 60%),
+    radial-gradient(860px 520px at 92% 0%, rgba(21, 60, 47, 0.08), transparent 62%),
+    linear-gradient(180deg, rgba(251, 250, 247, 0.98) 0%, rgba(241, 244, 241, 0.98) 100%);
+  --cases-lines: rgba(0, 0, 0, 0.015);
+  --cases-noise: rgba(0, 0, 0, 0.02);
+  --cases-card-bg: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(239, 244, 242, 0.95) 100%
+  );
+  --cases-card-border: rgba(21, 60, 47, 0.12);
+  --cases-card-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  --cases-card-shadow-hover: 0 22px 42px rgba(0, 0, 0, 0.12);
+  --cases-title-color: var(--green);
+  --cases-text-color: rgba(25, 28, 27, 0.72);
+  --case-card-gradient-a:
+    radial-gradient(140px 120px at 20% 0%, rgba(90, 170, 200, 0.22), transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(230, 238, 244, 0.98) 100%);
+  --case-card-gradient-b:
+    radial-gradient(140px 120px at 80% 0%, rgba(60, 130, 180, 0.22), transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(226, 234, 240, 0.98) 100%);
+  --case-card-icon-bg: rgba(255, 255, 255, 0.92);
+  --case-card-icon-border: rgba(21, 60, 47, 0.16);
+  --case-page-bg: #e5edf3;
+  --case-page-gradient:
+    radial-gradient(1200px 760px at 50% 28%, rgba(255, 255, 255, 0.8), transparent 60%),
+    radial-gradient(900px 560px at 18% 18%, rgba(242, 201, 76, 0.08), transparent 62%),
+    radial-gradient(900px 560px at 82% 16%, rgba(18, 54, 44, 0.08), transparent 64%),
+    radial-gradient(
+      1400px 900px at 50% 50%,
+      transparent 55%,
+      rgba(10, 50, 60, 0.08) 75%,
+      rgba(10, 50, 60, 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(236, 244, 248, 0.98) 0%,
+      rgba(227, 236, 244, 0.98) 60%,
+      rgba(219, 229, 238, 0.98) 100%
+    );
+  --case-page-lines: rgba(0, 0, 0, 0);
+  --case-page-noise: rgba(0, 0, 0, 0.006);
+
+  //! Reviews
+  --reviews-bg:
+    radial-gradient(
+      1380px 680px at 14% 6%,
+      rgba(186, 160, 102, 0.1) 0%,
+      rgba(186, 160, 102, 0.045) 34%,
+      rgba(186, 160, 102, 0) 74%
+    ),
+    radial-gradient(
+      1260px 760px at 86% 12%,
+      rgba(21, 60, 47, 0.085) 0%,
+      rgba(21, 60, 47, 0.03) 40%,
+      rgba(21, 60, 47, 0) 78%
+    ),
+    radial-gradient(
+      1220px 700px at 50% 42%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.14) 46%,
+      rgba(255, 255, 255, 0) 80%
+    ),
+    radial-gradient(
+      1400px 780px at 50% 70%,
+      rgba(118, 142, 132, 0.14) 0%,
+      rgba(118, 142, 132, 0.06) 34%,
+      rgba(118, 142, 132, 0) 82%
+    ),
+    radial-gradient(
+      1340px 700px at 50% 98%,
+      rgba(17, 57, 45, 0.24) 0%,
+      rgba(17, 57, 45, 0.14) 34%,
+      rgba(17, 57, 45, 0.06) 56%,
+      rgba(17, 57, 45, 0) 84%
+    ),
+    radial-gradient(
+      960px 460px at 88% 90%,
+      rgba(21, 60, 47, 0.12) 0%,
+      rgba(21, 60, 47, 0.045) 40%,
+      rgba(21, 60, 47, 0) 82%
+    ),
+    linear-gradient(180deg, #f8f6f2 0%, #f5f4f1 38%, #eff1ea 66%, #dfe8e0 100%);
+  --reviews-bg-mobile:
+    radial-gradient(
+      165% 38% at 50% 2%,
+      rgba(186, 160, 102, 0.08) 0%,
+      rgba(186, 160, 102, 0.03) 42%,
+      rgba(186, 160, 102, 0) 84%
+    ),
+    radial-gradient(
+      176% 56% at 50% 18%,
+      rgba(21, 60, 47, 0.07) 0%,
+      rgba(21, 60, 47, 0.025) 44%,
+      rgba(21, 60, 47, 0) 86%
+    ),
+    radial-gradient(
+      180% 70% at 50% 44%,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.1) 40%,
+      rgba(255, 255, 255, 0) 78%
+    ),
+    radial-gradient(
+      178% 74% at 50% 72%,
+      rgba(118, 142, 132, 0.13) 0%,
+      rgba(118, 142, 132, 0.045) 36%,
+      rgba(118, 142, 132, 0) 84%
+    ),
+    radial-gradient(
+      170% 48% at 50% 100%,
+      rgba(17, 57, 45, 0.2) 0%,
+      rgba(17, 57, 45, 0.1) 32%,
+      rgba(17, 57, 45, 0.035) 58%,
+      rgba(17, 57, 45, 0) 86%
+    ),
+    linear-gradient(180deg, #f8f6f2 0%, #f5f4f1 42%, #edf0e8 70%, #e1e8df 100%);
+  --reviews-fade-top: linear-gradient(
+    180deg,
+    rgba(248, 246, 241, 0.9) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --reviews-fade-bottom: linear-gradient(
+    0deg,
+    rgba(28, 62, 51, 0.16) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --reviews-title-color: #0f1114;
+  --reviews-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(246, 248, 247, 0.94) 100%);
+  --reviews-card-border: rgba(21, 60, 47, 0.08);
+  --reviews-card-shadow:
+    0 6px 18px rgba(21, 60, 47, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.75) inset;
+  --reviews-card-hover-border: rgba(21, 60, 47, 0.14);
+  --reviews-card-hover-shadow:
+    0 14px 28px rgba(21, 60, 47, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  --reviews-card-viewport-bg: rgba(255, 255, 255, 0.86);
+  --reviews-card-viewport-ring: inset 0 0 0 1px rgba(255, 255, 255, 0.68);
+  --reviews-card-gloss: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.52) 0%,
+    rgba(255, 255, 255, 0.16) 18%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  --reviews-sparkle-shadow: 0 0 8px rgba(242, 201, 76, 0.34), 0 0 14px rgba(242, 201, 76, 0.16);
+  --reviews-left-shine-bg: radial-gradient(
+    circle at 34% 34%,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.82) 16%,
+    rgba(242, 201, 76, 0.78) 42%,
+    rgba(242, 201, 76, 0) 76%
+  );
+  --reviews-left-shine-opacity: 0.96;
+  --reviews-cluster-bg:
+    radial-gradient(70% 62% at 16% 8%, rgba(186, 160, 102, 0.08) 0%, rgba(186, 160, 102, 0) 72%),
+    radial-gradient(86% 84% at 84% 14%, rgba(21, 60, 47, 0.07) 0%, rgba(21, 60, 47, 0) 78%),
+    linear-gradient(160deg, rgba(249, 250, 249, 0.97) 0%, rgba(238, 244, 241, 0.95) 100%);
+  --reviews-cluster-border: rgba(21, 60, 47, 0.1);
+  --reviews-cluster-shadow:
+    0 18px 42px rgba(21, 60, 47, 0.08),
+    0 2px 10px rgba(21, 60, 47, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  --reviews-cluster-sheen: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.16) 14%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  --reviews-cluster-divider: rgba(21, 60, 47, 0.1);
+  --reviews-cluster-divider-soft: rgba(255, 255, 255, 0.5);
+  --reviews-cluster-bottom-fade: radial-gradient(
+    90% 90% at 50% 0%,
+    rgba(31, 87, 72, 0.16) 0%,
+    rgba(31, 87, 72, 0) 78%
+  );
+  --reviews-more-line: linear-gradient(
+    90deg,
+    rgba(21, 60, 47, 0.02) 0%,
+    rgba(21, 60, 47, 0.12) 14%,
+    rgba(21, 60, 47, 0.08) 86%,
+    rgba(21, 60, 47, 0.02) 100%
+  );
+  --reviews-cta-bg: #1f2a2f;
+  --reviews-cta-bg-hover: #1a2429;
+  --reviews-cta-shadow: 0 8px 18px rgba(17, 25, 30, 0.12);
+  --reviews-cta-shadow-hover: 0 8px 20px rgba(16, 18, 20, 0.18);
+
+  --reviews-consult-border: rgba(255, 255, 255, 0);
+  --reviews-consult-shadow: none;
+  --reviews-consult-gradient:
+    radial-gradient(
+      66% 128% at 10% 54%,
+      rgba(24, 100, 80, 0.3) 0%,
+      rgba(24, 100, 80, 0.13) 34%,
+      rgba(22, 92, 74, 0) 78%
+    ),
+    radial-gradient(
+      52% 90% at 76% 22%,
+      rgba(168, 147, 101, 0.12) 0%,
+      rgba(168, 147, 101, 0.04) 34%,
+      rgba(168, 147, 101, 0) 78%
+    ),
+    radial-gradient(
+      88% 110% at 62% 104%,
+      rgba(6, 22, 19, 0.38) 0%,
+      rgba(6, 22, 19, 0.14) 34%,
+      rgba(5, 18, 16, 0) 82%
+    ),
+    radial-gradient(
+      44% 80% at 92% 80%,
+      rgba(19, 76, 62, 0.16) 0%,
+      rgba(19, 76, 62, 0.055) 38%,
+      rgba(17, 67, 55, 0) 82%
+    ),
+    linear-gradient(114deg, #091412 0%, #0d1d1a 24%, #123129 48%, #0f2822 72%, #091311 100%);
+  --reviews-consult-gradient-size: 100% 100%;
+  --reviews-consult-overlay-a: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.01) 14%,
+    rgba(255, 255, 255, 0) 40%
+  );
+  --reviews-consult-overlay-b: linear-gradient(
+    90deg,
+    rgba(3, 8, 8, 0.14) 0%,
+    rgba(3, 8, 8, 0.05) 14%,
+    rgba(3, 8, 8, 0) 30%,
+    rgba(3, 8, 8, 0) 70%,
+    rgba(3, 8, 8, 0.04) 86%,
+    rgba(3, 8, 8, 0.1) 100%
+  );
+  --reviews-separator-fade: radial-gradient(
+    100% 82% at 50% 100%,
+    rgba(21, 60, 47, 0.12) 0%,
+    rgba(21, 60, 47, 0) 74%
+  );
+  --reviews-separator-line: linear-gradient(
+    90deg,
+    rgba(21, 60, 47, 0) 0%,
+    rgba(21, 60, 47, 0.14) 16%,
+    rgba(21, 60, 47, 0.22) 36%,
+    rgba(175, 151, 98, 0.26) 50%,
+    rgba(21, 60, 47, 0.22) 64%,
+    rgba(21, 60, 47, 0.14) 84%,
+    rgba(21, 60, 47, 0) 100%
+  );
+  --reviews-consult-title-color: #f7f4ed;
+  --reviews-consult-eyebrow-color: rgba(255, 255, 255, 0.7);
+  --reviews-consult-lead-color: rgba(255, 255, 255, 0.82);
+  --reviews-consult-btn-bg: #f5f1e8;
+  --reviews-consult-btn-text: #12352d;
+  --reviews-consult-btn-hover-bg: #ebe7dc;
+  --reviews-consult-btn-hover-shadow: 0 12px 24px rgba(4, 8, 8, 0.26);
+  --reviews-consult-image-shadow: drop-shadow(0 18px 34px rgba(2, 5, 5, 0.2));
+  --reviews-consult-media-mobile-height: 252px;
+  --reviews-consult-image-mobile-width: clamp(210px, 82vw, 320px);
+  --reviews-consult-image-mobile-max-height: 290px;
+  --reviews-consult-image-mobile-shift-x: 10px;
+}

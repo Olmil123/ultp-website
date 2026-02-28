@@ -1,0 +1,90 @@
+﻿//! Center
+@mixin flex($ai: center, $jc: center, $gap: 0) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  gap: $gap;
+}
+
+//! Transition
+@mixin tr($props...) {
+  transition: $props var(--t, 220ms) var(--ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+//! Padding section
+@mixin section($py: 48px) {
+  padding: $py 0;
+}
+
+//! Surface card
+@mixin surface($radius: var(--radius-xl), $shadow: var(--shadow-soft)) {
+  background: var(--surface);
+  border-radius: $radius;
+  box-shadow: $shadow;
+  border: 1px solid var(--surface-border);
+}
+
+//! Hover lift
+@mixin lift($y: -4px) {
+  @include tr(transform, box-shadow, border-color);
+  &:hover {
+    transform: translateY($y);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+//! Grid helper
+@mixin grid($cols: 2, $gap: 16px) {
+  display: grid;
+  grid-template-columns: repeat($cols, minmax(0, 1fr));
+  gap: $gap;
+}
+
+//!Text style h2
+@mixin h2($size: 34px) {
+  margin: 0 0 16px;
+  font-size: $size;
+  letter-spacing: -0.02em;
+}
+
+//!Text cropping for cards/menus
+@mixin clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+//! Media helper
+@mixin respond($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin page-background {
+  background-color: var(--page-bg);
+  background-image:
+    var(--page-gradient), radial-gradient(circle at 20% 10%, var(--bg-noise-1), transparent 45%),
+    radial-gradient(circle at 80% 30%, var(--bg-noise-2), transparent 50%),
+    radial-gradient(circle at 40% 90%, var(--bg-noise-3), transparent 55%),
+    repeating-linear-gradient(
+      0deg,
+      var(--bg-lines) 0px,
+      var(--bg-lines) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+}
+
+@mixin home-background($mobile: false) {
+  background: var(--home-bg);
+}
+
+@mixin glass-bar {
+  background: var(--header-bg);
+  border: 1px solid var(--header-border);
+  box-shadow: var(--header-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

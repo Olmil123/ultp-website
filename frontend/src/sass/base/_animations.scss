@@ -1,0 +1,229 @@
+body.is-boot-loading {
+  overflow: hidden;
+}
+
+#app {
+  position: relative;
+  isolation: isolate;
+  opacity: 1;
+  transition: opacity var(--t) var(--ease);
+}
+
+body.is-boot-loading #app {
+  opacity: 0;
+}
+
+#app::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 980;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-34%);
+  background: var(--lang-switch-veil);
+}
+
+.boot-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--boot-loader-gradient);
+  color: var(--loader-accent);
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--t) var(--ease),
+    visibility 0s linear var(--t);
+}
+
+.boot-loader.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.boot-loader__spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid var(--loader-track);
+  border-top-color: var(--loader-accent);
+  animation: page-loader-spin 0.8s linear infinite;
+}
+
+.boot-loader__label::before {
+  content: var(--loader-text);
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--t) var(--ease),
+    visibility 0s linear var(--t);
+}
+
+body::before {
+  inset: 0;
+  z-index: 900;
+  pointer-events: auto;
+  background: var(--page-loader-overlay);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+body::after {
+  top: 50%;
+  left: 50%;
+  z-index: 901;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  margin-left: -22px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 3px solid var(--loader-track);
+  border-top-color: var(--loader-accent);
+  animation: page-loader-spin 0.8s linear infinite;
+}
+
+body.is-page-loading {
+  cursor: progress;
+}
+
+body.is-page-loading::before,
+body.is-page-loading::after {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.app-main.is-route-entering {
+  animation: route-fade-in 460ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-lang] {
+  transition:
+    opacity var(--lang-switch-text-duration) var(--ease),
+    transform var(--lang-switch-text-duration) var(--ease),
+    filter var(--lang-switch-text-duration) var(--ease);
+  will-change: opacity, transform, filter;
+}
+
+body.is-language-switching [data-lang] {
+  opacity: 0;
+  transform: translateY(var(--lang-switch-shift)) scale(0.995);
+  filter: blur(var(--lang-switch-blur));
+}
+
+body.is-language-switching #app::after {
+  opacity: 1;
+  animation: language-switch-veil var(--lang-switch-duration) var(--ease) forwards;
+}
+
+@keyframes page-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes route-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.995);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes language-switch-veil {
+  0% {
+    opacity: 0;
+    transform: translateX(-34%);
+  }
+
+  20% {
+    opacity: 0.72;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(36%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-loader {
+    transition: none;
+  }
+
+  .boot-loader__spinner {
+    animation-duration: 1.6s;
+  }
+
+  body::before,
+  body::after {
+    transition: none;
+  }
+
+  body::after {
+    animation-duration: 1.6s;
+  }
+
+  .app-main.is-route-entering {
+    animation: none;
+  }
+
+  .reveal-on-scroll,
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  [data-lang],
+  body.is-language-switching [data-lang] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  #app::after,
+  body.is-language-switching #app::after {
+    opacity: 0;
+    animation: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,647 @@
+﻿{
+  "header": {
+    "ask": "Make a question"
+  },
+  "nav": {
+    "practices": "Practices",
+    "services": "Services and their cost",
+    "about": "About Us",
+    "news": "News",
+    "cases": "Cases",
+    "reviewsConsult": "Reviews & Consultation"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "[ SVITLANA RUDIUK ]",
+      "badge": "Tokenization & Digital Assets",
+      "metric": "7+ years of international tax and Web3 practice",
+      "lead": "International practice in tokenization, crypto authorization, and Web3",
+      "tagline": "Structuring, regulatory analysis, and implementation models for digital assets and blockchain platforms.",
+      "p1": "International tax and regulatory structuring for Web3 projects.",
+      "p2": "Legal support for asset tokenization and Security Token Offering (STO).",
+      "p3": "CASP / VASP authorization and KYC/AML model implementation.",
+      "cta": "Integrated approach: legal model aligned with technical architecture.",
+      "jurisdictionsLabel": "We work across jurisdictions:",
+      "jurisdictionsList": "Ukraine • UK • Cayman Islands • BVI • Cyprus • Lithuania • Estonia • UAE • Singapore • Hong Kong • Luxembourg • USA",
+      "jurisdictions": {
+        "ua": "Ukraine",
+        "uk": "United Kingdom",
+        "cayman": "Cayman Islands",
+        "bvi": "British Virgin Islands",
+        "cyprus": "Cyprus",
+        "lithuania": "Lithuania",
+        "estonia": "Estonia",
+        "uae": "UAE",
+        "singapore": "Singapore",
+        "hongKong": "Hong Kong",
+        "luxembourg": "Luxembourg",
+        "usa": "USA"
+      },
+      "credibility": "We work with corporate and private clients in digital assets, fintech, and international structuring.",
+      "brand": "Ukrainian Legal and Tech Partners",
+      "cardName": "Svitlana Rudiuk",
+      "cardDesc": "CEO | International Tax & Web3 Legal Practice",
+      "cardLink": "Read more"
+    },
+    "advantages": {
+      "title": "Advantages",
+      "i1Title": "Integrated approach",
+      "i1Text": "Simultaneous analysis of legal and technical project structure to ensure regulatory compliance and practical implementation.",
+      "i2Title": "Regulatory Web3 expertise",
+      "i2Text": "Hands-on experience with asset tokenization, STO, CASP/VASP authorization, and KYC/AML model implementation.",
+      "i3Title": "International coverage",
+      "i3Text": "Cross-border support across jurisdictions with regard to local and international regulatory requirements.",
+      "i4Title": "Result-oriented execution",
+      "i4Text": "We deliver solutions that are implementable in practice and aligned with client business goals."
+    },
+    "practices": {
+      "title": "Practices",
+      "p1": "National taxation",
+      "p2": "International taxation",
+      "p3": "Technologies",
+      "p4": "Fintech, Blockchain, Web3",
+      "p5": "Compliance"
+    },
+    "news": {
+      "placeholder": "News and updates coming soon."
+    },
+    "cases": {
+      "title": "Cases",
+      "more": "Read more",
+      "items": {
+        "c1": {
+          "title": "Tokenization of premium real estate",
+          "desc": "Launching a Security Token Offering for a community of 20 villas and creating a digital token for real estate investment on blockchain."
+        },
+        "c2": {
+          "title": "Blockchain-based digital identity platform",
+          "desc": "Developing a solution for access to tokenized assets and DeFi services in compliance with KYC and AML requirements."
+        },
+        "c3": {
+          "title": "Subscription-based crypto education platform",
+          "desc": "Building a platform for crypto education with GDPR compliance and a mobile app launch."
+        }
+      }
+    },
+    "contacts": {
+      "title": "Contacts",
+      "emailLabel": "Email:",
+      "telLabel": "Tel.:",
+      "tgLabel": "Telegram -",
+      "email": "rudiuksvitlana@gmail.com",
+      "tel": "+380633966786",
+      "telegram": "dont_tax_me"
+    },
+    "reviews": {
+      "eyebrow": "Reviews",
+      "title": "Client reviews",
+      "ratingLabel": "Average rating",
+      "ratingMeta": "based on client feedback",
+      "moreButton": "View all reviews",
+      "consult": {
+        "eyebrow": "Consultation",
+        "title": "Have questions? Ask away.",
+        "lead": "We will quickly review your case, highlight the risks, and suggest a clear action plan.",
+        "button": "Ask a question"
+      },
+      "items": {
+        "r1": {
+          "name": "Artem Plohii",
+          "role": "Legal Advisor for Tech Entrepreneurs",
+          "date": "February 19, 2025",
+          "text": "We collaborated on several matters. Roman quickly understood the context and consistently delivered clear, practical solutions that kept us moving."
+        },
+        "r2": {
+          "name": "Anastasia Herman",
+          "role": "Founder, Exective of Herman Family Group",
+          "date": "February 9, 2025",
+          "text": "Excellent communication, strong attention to detail, and a responsible approach throughout the project. It was a smooth and reliable cooperation."
+        },
+        "r3": {
+          "name": "Aliona K.",
+          "role": "Family Office Director / International Lawyer",
+          "date": "February 11, 2025",
+          "text": "We received strong support on international corporate and tax matters. The key advantage was the ability to explain complex issues in a practical way."
+        },
+        "r4": {
+          "name": "Andrii Harkusha",
+          "role": "Head of Legal at JatApp",
+          "date": "September 19, 2024",
+          "text": "Roman effectively covered our requests on international structuring and transaction support. The team was responsive and met deadlines."
+        },
+        "r5": {
+          "name": "Ruslan Riabko",
+          "role": "Attorney-at-Law",
+          "date": "February 29, 2024",
+          "text": "I appreciated the structured approach and careful risk analysis. Recommendations were clear, practical, and adapted to the business context."
+        },
+        "r6": {
+          "name": "Stefanii Martynenko",
+          "role": "Legal Counsel - Nexus Ltd.",
+          "date": "March 18, 2024",
+          "text": "A strong expert in IP, international tax planning, and compliance. The engagement was well organized, transparent, and result-oriented."
+        }
+      }
+    }
+  },
+  "cases": {
+    "title": "Cases",
+    "lead": "A selection of projects and approaches we apply in practice.",
+    "items": {
+      "c1": {
+        "title": "Tokenization of premium real estate",
+        "desc": "Launching a Security Token Offering for a community of 20 villas and creating a digital token for real estate investment on blockchain."
+      },
+      "c2": {
+        "title": "Blockchain-based digital identity platform",
+        "desc": "Developing a solution for access to tokenized assets and DeFi services in compliance with KYC and AML requirements."
+      },
+      "c3": {
+        "title": "Subscription-based crypto education platform",
+        "desc": "Building a platform for crypto education with GDPR compliance and a mobile app launch."
+      }
+    }
+  },
+  "case1": {
+    "hero": {
+      "eyebrow": "Case 1",
+      "title": "Tokenization of premium real estate in a prestigious tourist destination",
+      "subtitle": "Launching a Security Token Offering (STO) for a community of 20 luxury villas and creating a digital token for real estate investment on blockchain.",
+      "lead": "The project enabled investors to participate in premium real estate ownership with minimal entry, using blockchain technology.",
+      "mediaLabel": "Real Estate + Blockchain"
+    },
+    "overview": {
+      "title": "Project overview",
+      "text": "A boutique community of twenty luxury villas in a prestigious tourist destination partnered with Ukrainian Legal and Tech Partners to launch a Security Token Offering (STO). The project created a digital token that allows investors to participate in real estate ownership using blockchain."
+    },
+    "solution": {
+      "title": "Solution",
+      "text": "The tokenization initiative used modern blockchain technologies to ensure:",
+      "items": {
+        "i1": "investment accessibility",
+        "i2": "transparency",
+        "i3": "liquidity",
+        "i4": "security"
+      },
+      "benefitsTitle": "Investors also received additional benefits:",
+      "benefits": {
+        "b1": "accommodation discounts",
+        "b2": "access to events",
+        "b3": "rental income"
+      }
+    },
+    "result": {
+      "title": "Result",
+      "text": "The STO was presented at an international crypto and blockchain festival that gathered over 50,000 investors. The project demonstrated how tokenization can transform real estate investments by improving accessibility and efficiency."
+    },
+    "cta": {
+      "title": "Discuss a similar project",
+      "button": "Make a question"
+    }
+  },
+  "case2": {
+    "hero": {
+      "eyebrow": "Case 2",
+      "title": "Building an innovative blockchain-based digital identity platform",
+      "subtitle": "A solution to simplify and secure access to tokenized assets and DeFi services.",
+      "lead": "A unified, interoperable entry point that makes tokenization accessible for investors and businesses.",
+      "mediaLabel": "Digital Identity + Blockchain"
+    },
+    "overview": {
+      "title": "Project overview",
+      "text": "Ukrainian Legal and Tech Partners created a transformational blockchain-based digital identity solution designed to simplify and secure access to tokenized assets and decentralized finance (DeFi) services. This innovative product offers a single, interoperable entry point so users can interact with a broad range of virtual assets, making tokenization accessible to both individual investors and businesses. The solution, currently in beta testing within a large blockchain network, eliminates repetitive verification processes and enables seamless navigation across offerings."
+    },
+    "solution": {
+      "title": "Solution",
+      "text": "For businesses, the platform:",
+      "items": {
+        "i1": "simplifies token issuance",
+        "i2": "ensures compliance with KYC and AML regulations",
+        "i3": "reduces operational complexity",
+        "i4": "creates a single entry point for working with digital assets"
+      }
+    },
+    "result": {
+      "title": "Result",
+      "text": "Delivered to a global audience, the digital identity solution lays the foundation for future expansion, including support for additional blockchain networks and enhanced security features. Its launch demonstrates a commitment to bridging traditional finance and web3, enabling users to unlock new investment opportunities with transparency and efficiency. This project shows how advanced blockchain technology can reshape user interaction in digital finance, offering a scalable, secure, and user-friendly solution that paves the way for the future of tokenized assets."
+    },
+    "cta": {
+      "title": "Discuss a similar project",
+      "button": "Make a question"
+    }
+  },
+  "case3": {
+    "hero": {
+      "eyebrow": "Case 3",
+      "title": "Subscription-based crypto education platform",
+      "subtitle": "Building a crypto learning platform with GDPR compliance and a mobile app launch.",
+      "lead": "The platform provides secure, subscription-based access to educational materials.",
+      "mediaLabel": "GDPR + crypto education"
+    },
+    "overview": {
+      "title": "Project overview",
+      "text": "The company developed a cryptocurrency education platform that provides subscription-based access to ensure a seamless, secure, and compliant user experience. The platform was created to offer enthusiasts an educational space and convenient access to materials and services. To ensure compliance, the project underwent comprehensive technical and legal review, following App Store Guidelines and the EU General Data Protection Regulation (GDPR), as well as other applicable laws."
+    },
+    "solution": {
+      "title": "Solution",
+      "text": "To deliver the project, the team completed:",
+      "items": {
+        "i1": "data and processing audits",
+        "i2": "third-party service checks for GDPR compliance",
+        "i3": "implementation of transparent user consent flows",
+        "i4": "creation of an intuitive and secure interface"
+      },
+      "outcome": "This ensured a high level of privacy, security, and user trust."
+    },
+    "result": {
+      "title": "Result",
+      "text": "A successful App Store launch demonstrated the team’s ability to build a high-quality mobile app aligned with regulatory requirements and tailored for a global audience. The initiative highlighted the power of combining innovation with strict compliance, creating a safe and user-friendly platform that enables confident learning in the crypto space."
+    },
+    "cta": {
+      "title": "Discuss a similar project",
+      "button": "Make a question"
+    }
+  },
+  "about": {
+    "title": "Ukrainian Legal and Tech Partners",
+    "lead": "<strong>Ukrainian Legal and Tech Partners</strong> is a unique project that unites <strong>legal</strong>, <strong>technological</strong> and <strong>compliance</strong> expertise.",
+    "founder": {
+      "title": "Founder",
+      "name": "Svitlana Rudiuk",
+      "role": "Founder, tax law and WEB3",
+      "text": "Founder - <strong>Svitlana Rudiuk</strong>, an expert in <strong>national</strong> and <strong>international taxation</strong> and <strong>WEB.3.0 solutions</strong> practices.",
+      "experience": "Experience in national and international taxation practices, WEB.3 solutions practices is <strong>more than twelve years</strong>.",
+      "specialization": "Specializes in solving issues related to international and national taxation, including, but not limited to: <strong>corporate and personal tax planning</strong>, <strong>tax structuring</strong>, <strong>constructing of holding structures</strong>, <strong>structuring of M&A deals</strong>, <strong>attracting financing</strong>, and <strong>personal tax declaration</strong> measures."
+    },
+    "web3": {
+      "title": "WEB.3.0 practice",
+      "text": "In <strong>WEB.3.0</strong> practice provides <strong>legal support</strong> to clients at all stages of <strong>tokenization</strong>, obtains the status of a VASP or CASPʼs provider, ensures <strong>compliance</strong>, and opens accounts for VASP or CASP’s providers."
+    },
+    "speaker": "<strong>Speaker, author of publications.</strong>",
+    "credits": {
+      "title": "Partnerships and professional associations",
+      "partner": "UA Tech Network Community Partner",
+      "association": "Expert of the International Association of Tax Advisors",
+      "beps": "BEPS.space expert",
+      "elit": "Elit-Web",
+      "sabai": "Sabai Protocol",
+      "zon": "Zon Art Group"
+    },
+    "approach": {
+      "title": "Work approach",
+      "p1": "I have been working in national and international taxation and WEB 3.0 solutions for over twelve years. During this time, I have helped businesses and investors solve complex legal and technological issues by combining legal expertise with an understanding of modern technologies.",
+      "p2": "My practice covers a wide range of tasks, from tax planning, business structuring, and building holding structures to legal support for projects in blockchain, tokenization, and virtual assets.",
+      "p3": "I support clients at all project stages, assist with compliance, obtaining VASP statuses, as well as opening accounts and building legal structures.",
+      "p4": "In addition to practical work, I speak publicly, publish professional materials, contribute to legislative initiatives, and take part in legal training and mentoring.",
+      "p5": "I am fluent in Ukrainian and English and work with clients from different countries. If you need support or consultation, I am always ready to provide professional assistance."
+    }
+  },
+  "privacy": {
+    "hero": {
+      "eyebrow": "Document",
+      "title": "Privacy Notice",
+      "lead": "This notice explains how personal data is collected, used, and protected."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Data Controller",
+        "p1": "This privacy notice explains how personal data is collected, used, and protected.",
+        "p2": "Data Controller:",
+        "items": {
+          "i1": "Svitlana Rudiuk, Sole Proprietor (Ukraine)",
+          "i2": "Activities: legal, advisory, compliance, and technology services",
+          "i3": "Contact email:"
+        },
+        "p3": "The Controller complies with applicable data protection laws, including GDPR (EU), U.S. federal and state privacy laws, as well as relevant privacy laws in Asian jurisdictions (for example, Singapore, Hong Kong, Japan)."
+      },
+      "s2": {
+        "title": "2. Scope",
+        "p1": "This privacy notice applies to:",
+        "items": {
+          "i1": "clients and prospective clients",
+          "i2": "business partners and their representatives",
+          "i3": "website visitors",
+          "i4": "individuals contacting the Controller for professional services"
+        },
+        "p2": "It applies to individuals located in the EU, USA, Asia, and other jurisdictions."
+      },
+      "s3": {
+        "title": "3. Categories of Personal Data",
+        "p1": "The Controller may collect and process the following categories of personal data:",
+        "items": {
+          "i1": "identification data: first name, last name, position",
+          "i2": "contact data: email address, phone number",
+          "i3": "professional data: company name, role, type of activity",
+          "i4": "contractual and payment information",
+          "i5": "communication data: emails and messages",
+          "i6": "technical data: IP address, browser type, access logs",
+          "i7": "compliance-related data provided within legal or advisory services"
+        },
+        "p2": "Special categories of data are not collected unless required by law or voluntarily provided by the client."
+      },
+      "s4": {
+        "title": "4. Purposes of Processing",
+        "p1": "Personal data is processed for the following purposes:",
+        "items": {
+          "i1": "provision of professional services",
+          "i2": "client communication and support",
+          "i3": "contract performance and administration",
+          "i4": "compliance with legal and regulatory obligations",
+          "i5": "invoicing, accounting, and tax records",
+          "i6": "risk assessment and conflict checks",
+          "i7": "protection of legitimate business interests"
+        },
+        "p2": "Personal data is not used for automated decision-making or profiling."
+      },
+      "s5": {
+        "title": "5. Legal Basis for Processing",
+        "p1": "For EU residents, data processing is carried out under Article 6 GDPR:",
+        "items": {
+          "i1": "performance of a contract",
+          "i2": "compliance with legal obligations",
+          "i3": "legitimate interests of the Controller",
+          "i4": "consent, where explicitly required"
+        },
+        "p2": "For U.S. and Asian residents, processing is carried out in accordance with applicable laws in their jurisdictions."
+      },
+      "s6": {
+        "title": "6. Data Sharing and Disclosure",
+        "p1": "Personal data may be shared only where necessary and limited to:",
+        "items": {
+          "i1": "professional advisors and confidentiality-bound service providers",
+          "i2": "accounting, legal, and compliance partners",
+          "i3": "technology and hosting providers",
+          "i4": "regulatory or governmental authorities where required by law"
+        },
+        "p2": "Personal data is not sold and is not disclosed for marketing purposes."
+      },
+      "s7": {
+        "title": "7. International Data Transfers",
+        "p1": "Personal data may be processed or stored outside the user's jurisdiction, including Ukraine, the USA, and other regions.",
+        "p2": "Appropriate safeguards are implemented, such as:",
+        "items": {
+          "i1": "contractual confidentiality obligations",
+          "i2": "data processing agreements compliant with GDPR where required",
+          "i3": "technical and organizational security measures"
+        }
+      },
+      "s8": {
+        "title": "8. Data Retention",
+        "p1": "Personal data is retained only as long as necessary for:",
+        "items": {
+          "i1": "fulfilling contractual and legal obligations",
+          "i2": "meeting accounting and regulatory requirements",
+          "i3": "protecting legitimate interests"
+        },
+        "p2": "Retention periods depend on the nature of services and applicable law."
+      },
+      "s9": {
+        "title": "9. Data Subject Rights",
+        "p1": "Depending on your place of residence, you may have the following rights:",
+        "eu": {
+          "title": "EU residents:",
+          "items": {
+            "i1": "access, rectification, erasure, restriction, objection, data portability",
+            "i2": "withdrawal of consent",
+            "i3": "lodging a complaint with a supervisory authority"
+          }
+        },
+        "us": {
+          "title": "U.S. residents:",
+          "items": {
+            "i1": "access, correction, or deletion of data",
+            "i2": "opt-out of certain data uses where applicable"
+          }
+        },
+        "asia": {
+          "title": "Asian residents (Singapore, Hong Kong, Japan, etc.):",
+          "items": {
+            "i1": "access, correction, or deletion of data",
+            "i2": "objection to certain processing where applicable"
+          }
+        },
+        "p2": "Requests can be sent to the contact email below."
+      },
+      "s10": {
+        "title": "10. Data Security",
+        "p1": "The Controller implements appropriate technical and organizational measures to protect personal data, including:",
+        "items": {
+          "i1": "access control and confidentiality obligations",
+          "i2": "secure communication channels",
+          "i3": "restricted access to client information",
+          "i4": "data minimization principle"
+        }
+      },
+      "s11": {
+        "title": "11. Notice Updates",
+        "p1": "This notice may be updated from time to time to reflect changes in law or the Controller's activities. The latest version is always available upon request or on the official website."
+      },
+      "s12": {
+        "title": "12. Contacts",
+        "p1": "For privacy-related requests, please contact:"
+      }
+    }
+  },
+  "termsPage": {
+    "hero": {
+      "eyebrow": "Document",
+      "title": "Terms of Service",
+      "lead": "These terms govern the use of legal, advisory, compliance, and technology services."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Introduction",
+        "p1": "These Terms of Service (\"Terms\") govern the use of services provided by:",
+        "p2": "Service provider:",
+        "items": {
+          "i1": "Svitlana Rudiuk, Sole Proprietor (Ukraine)",
+          "i2": "Business activities: legal, advisory, compliance, and technology-related consulting services",
+          "i3": "Contact email: Rudiuksvitlana@gmail.com"
+        },
+        "p3": "By engaging with the services, you agree to be bound by these Terms. If you do not agree, you may not use the services.",
+        "p4": "These Terms apply to clients, prospective clients, business partners, and website users located in the European Union, the United States, Asia, and other jurisdictions."
+      },
+      "s2": {
+        "title": "2. Services",
+        "p1": "The services provided may include, but are not limited to:",
+        "items": {
+          "i1": "legal and compliance advisory",
+          "i2": "technology consulting and tokenization solutions",
+          "i3": "risk assessment and governance solutions",
+          "i4": "contract drafting and review",
+          "i5": "other professional services agreed with the client"
+        },
+        "p2": "Specific service agreements may include additional terms, which take precedence over these general Terms."
+      },
+      "s3": {
+        "title": "3. Client Responsibilities",
+        "p1": "Clients agree to:",
+        "items": {
+          "i1": "provide accurate and complete information",
+          "i2": "comply with applicable laws and regulations",
+          "i3": "cooperate in a timely manner to enable the provision of services",
+          "i4": "ensure that any information provided does not violate third-party rights"
+        }
+      },
+      "s4": {
+        "title": "4. Fees and Payment",
+        "items": {
+          "i1": "Fees for services are set out in individual agreements or proposals.",
+          "i2": "Invoices are payable according to the terms specified in the agreement.",
+          "i3": "Late payments may incur interest or suspension of services."
+        }
+      },
+      "s5": {
+        "title": "5. Confidentiality",
+        "items": {
+          "i1": "All information shared between the client and the service provider is treated as confidential.",
+          "i2": "Confidential information may only be disclosed if required by law, regulatory authority, or with client consent.",
+          "i3": "This confidentiality obligation survives termination of the service agreement."
+        }
+      },
+      "s6": {
+        "title": "6. Intellectual Property",
+        "items": {
+          "i1": "All intellectual property created by the service provider remains the property of the service provider unless explicitly assigned.",
+          "i2": "Clients may use deliverables only for the purposes agreed in the service agreement."
+        }
+      },
+      "s7": {
+        "title": "7. Liability",
+        "items": {
+          "i1": "The service provider acts with professional care and in accordance with applicable laws.",
+          "i2": "Liability is limited to direct damages caused by gross negligence or willful misconduct.",
+          "i3": "The service provider is not liable for indirect, incidental, or consequential damages."
+        }
+      },
+      "s8": {
+        "title": "8. Termination",
+        "items": {
+          "i1": "Either party may terminate the engagement according to the terms of the service agreement.",
+          "i2": "Upon termination, fees for services rendered up to the date of termination remain payable."
+        }
+      },
+      "s9": {
+        "title": "9. Governing Law and Jurisdiction",
+        "items": {
+          "i1": "These Terms are governed by the laws of Ukraine.",
+          "i2": "Disputes will be resolved primarily through negotiation. If unresolved, disputes may be submitted to the competent court in Ukraine.",
+          "i3": "For EU clients, GDPR rights and remedies remain unaffected."
+        }
+      },
+      "s10": {
+        "title": "10. Amendments",
+        "items": {
+          "i1": "These Terms may be updated periodically.",
+          "i2": "Clients will be notified of significant changes, and continued use of services constitutes acceptance of the updated Terms."
+        }
+      },
+      "s11": {
+        "title": "11. Contact",
+        "p1": "For questions regarding these Terms or the services, please contact:"
+      }
+    }
+  },
+  "footer": {
+    "copy": "PE \"Rudiuk S.A.\" 2025",
+    "disclaimer1": "The information which is provided on this website is not legal advice and needs to be used for informational purposes only.",
+    "disclaimer2": "All materials are protected by copyright law. Using and/or copying is permitted only with the consent of the website owner.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "modal": {
+    "title": "Make a question",
+    "subtitle": "Briefly describe your case - we will get back to you quickly.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "consentHtml": "By clicking the button, I agree with the <a href=\"/privacy\" data-link=\"\">Privacy Policy</a>",
+    "required": "Please fill in all fields.",
+    "invalid": "Please check entered data.",
+    "sending": "Sending...",
+    "sent": "Message sent successfully.",
+    "throttled": "Too many requests. Please wait and try again.",
+    "error": "Failed to send message. Please try again later."
+  },
+  "practices": {
+    "title": "Practices",
+    "more": "Details",
+    "hint": "See full list in details",
+    "items": {
+      "national": "National taxation",
+      "international": "International taxation",
+      "technologies": "Technologies",
+      "fintech": "Fintech, Blockchain, Web3",
+      "compliance": "Compliance"
+    }
+  },
+  "services": {
+    "title": "Services and their cost",
+    "subtitle": "We provide legal and technological services in taxation, fintech, blockchain and compliance.\nThe cost of each project is determined individually depending on complexity, scope of work, and jurisdiction.",
+    "work": {
+      "title": "How we work",
+      "analysis": {
+        "title": "Request analysis",
+        "text": "We study the client's task and define possible solutions."
+      },
+      "risk": {
+        "title": "Risk assessment",
+        "text": "We conduct legal and technical analysis."
+      },
+      "solution": {
+        "title": "Solution design",
+        "text": "We select the optimal structure and implementation plan."
+      },
+      "delivery": {
+        "title": "Delivery",
+        "text": "We support the project at all stages."
+      },
+      "support": {
+        "title": "Support",
+        "text": "We provide consultations after launch."
+      }
+    },
+    "cost": {
+      "title": "How pricing is formed",
+      "lead": "The cost depends on:",
+      "complexity": "Project complexity",
+      "jurisdiction": "Jurisdiction",
+      "scope": "Scope of work",
+      "timeline": "Timeline",
+      "note": "Each project is assessed individually."
+    },
+    "tax": {
+      "title": "Tax practice",
+      "t1": "Advising on the application of the provisions of tax legislation",
+      "t2": "Analysis of business structures with respect to the tax legislation",
+      "t3": "Providing recommendations on choosing the most effective model for implementing a cross-border agreement or business scheme and selecting appropriate jurisdictions for companies, taking into account the provisions of international agreements",
+      "t4": "Supporting the business restructuring process and the process of structuring operations",
+      "t5": "Developing and supporting optimal individual schemes for the purchase and sale of assets (business, real estate, intellectual property, etc.)",
+      "t6": "Advising on compliance with transfer pricing legislation and controlled foreign companies legislation",
+      "t7": "Advising on the application of international treaties on the avoidance of double taxation and the international exchange of tax information",
+      "t8": "Asset protecting and structuring",
+      "t9": "Personal tax declaration measures",
+      "t10": "Consulting and preparation of necessary documents on the application of tax benefits provided by current legislation",
+      "t11": "International tax planning for private clients"
+    },
+    "tech": {
+      "title": "Technologies",
+      "text": "Creating technological projects, mobile applications, crypto wallets, compliance platforms, etc."
+    },
+    "fintech": {
+      "title": "Fintech, Blockchain, Web3",
+      "f1": "Asset tokenization",
+      "f2": "Creating platforms for tokenization",
+      "f3": "Creating payment solutions",
+      "f4": "Obtaining the status of a CASP or VASP provider",
+      "f5": "Refunding funds from crypto scammers, etc."
+    },
+    "compliance": {
+      "title": "Compliance",
+      "text": "Opening bank accounts."
+    },
+    "cta": "Define your request - and we will prepare a detailed estimate.",
+    "ctaBtn": "Ask a question"
+  }
+}
