@@ -99,8 +99,8 @@
   --header-logo-text: var(--white);
   --footer-text: var(--white-92);
   --section-title-bracket: rgba(28, 36, 34, 0.7);
-  --advantages-card-border-hover: rgba(21, 60, 47, 0.2);
-  --advantages-card-shadow-hover: 0 22px 38px rgba(21, 60, 47, 0.14);
+  --advantages-card-border-hover: rgba(21, 60, 47, 0.18);
+  --advantages-card-shadow-hover: 0 24px 44px rgba(15, 24, 20, 0.12);
 
   //! Hero and model elements
   --home-bg: #f5f4f1;
@@ -116,6 +116,20 @@
   --hero-card-text: var(--green);
   --hero-card-desc: rgba(21, 60, 47, 0.92);
   --hero-card-link: var(--green-2);
+  --hero-badge-bg: rgba(255, 255, 255, 0.82);
+  --hero-badge-border: rgba(21, 60, 47, 0.14);
+  --hero-badge-shadow: 0 10px 22px rgba(15, 24, 20, 0.06);
+  --hero-badge-text: rgba(21, 60, 47, 0.78);
+  --hero-metric-bg: linear-gradient(
+    135deg,
+    rgba(252, 250, 244, 0.98) 0%,
+    rgba(245, 249, 246, 0.97) 54%,
+    rgba(237, 244, 242, 0.98) 100%
+  );
+  --hero-metric-border: rgba(21, 60, 47, 0.18);
+  --hero-metric-shadow:
+    0 16px 28px rgba(15, 24, 20, 0.08), 0 1px 0 rgba(255, 255, 255, 0.72) inset;
+  --hero-metric-text: rgba(21, 60, 47, 0.94);
   --hero-glow: none;
   --hero-texture: none;
   --hero-photo-mask: linear-gradient(
@@ -307,20 +321,22 @@
   --privacy-mail-color: var(--green);
 
   //! Advantages
-  --advantages-card-bg:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, rgba(243, 248, 244, 0.93) 54%, rgba(238, 244, 240, 0.94) 100%);
-  --advantages-card-border: rgba(21, 60, 47, 0.14);
-  --advantages-card-shadow: 0 18px 30px rgba(15, 33, 29, 0.1);
-  --advantages-accent:
-    radial-gradient(
-      circle at 30% 32%,
-      rgba(186, 160, 102, 0.22) 0%,
-      rgba(186, 160, 102, 0.08) 34%,
-      rgba(21, 60, 47, 0.08) 64%,
-      transparent 82%
-    );
-  --advantages-accent-line: rgba(21, 60, 47, 0.18);
-  --advantages-accent-shadow: 0 12px 28px rgba(21, 60, 47, 0.08);
+  --advantages-card-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(248, 250, 248, 0.98) 100%
+  );
+  --advantages-card-border: rgba(21, 60, 47, 0.1);
+  --advantages-card-shadow:
+    0 18px 36px rgba(15, 24, 20, 0.08), 0 1px 0 rgba(255, 255, 255, 0.82) inset;
+  --advantages-card-overlay:
+    radial-gradient(220px 160px at 100% 0%, rgba(242, 201, 76, 0.12), transparent 72%),
+    radial-gradient(180px 140px at 0% 100%, rgba(21, 60, 47, 0.05), transparent 74%);
+  --advantages-card-title: var(--green);
+  --advantages-card-lead: rgba(21, 60, 47, 0.82);
+  --advantages-card-text: rgba(25, 28, 27, 0.78);
+  --advantages-card-divider: rgba(21, 60, 47, 0.1);
+  --advantages-card-dot: rgba(21, 60, 47, 0.52);
 
   //! Cases
   --cases-bg: #f3f2ee;

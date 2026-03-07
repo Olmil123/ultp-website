@@ -30,6 +30,26 @@ export const createAboutPage = () =>
             }),
           ]),
 
+          el('div', { class: 'about__block about__block--partners' }, [
+            el('h2', { class: 'about__subtitle', 'data-lang': 'about.partners.title' }),
+            el('p', {
+              class: 'about__text',
+              'data-lang': 'about.partners.lead',
+            }),
+            el('p', {
+              class: 'about__text',
+              'data-lang': 'about.partners.self',
+            }),
+            el('p', {
+              class: 'about__text',
+              'data-lang': 'about.partners.mary',
+            }),
+            el('p', {
+              class: 'about__text',
+              'data-lang': 'about.partners.oleksandr',
+            }),
+          ]),
+
           el('div', { class: 'about__block about__block--web3' }, [
             el('h2', { class: 'about__subtitle', 'data-lang': 'about.web3.title' }),
             el('p', { class: 'about__text', 'data-lang': 'about.web3.text', 'data-lang-html': '' }),
@@ -37,15 +57,6 @@ export const createAboutPage = () =>
 
           el('div', { class: 'about__block about__block--speaker' }, [
             el('p', { class: 'about__text', 'data-lang': 'about.speaker', 'data-lang-html': '' }),
-          ]),
-
-          el('div', { class: 'about__block about__block--approach' }, [
-            el('h2', { class: 'about__subtitle', 'data-lang': 'about.approach.title' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p1' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p2' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p3' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p4' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p5' }),
           ]),
         ]),
 
@@ -71,7 +82,7 @@ export const createAboutPage = () =>
                   'a',
                   {
                     class: 'about__badge-link',
-                    href: 'https://www.linkedin.com/company/ua-tech-network/?originalSubdomain=ua',
+                    href: 'https://uatechnetwork.com/#about-us',
                     target: '_blank',
                     rel: 'noreferrer',
                   },
@@ -79,10 +90,16 @@ export const createAboutPage = () =>
                 ),
               ]),
               el('li', {}, [
-                el('span', {
-                  class: 'about__badge-text',
-                  'data-lang': 'about.credits.association',
-                }),
+                el(
+                  'a',
+                  {
+                    class: 'about__badge-link',
+                    href: 'https://iaa.international/',
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                  [el('span', { 'data-lang': 'about.credits.association' })],
+                ),
               ]),
               el('li', {}, [
                 el(
