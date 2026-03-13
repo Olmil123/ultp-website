@@ -182,7 +182,7 @@
 
   //! Layout
   --container: 1200px;
-  --about-container: 1240px;
+  --about-container: 1440px;
   --radius-xl: 16px;
   --header-h: 72px;
   --header-offset: 84px;
@@ -274,6 +274,32 @@
   --about-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(242, 246, 242, 0.94));
   --about-card-border: rgba(21, 60, 47, 0.08);
   --about-card-shadow: 0 16px 30px rgba(15, 24, 20, 0.08);
+  --about-partner-card-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(247, 249, 247, 0.96) 100%
+  );
+  --about-partner-card-border: rgba(21, 60, 47, 0.1);
+  --about-partner-card-shadow:
+    0 18px 34px rgba(15, 24, 20, 0.08), 0 1px 0 rgba(255, 255, 255, 0.82) inset;
+  --about-partner-card-shadow-hover:
+    0 24px 42px rgba(15, 24, 20, 0.12), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  --about-partner-overlay:
+    linear-gradient(180deg, rgba(8, 16, 14, 0.04) 0%, rgba(8, 16, 14, 0.2) 56%, rgba(8, 16, 14, 0.74) 100%);
+  --about-partner-company-bg: rgba(255, 255, 255, 0.12);
+  --about-partner-company-border: rgba(255, 255, 255, 0.22);
+  --about-partner-company-text: rgba(255, 255, 255, 0.9);
+  --about-partner-link-bg: rgba(21, 60, 47, 0.04);
+  --about-partner-link-bg-hover: rgba(21, 60, 47, 0.08);
+  --about-partner-link-border: rgba(21, 60, 47, 0.12);
+  --about-partner-link-border-hover: rgba(21, 60, 47, 0.2);
+  --about-partner-link-shadow: 0 8px 18px rgba(15, 24, 20, 0.06);
+  --about-partner-link-text: var(--about-heading-color);
+  --about-result-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 248, 246, 0.96));
+  --about-result-card-border: rgba(21, 60, 47, 0.1);
+  --about-result-card-shadow: 0 14px 28px rgba(15, 24, 20, 0.07);
+  --about-result-card-title: var(--about-heading-color);
+  --about-result-card-text: rgba(25, 28, 27, 0.76);
   --about-logo-color: rgba(21, 60, 47, 0.7);
   --about-credits-bg: linear-gradient(180deg, rgba(249, 247, 242, 0.92), rgba(243, 247, 244, 0.92));
   --about-credits-border: rgba(21, 60, 47, 0.08);

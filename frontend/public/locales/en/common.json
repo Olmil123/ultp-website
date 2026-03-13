@@ -286,23 +286,38 @@
   },
   "about": {
     "title": "Ukrainian Legal and Tech Partners",
-    "lead": "<strong>Ukrainian Legal and Tech Partners</strong> is a unique project that combines <strong>legal, technological</strong> and <strong>compliance expertise</strong>.",
+    "lead": "<strong>Ukrainian Legal and Tech Partners</strong> is a project founded by <strong>Svitlana Rudiuk</strong> that combines legal, tax, technological, and compliance expertise to support projects in Web3, fintech, tokenization, and digital assets.",
     "founder": {
       "title": "Founder",
       "name": "Svitlana Rudiuk",
-      "role": "CEO and expert in national and international taxation and Web3",
-      "text": "Founder ? <strong>Svitlana Rudiuk</strong>, an expert in <strong>national and international taxation</strong> and <strong>Web3 solutions</strong>.",
-      "experience": "Experience in national and international taxation practices, WEB.3 solutions practices is more than twelve years.",
-      "specialization": "My practice covers a wide range of tasks ? from tax planning, business structuring, and holding structures to legal support of projects in blockchain, tokenization, and virtual assets."
+      "role": "Founder of ULTP · international tax and Web3",
+      "text": "<strong>Svitlana Rudiuk</strong> is the founder of Ukrainian Legal and Tech Partners and an expert in national and international taxation, business structuring, and Web3 solutions.",
+      "experience": "For more than 7 years, I have worked with tax, regulatory, and compliance matters, supporting clients in projects related to blockchain, tokenization, virtual assets, and international structuring.",
+      "specialization": "My practice covers tax planning, building holding structures, legal support for fintech and Web3 projects, and designing legal frameworks for launching new digital products."
     },
     "web3": {
-      "title": "Web3 Practice",
-      "text": "I support clients at every stage of projects: compliance, obtaining crypto-asset provider status, account opening, and building effective legal structures."
+      "title": "Expertise",
+      "text": "I support clients at every stage of projects: from legal and compliance analysis to structuring the model, obtaining crypto-asset service provider status, opening accounts, and building effective legal infrastructure."
     },
-    "speaker": "<strong>Speaker, author of publications.</strong>",
+    "speaker": "Alongside practical work, I speak at industry events, prepare publications and legislative initiatives, and mentor lawyers.<br><br>I work in Ukrainian and English, advise clients from different jurisdictions, and help adapt solutions to specific regulatory requirements.",
+    "results": {
+      "title": "What The Client Gets",
+      "i1": {
+        "title": "Structured Solution",
+        "text": "A single project model that combines legal, compliance, and technological expertise."
+      },
+      "i2": {
+        "title": "Launch Readiness",
+        "text": "Solutions prepared for practical implementation, market entry, and further scaling."
+      },
+      "i3": {
+        "title": "International Focus",
+        "text": "Support aligned with different jurisdictions, regulatory models, and the client’s business goals."
+      }
+    },
     "credits": {
       "title": "Partnerships and professional associations",
-      "partner": "UA Tech Network Community Partner",
+      "partner": "UA Tech Network",
       "association": "International Advisers Association",
       "beps": "BEPS.space expert",
       "elit": "Elit-Web",
@@ -311,9 +326,11 @@
     },
     "partners": {
       "title": "Partners",
-      "lead": "The partner block combines legal, technological, and infrastructure expertise.",
-      "mary": "<strong>Mary Prokhorova - InDevLab.</strong> Compliance and IT infrastructure partner: 24/7 support, security, modernization, migration, and DevOps services. <a href=\"https://indevlab.com/uk/o-kompani/\" target=\"_blank\" rel=\"noreferrer\">indevlab.com</a>.",
-      "oleksandr": "<strong>Oleksandr Volynskiy - Mindtec.</strong> Software development partner for fintech, crypto, and Web3 tailored to individual business needs. <a href=\"https://www.linkedin.com/in/oleksandr-volynskiy/\" target=\"_blank\" rel=\"noreferrer\">LinkedIn</a>."
+      "maryRole": "Compliance Partner",
+      "mary": "InDevLab brings 7+ years of experience in data protection compliance, cybersecurity compliance, and IT infrastructure support. The team works in line with international standards for software development, IT infrastructure services, and information security processes.",
+      "oleksandrRole": "Software Development Partner",
+      "oleksandr": "Mindtec brings 11 years of software development experience and delivers tailored solutions for fintech, crypto, and Web3 business needs.",
+      "note": "Our partner model combines legal, compliance, infrastructure, and software development expertise within one project, so the client receives an integrated solution rather than fragmented services."
     }
   },
   "privacy": {
