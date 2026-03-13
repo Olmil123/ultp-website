@@ -10,7 +10,6 @@ const WORK_STEPS = [
 
 const COST_ITEMS = [
   { key: 'complexity', icon: '/assets/icons/services/solution.svg' },
-  { key: 'jurisdiction', icon: '/assets/icons/services/jurisdiction.svg' },
   { key: 'scope', icon: '/assets/icons/services/scope.svg' },
   { key: 'timeline', icon: '/assets/icons/services/timeline.svg' },
 ];

@@ -62,30 +62,66 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin: 0 0 2px;
+  gap: 10px;
+  margin: 0 0 8px;
 }
 
 .hero__badge,
 .hero__metric {
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 6px 11px;
   border-radius: 999px;
-  border: 1px solid rgba(21, 60, 47, 0.18);
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--green);
+  line-height: 1.3;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero__badge {
+  min-height: 34px;
+  padding: 8px 14px;
+  border: 1px solid var(--hero-badge-border);
+  background: var(--hero-badge-bg);
+  box-shadow: var(--hero-badge-shadow);
+  color: var(--hero-badge-text);
   font-size: 11px;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero__metric {
+  min-height: 42px;
+  max-width: min(100%, 420px);
+  padding: 10px 16px;
+  border: 1px solid var(--hero-metric-border);
+  background: var(--hero-metric-bg);
+  box-shadow: var(--hero-metric-shadow);
+  color: var(--hero-metric-text);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-wrap: pretty;
+}
+
+html[lang='uk'] .hero__meta {
+  column-gap: 8px;
+  row-gap: 8px;
+  align-items: flex-start;
+}
+
+html[lang='uk'] .hero__badge {
+  padding-inline: 12px;
   font-size: 10px;
-  font-weight: 600;
-  color: rgba(21, 60, 47, 0.86);
+  letter-spacing: 0.05em;
+}
+
+html[lang='uk'] .hero__metric {
+  flex: 1 1 320px;
+  min-width: 0;
+  max-width: min(100%, 380px);
+  padding-inline: 14px;
+  font-size: 12px;
+  line-height: 1.25;
 }
 
 .hero__title {
@@ -204,6 +240,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: pre-line;
   color: rgba(21, 60, 47, 0.8);
 }
 
@@ -404,9 +441,19 @@
 
   .hero__badge,
   .hero__metric {
-    min-height: 26px;
-    padding: 5px 10px;
+    min-height: 32px;
+    padding: 7px 12px;
+  }
+
+  .hero__badge {
     font-size: 10px;
+  }
+
+  .hero__metric {
+    min-height: 38px;
+    max-width: 100%;
+    padding: 8px 14px;
+    font-size: 12px;
   }
 
   .hero__jurisdictions-list {
@@ -473,13 +520,24 @@
   }
 
   .hero__meta {
-    gap: 6px;
+    gap: 8px;
   }
 
   .hero__badge,
   .hero__metric {
-    padding: 5px 9px;
+    padding: 6px 11px;
     letter-spacing: 0.02em;
+  }
+
+  .hero__badge {
+    min-height: 30px;
+    font-size: 9px;
+  }
+
+  .hero__metric {
+    min-height: 36px;
+    padding: 7px 12px;
+    font-size: 11px;
   }
 
   .hero__jurisdictions-label {

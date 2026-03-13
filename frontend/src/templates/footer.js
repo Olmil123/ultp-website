@@ -63,7 +63,7 @@ export const createFooter = () => {
         ]),
       ]),
 
-      el('div', { class: 'footer__contacts' }, [
+      el('div', { class: 'footer__contacts', id: 'contacts' }, [
         el('h3', { class: 'footer__contacts-title', 'data-lang': 'home.contacts.title' }),
         el('ul', { class: 'footer__contacts-list' }, [
           el('li', { class: 'footer__contacts-item' }, [

@@ -1,58 +1,80 @@
-﻿{
+{
   "header": {
     "ask": "Make a question"
   },
   "nav": {
     "practices": "Practices",
-    "services": "Services and their cost",
+    "services": "Services",
     "about": "About Us",
     "news": "News",
     "cases": "Cases",
-    "reviewsConsult": "Reviews & Consultation"
+    "reviewsConsult": "Reviews & Consultation",
+    "jurisdictions": "Jurisdictions",
+    "contacts": "Contacts"
   },
   "home": {
     "hero": {
       "subtitle": "[ SVITLANA RUDIUK ]",
       "badge": "Tokenization & Digital Assets",
       "metric": "7+ years of international tax and Web3 practice",
-      "lead": "International practice in tokenization, crypto authorization, and Web3",
-      "tagline": "Structuring, regulatory analysis, and implementation models for digital assets and blockchain platforms.",
-      "p1": "International tax and regulatory structuring for Web3 projects.",
-      "p2": "Legal support for asset tokenization and Security Token Offering (STO).",
-      "p3": "CASP / VASP authorization and KYC/AML model implementation.",
-      "cta": "Integrated approach: legal model aligned with technical architecture.",
-      "jurisdictionsLabel": "We work across jurisdictions:",
-      "jurisdictionsList": "Ukraine • UK • Cayman Islands • BVI • Cyprus • Lithuania • Estonia • UAE • Singapore • Hong Kong • Luxembourg • USA",
+      "lead": "International practices in tokenization, crypto authorization, and Web3",
+      "tagline": "We offer only reliable and balanced solutions for your business.",
+      "p1": "We provide services to corporate and private clients in digital assets, fintech, and international structuring.",
+      "p2": "Legal support for asset tokenization.",
+      "p3": "We create solutions ready for monetization and aligned with the client's business goals.",
+      "cta": "Without synergy between technical and legal expertise, it is impossible to build solutions that are truly effective for clients.",
+      "jurisdictionsLabel": "Presence Across Most Jurisdictions:",
+      "jurisdictionsList": "Ukraine • Spain • Cyprus • Estonia • Poland • Cayman Islands • Seychelles • Lithuania • UAE • Czech Republic • United Kingdom • British Virgin Islands • Hong Kong • Malta • Singapore • Liechtenstein • Luxembourg • USA",
       "jurisdictions": {
         "ua": "Ukraine",
-        "uk": "United Kingdom",
-        "cayman": "Cayman Islands",
-        "bvi": "British Virgin Islands",
+        "spain": "Spain",
         "cyprus": "Cyprus",
-        "lithuania": "Lithuania",
         "estonia": "Estonia",
+        "poland": "Poland",
+        "cayman": "Cayman Islands",
+        "seychelles": "Seychelles",
+        "lithuania": "Lithuania",
         "uae": "UAE",
-        "singapore": "Singapore",
+        "czech": "Czech Republic",
+        "uk": "United Kingdom",
+        "bvi": "British Virgin Islands",
         "hongKong": "Hong Kong",
+        "malta": "Malta",
+        "singapore": "Singapore",
+        "liechtenstein": "Liechtenstein",
         "luxembourg": "Luxembourg",
         "usa": "USA"
       },
-      "credibility": "We work with corporate and private clients in digital assets, fintech, and international structuring.",
+      "credibility": "We provide services to corporate and private clients in digital assets, fintech, and international structuring.",
       "brand": "Ukrainian Legal and Tech Partners",
       "cardName": "Svitlana Rudiuk",
       "cardDesc": "CEO | International Tax & Web3 Legal Practice",
       "cardLink": "Read more"
     },
     "advantages": {
-      "title": "Advantages",
-      "i1Title": "Integrated approach",
-      "i1Text": "Simultaneous analysis of legal and technical project structure to ensure regulatory compliance and practical implementation.",
-      "i2Title": "Regulatory Web3 expertise",
-      "i2Text": "Hands-on experience with asset tokenization, STO, CASP/VASP authorization, and KYC/AML model implementation.",
-      "i3Title": "International coverage",
-      "i3Text": "Cross-border support across jurisdictions with regard to local and international regulatory requirements.",
-      "i4Title": "Result-oriented execution",
-      "i4Text": "We deliver solutions that are implementable in practice and aligned with client business goals."
+      "title": "Our Advantages",
+      "i1Title": "Integrated Approach",
+      "i1Lead": "Our approach enables:",
+      "i1Points": {
+        "p1": "simultaneous resolution of technological and legal aspects of projects, such as tokenization or mobile application development;",
+        "p2": "delivery of legal opinions substantiated by thorough technical assessments, ensuring their practical applicability;",
+        "p3": "legal, technological and compliance expertise. Without this synergy of technical and legal expertise, it is impossible to create solutions that are genuinely effective for clients."
+      },
+      "i1Strong": "",
+      "i2Title": "Holistic and Measurable Results",
+      "i2Lead": "Our services extend beyond documentation or consultation - we deliver holistic solutions that generate revenue:",
+      "i2Points": {
+        "p1": "we develop operational solutions ready for monetization through subscriptions or sales;",
+        "p2": "we take full responsibility for the outcome, ensuring both documentation accuracy and final operational functionality."
+      },
+      "i3Text": "We adapt our solutions to different jurisdictions while maintaining international standards.",
+      "i4Title": "Results-Oriented Commitment",
+      "i4Lead": "Our team is dedicated to achieving your business objectives by delivering decisions that:",
+      "i4Points": {
+        "p1": "operate seamlessly;",
+        "p2": "generate revenue;",
+        "p3": "comply with all technical and legal requirements."
+      }
     },
     "practices": {
       "title": "Practices",
@@ -90,7 +112,7 @@
       "tgLabel": "Telegram -",
       "email": "rudiuksvitlana@gmail.com",
       "tel": "+380633966786",
-      "telegram": "dont_tax_me"
+      "telegram": "@dont_tax_me"
     },
     "reviews": {
       "eyebrow": "Reviews",
@@ -101,7 +123,7 @@
       "consult": {
         "eyebrow": "Consultation",
         "title": "Have questions? Ask away.",
-        "lead": "We will quickly review your case, highlight the risks, and suggest a clear action plan.",
+        "lead": "We will briefly analyze your situation, identify risks, and propose a clear action plan.",
         "button": "Ask a question"
       },
       "items": {
@@ -171,12 +193,12 @@
       "mediaLabel": "Real Estate + Blockchain"
     },
     "overview": {
-      "title": "Project overview",
-      "text": "A boutique community of twenty luxury villas in a prestigious tourist destination partnered with Ukrainian Legal and Tech Partners to launch a Security Token Offering (STO). The project created a digital token that allows investors to participate in real estate ownership using blockchain."
+      "title": "Project Description",
+      "text": "A boutique community of twenty luxury villas located in a famous tropical destination (Mexico), in partnership with ULTP, launched a Security Token Offering (STO). This innovative project created a digital token that allows investors to co-own premium real estate through blockchain technology with minimum investments starting from USD 5,000."
     },
     "solution": {
       "title": "Solution",
-      "text": "The tokenization initiative used modern blockchain technologies to ensure:",
+      "text": "Token issuance relied on advanced blockchain technologies to ensure:",
       "items": {
         "i1": "investment accessibility",
         "i2": "transparency",
@@ -192,23 +214,23 @@
     },
     "result": {
       "title": "Result",
-      "text": "The STO was presented at an international crypto and blockchain festival that gathered over 50,000 investors. The project demonstrated how tokenization can transform real estate investments by improving accessibility and efficiency."
+      "text": "The STO was presented at an international crypto and blockchain festival with an audience of over 50,000 investors. The project clearly demonstrated how tokenization can transform real estate investment, making it more accessible and efficient."
     },
     "cta": {
-      "title": "Discuss a similar project",
+      "title": "Explore a Similar Project",
       "button": "Make a question"
     }
   },
   "case2": {
     "hero": {
       "eyebrow": "Case 2",
-      "title": "Building an innovative blockchain-based digital identity platform",
+      "title": "Building an Innovative Blockchain Identity Platform",
       "subtitle": "A solution to simplify and secure access to tokenized assets and DeFi services.",
       "lead": "A unified, interoperable entry point that makes tokenization accessible for investors and businesses.",
       "mediaLabel": "Digital Identity + Blockchain"
     },
     "overview": {
-      "title": "Project overview",
+      "title": "Project Description",
       "text": "Ukrainian Legal and Tech Partners created a transformational blockchain-based digital identity solution designed to simplify and secure access to tokenized assets and decentralized finance (DeFi) services. This innovative product offers a single, interoperable entry point so users can interact with a broad range of virtual assets, making tokenization accessible to both individual investors and businesses. The solution, currently in beta testing within a large blockchain network, eliminates repetitive verification processes and enables seamless navigation across offerings."
     },
     "solution": {
@@ -216,7 +238,7 @@
       "text": "For businesses, the platform:",
       "items": {
         "i1": "simplifies token issuance",
-        "i2": "ensures compliance with KYC and AML regulations",
+        "i2": "ensures compliance with KYC and AML requirements",
         "i3": "reduces operational complexity",
         "i4": "creates a single entry point for working with digital assets"
       }
@@ -226,7 +248,7 @@
       "text": "Delivered to a global audience, the digital identity solution lays the foundation for future expansion, including support for additional blockchain networks and enhanced security features. Its launch demonstrates a commitment to bridging traditional finance and web3, enabling users to unlock new investment opportunities with transparency and efficiency. This project shows how advanced blockchain technology can reshape user interaction in digital finance, offering a scalable, secure, and user-friendly solution that paves the way for the future of tokenized assets."
     },
     "cta": {
-      "title": "Discuss a similar project",
+      "title": "Explore a Similar Project",
       "button": "Make a question"
     }
   },
@@ -239,7 +261,7 @@
       "mediaLabel": "GDPR + crypto education"
     },
     "overview": {
-      "title": "Project overview",
+      "title": "Project Description",
       "text": "The company developed a cryptocurrency education platform that provides subscription-based access to ensure a seamless, secure, and compliant user experience. The platform was created to offer enthusiasts an educational space and convenient access to materials and services. To ensure compliance, the project underwent comprehensive technical and legal review, following App Store Guidelines and the EU General Data Protection Regulation (GDPR), as well as other applicable laws."
     },
     "solution": {
@@ -258,42 +280,57 @@
       "text": "A successful App Store launch demonstrated the team’s ability to build a high-quality mobile app aligned with regulatory requirements and tailored for a global audience. The initiative highlighted the power of combining innovation with strict compliance, creating a safe and user-friendly platform that enables confident learning in the crypto space."
     },
     "cta": {
-      "title": "Discuss a similar project",
+      "title": "Explore a Similar Project",
       "button": "Make a question"
     }
   },
   "about": {
     "title": "Ukrainian Legal and Tech Partners",
-    "lead": "<strong>Ukrainian Legal and Tech Partners</strong> is a unique project that unites <strong>legal</strong>, <strong>technological</strong> and <strong>compliance</strong> expertise.",
+    "lead": "<strong>Ukrainian Legal and Tech Partners</strong> is a project founded by <strong>Svitlana Rudiuk</strong> that combines legal, tax, technological, and compliance expertise to support projects in Web3, fintech, tokenization, and digital assets.",
     "founder": {
       "title": "Founder",
       "name": "Svitlana Rudiuk",
-      "role": "Founder, tax law and WEB3",
-      "text": "Founder - <strong>Svitlana Rudiuk</strong>, an expert in <strong>national</strong> and <strong>international taxation</strong> and <strong>WEB.3.0 solutions</strong> practices.",
-      "experience": "Experience in national and international taxation practices, WEB.3 solutions practices is <strong>more than twelve years</strong>.",
-      "specialization": "Specializes in solving issues related to international and national taxation, including, but not limited to: <strong>corporate and personal tax planning</strong>, <strong>tax structuring</strong>, <strong>constructing of holding structures</strong>, <strong>structuring of M&A deals</strong>, <strong>attracting financing</strong>, and <strong>personal tax declaration</strong> measures."
+      "role": "Founder of ULTP · international tax and Web3",
+      "text": "<strong>Svitlana Rudiuk</strong> is the founder of Ukrainian Legal and Tech Partners and an expert in national and international taxation, business structuring, and Web3 solutions.",
+      "experience": "For more than 7 years, I have worked with tax, regulatory, and compliance matters, supporting clients in projects related to blockchain, tokenization, virtual assets, and international structuring.",
+      "specialization": "My practice covers tax planning, building holding structures, legal support for fintech and Web3 projects, and designing legal frameworks for launching new digital products."
     },
     "web3": {
-      "title": "WEB.3.0 practice",
-      "text": "In <strong>WEB.3.0</strong> practice provides <strong>legal support</strong> to clients at all stages of <strong>tokenization</strong>, obtains the status of a VASP or CASPʼs provider, ensures <strong>compliance</strong>, and opens accounts for VASP or CASP’s providers."
+      "title": "Expertise",
+      "text": "I support clients at every stage of projects: from legal and compliance analysis to structuring the model, obtaining crypto-asset service provider status, opening accounts, and building effective legal infrastructure."
     },
-    "speaker": "<strong>Speaker, author of publications.</strong>",
+    "speaker": "Alongside practical work, I speak at industry events, prepare publications and legislative initiatives, and mentor lawyers.<br><br>I work in Ukrainian and English, advise clients from different jurisdictions, and help adapt solutions to specific regulatory requirements.",
+    "results": {
+      "title": "What The Client Gets",
+      "i1": {
+        "title": "Structured Solution",
+        "text": "A single project model that combines legal, compliance, and technological expertise."
+      },
+      "i2": {
+        "title": "Launch Readiness",
+        "text": "Solutions prepared for practical implementation, market entry, and further scaling."
+      },
+      "i3": {
+        "title": "International Focus",
+        "text": "Support aligned with different jurisdictions, regulatory models, and the client’s business goals."
+      }
+    },
     "credits": {
       "title": "Partnerships and professional associations",
-      "partner": "UA Tech Network Community Partner",
-      "association": "Expert of the International Association of Tax Advisors",
+      "partner": "UA Tech Network",
+      "association": "International Advisers Association",
       "beps": "BEPS.space expert",
       "elit": "Elit-Web",
       "sabai": "Sabai Protocol",
       "zon": "Zon Art Group"
     },
-    "approach": {
-      "title": "Work approach",
-      "p1": "I have been working in national and international taxation and WEB 3.0 solutions for over twelve years. During this time, I have helped businesses and investors solve complex legal and technological issues by combining legal expertise with an understanding of modern technologies.",
-      "p2": "My practice covers a wide range of tasks, from tax planning, business structuring, and building holding structures to legal support for projects in blockchain, tokenization, and virtual assets.",
-      "p3": "I support clients at all project stages, assist with compliance, obtaining VASP statuses, as well as opening accounts and building legal structures.",
-      "p4": "In addition to practical work, I speak publicly, publish professional materials, contribute to legislative initiatives, and take part in legal training and mentoring.",
-      "p5": "I am fluent in Ukrainian and English and work with clients from different countries. If you need support or consultation, I am always ready to provide professional assistance."
+    "partners": {
+      "title": "Partners",
+      "maryRole": "Compliance Partner",
+      "mary": "InDevLab brings 7+ years of experience in data protection compliance, cybersecurity compliance, and IT infrastructure support. The team works in line with international standards for software development, IT infrastructure services, and information security processes.",
+      "oleksandrRole": "Software Development Partner",
+      "oleksandr": "Mindtec brings 11 years of software development experience and delivers tailored solutions for fintech, crypto, and Web3 business needs.",
+      "note": "Our partner model combines legal, compliance, infrastructure, and software development expertise within one project, so the client receives an integrated solution rather than fragmented services."
     }
   },
   "privacy": {
@@ -577,13 +614,13 @@
     }
   },
   "services": {
-    "title": "Services and their cost",
-    "subtitle": "We provide legal and technological services in taxation, fintech, blockchain and compliance.\nThe cost of each project is determined individually depending on complexity, scope of work, and jurisdiction.",
+    "title": "Services",
+    "subtitle": "We provide legal services in taxation, fintech, blockchain, and compliance. We provide technological services in fintech, blockchain, and WEB.3. The cost of each project is determined individually depending on complexity and scope of services.",
     "work": {
       "title": "How we work",
       "analysis": {
         "title": "Request analysis",
-        "text": "We study the client's task and define possible solutions."
+        "text": "We analyze the client's task and propose possible solutions."
       },
       "risk": {
         "title": "Risk assessment",
@@ -606,40 +643,39 @@
       "title": "How pricing is formed",
       "lead": "The cost depends on:",
       "complexity": "Project complexity",
-      "jurisdiction": "Jurisdiction",
       "scope": "Scope of work",
       "timeline": "Timeline",
       "note": "Each project is assessed individually."
     },
     "tax": {
-      "title": "Tax practice",
-      "t1": "Advising on the application of the provisions of tax legislation",
-      "t2": "Analysis of business structures with respect to the tax legislation",
-      "t3": "Providing recommendations on choosing the most effective model for implementing a cross-border agreement or business scheme and selecting appropriate jurisdictions for companies, taking into account the provisions of international agreements",
-      "t4": "Supporting the business restructuring process and the process of structuring operations",
-      "t5": "Developing and supporting optimal individual schemes for the purchase and sale of assets (business, real estate, intellectual property, etc.)",
-      "t6": "Advising on compliance with transfer pricing legislation and controlled foreign companies legislation",
-      "t7": "Advising on the application of international treaties on the avoidance of double taxation and the international exchange of tax information",
-      "t8": "Asset protecting and structuring",
-      "t9": "Personal tax declaration measures",
-      "t10": "Consulting and preparation of necessary documents on the application of tax benefits provided by current legislation",
-      "t11": "International tax planning for private clients"
+      "title": "Taxation",
+      "t1": "Consulting on the application of tax legislation.",
+      "t2": "Analysis of business structures in view of tax legislation.",
+      "t3": "Recommendations on the most effective models for cross-border deals or business schemes and selection of suitable jurisdictions.",
+      "t4": "Support of business restructuring processes.",
+      "t5": "Development and support of optimal individual asset sale and purchase structures (business, real estate, intellectual property, etc.).",
+      "t6": "Consulting on transfer pricing and controlled foreign company regulations.",
+      "t7": "Consulting on international treaties to avoid double taxation and international tax information exchange.",
+      "t8": "Consulting and preparation of documents for tax benefits under applicable legislation.",
+      "t9": "International tax planning.",
+      "t10": "Asset protection and structuring.",
+      "t11": "Personal tax declarations."
     },
     "tech": {
       "title": "Technologies",
-      "text": "Creating technological projects, mobile applications, crypto wallets, compliance platforms, etc."
+      "text": "Creation of legal and technological infrastructure for payment solutions."
     },
     "fintech": {
-      "title": "Fintech, Blockchain, Web3",
-      "f1": "Asset tokenization",
-      "f2": "Creating platforms for tokenization",
-      "f3": "Creating payment solutions",
-      "f4": "Obtaining the status of a CASP or VASP provider",
-      "f5": "Refunding funds from crypto scammers, etc."
+      "title": "Web3.0 Solutions Practice",
+      "f1": "Support of tokenization processes including tokenomics, smart-contract development, and deployment (technical and legal components).",
+      "f2": "Application of industry practices for risk management.",
+      "f3": "Obtaining crypto-asset service provider status.",
+      "f4": "Opening bank accounts for CASP providers.",
+      "f5": "Onboarding and listing services on trading platforms."
     },
     "compliance": {
       "title": "Compliance",
-      "text": "Opening bank accounts."
+      "text": "Adaptation of payment-processing service providers."
     },
     "cta": "Define your request - and we will prepare a detailed estimate.",
     "ctaBtn": "Ask a question"

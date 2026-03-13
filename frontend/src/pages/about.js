@@ -1,5 +1,65 @@
 import { el } from '@/utils/createElement';
 
+const createPartnerCard = ({
+  name,
+  company,
+  companyHref,
+  roleKey,
+  image,
+  alt,
+  textKey,
+  linkHref,
+  linkLabel,
+}) =>
+  el('article', { class: 'about__partner-card' }, [
+    el('div', { class: 'about__partner-media' }, [
+      el('img', {
+        src: image,
+        alt,
+        class: 'about__partner-img',
+        loading: 'lazy',
+      }),
+      el('div', { class: 'about__partner-overlay' }, [
+        el('p', { class: 'about__partner-name' }, name),
+        companyHref
+          ? el(
+              'a',
+              {
+                class: 'about__partner-company about__partner-company-link',
+                href: companyHref,
+                target: '_blank',
+                rel: 'noreferrer',
+              },
+              [company],
+            )
+          : el('span', { class: 'about__partner-company' }, company),
+      ]),
+    ]),
+    el('div', { class: 'about__partner-body' }, [
+      el('p', {
+        class: 'about__partner-role',
+        'data-lang': roleKey,
+      }),
+      el('p', {
+        class: 'about__text about__partner-text',
+        'data-lang': textKey,
+        'data-lang-html': '',
+      }),
+      el('div', { class: 'about__partner-actions' }, [
+        el(
+          'a',
+          {
+            class: 'about__partner-link',
+            href: linkHref,
+            target: '_blank',
+            rel: 'noreferrer',
+          },
+          [linkLabel],
+        ),
+      ]),
+    ]),
+  ]);
+
 export const createAboutPage = () =>
   el('section', { class: 'page page-about' }, [
     el('div', { class: 'container about' }, [
@@ -39,14 +99,24 @@ export const createAboutPage = () =>
             el('p', { class: 'about__text', 'data-lang': 'about.speaker', 'data-lang-html': '' }),
           ]),
 
-          el('div', { class: 'about__block about__block--approach' }, [
-            el('h2', { class: 'about__subtitle', 'data-lang': 'about.approach.title' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p1' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p2' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p3' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p4' }),
-            el('p', { class: 'about__text', 'data-lang': 'about.approach.p5' }),
+          el('div', { class: 'about__block about__block--results' }, [
+            el('h2', { class: 'about__subtitle', 'data-lang': 'about.results.title' }),
+            el('div', { class: 'about__results-grid' }, [
+              el('article', { class: 'about__result-card' }, [
+                el('h3', { class: 'about__result-title', 'data-lang': 'about.results.i1.title' }),
+                el('p', { class: 'about__result-text', 'data-lang': 'about.results.i1.text' }),
+              ]),
+              el('article', { class: 'about__result-card' }, [
+                el('h3', { class: 'about__result-title', 'data-lang': 'about.results.i2.title' }),
+                el('p', { class: 'about__result-text', 'data-lang': 'about.results.i2.text' }),
+              ]),
+              el('article', { class: 'about__result-card' }, [
+                el('h3', { class: 'about__result-title', 'data-lang': 'about.results.i3.title' }),
+                el('p', { class: 'about__result-text', 'data-lang': 'about.results.i3.text' }),
+              ]),
+            ]),
           ]),
+
         ]),
 
         el('aside', { class: 'about__aside' }, [
@@ -71,7 +141,7 @@ export const createAboutPage = () =>
                   'a',
                   {
                     class: 'about__badge-link',
-                    href: 'https://www.linkedin.com/company/ua-tech-network/?originalSubdomain=ua',
+                    href: 'https://uatechnetwork.com/#about-us',
                     target: '_blank',
                     rel: 'noreferrer',
                   },
@@ -79,10 +149,16 @@ export const createAboutPage = () =>
                 ),
               ]),
               el('li', {}, [
-                el('span', {
-                  class: 'about__badge-text',
-                  'data-lang': 'about.credits.association',
-                }),
+                el(
+                  'a',
+                  {
+                    class: 'about__badge-link',
+                    href: 'https://iaa.international/',
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                  [el('span', { 'data-lang': 'about.credits.association' })],
+                ),
               ]),
               el('li', {}, [
                 el(
@@ -132,6 +208,36 @@ export const createAboutPage = () =>
                   [el('span', { 'data-lang': 'about.credits.zon' })],
                 ),
               ]),
+            ]),
+          ]),
+        ]),
+
+        el('section', { class: 'about__section about__section--partners' }, [
+          el('div', { class: 'about__block about__block--partners' }, [
+            el('h2', { class: 'about__subtitle', 'data-lang': 'about.partners.title' }),
+            el('div', { class: 'about__partners-grid' }, [
+              createPartnerCard({
+                name: 'Mary Prokhorova',
+                company: 'InDevLab',
+                companyHref: 'https://indevlab.com/',
+                roleKey: 'about.partners.maryRole',
+                image: '/assets/ico/mary.jpg',
+                alt: 'Mary Prokhorova',
+                textKey: 'about.partners.mary',
+                linkHref: 'https://www.linkedin.com/in/maryprokhorova/?originalSubdomain=ua',
+                linkLabel: 'LinkedIn',
+              }),
+              createPartnerCard({
+                name: 'Oleksandr Volynskiy',
+                company: 'Mindtec',
+                companyHref: 'https://mindtec.com.ua/',
+                roleKey: 'about.partners.oleksandrRole',
+                image: '/assets/ico/oleksandr.jpg',
+                alt: 'Oleksandr Volynskiy',
+                textKey: 'about.partners.oleksandr',
+                linkHref: 'https://www.linkedin.com/in/oleksandr-volynskiy/',
+                linkLabel: 'LinkedIn',
+              }),
             ]),
           ]),
         ]),

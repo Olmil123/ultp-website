@@ -25,15 +25,21 @@ const REVIEW_SHOTS = [
 
 const HERO_JURISDICTIONS = [
   { key: 'ua', flag: 'ua' },
-  { key: 'uk', flag: 'gb' },
-  { key: 'cayman', flag: 'ky' },
-  { key: 'bvi', flag: 'vg' },
+  { key: 'spain', flag: 'es' },
   { key: 'cyprus', flag: 'cy' },
-  { key: 'lithuania', flag: 'lt' },
   { key: 'estonia', flag: 'ee' },
+  { key: 'poland', flag: 'pl' },
+  { key: 'cayman', flag: 'ky' },
+  { key: 'seychelles', flag: 'sc' },
+  { key: 'lithuania', flag: 'lt' },
   { key: 'uae', flag: 'ae' },
-  { key: 'singapore', flag: 'sg' },
+  { key: 'czech', flag: 'cz' },
+  { key: 'uk', flag: 'gb' },
+  { key: 'bvi', flag: 'vg' },
   { key: 'hongKong', flag: 'hk' },
+  { key: 'malta', flag: 'mt' },
+  { key: 'singapore', flag: 'sg' },
+  { key: 'liechtenstein', flag: 'li' },
   { key: 'luxembourg', flag: 'lu' },
   { key: 'usa', flag: 'us' },
 ];
@@ -95,7 +101,7 @@ export const createMain = () => {
         el('div', { class: 'hero__jurisdictions' }, [
           el('span', { class: 'hero__jurisdictions-label', 'data-lang': 'home.hero.jurisdictionsLabel' }),
           createHeroJurisdictions(),
-          el('p', { class: 'hero__credibility', 'data-lang': 'home.hero.credibility' }),
+          el('p', { class: 'hero__credibility', 'data-lang': 'home.advantages.i3Text' }),
         ]),
       ]),
 
@@ -127,19 +133,30 @@ export const createMain = () => {
       el('ul', { class: 'advantages__list' }, [
         el('li', { class: 'advantages__item' }, [
           el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i1Title' }),
-          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i1Text' }),
+          el('p', { class: 'advantages__item-lead', 'data-lang': 'home.advantages.i1Lead' }),
+          el('ul', { class: 'advantages__item-points' }, [
+            el('li', { 'data-lang': 'home.advantages.i1Points.p1' }),
+            el('li', { 'data-lang': 'home.advantages.i1Points.p2' }),
+            el('li', { 'data-lang': 'home.advantages.i1Points.p3' }),
+          ]),
+          el('p', { class: 'advantages__item-strong', 'data-lang': 'home.advantages.i1Strong' }),
         ]),
         el('li', { class: 'advantages__item' }, [
           el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i2Title' }),
-          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i2Text' }),
-        ]),
-        el('li', { class: 'advantages__item' }, [
-          el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i3Title' }),
-          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i3Text' }),
+          el('p', { class: 'advantages__item-lead', 'data-lang': 'home.advantages.i2Lead' }),
+          el('ul', { class: 'advantages__item-points' }, [
+            el('li', { 'data-lang': 'home.advantages.i2Points.p1' }),
+            el('li', { 'data-lang': 'home.advantages.i2Points.p2' }),
+          ]),
         ]),
         el('li', { class: 'advantages__item' }, [
           el('h3', { class: 'advantages__item-title', 'data-lang': 'home.advantages.i4Title' }),
-          el('p', { class: 'advantages__item-text', 'data-lang': 'home.advantages.i4Text' }),
+          el('p', { class: 'advantages__item-lead', 'data-lang': 'home.advantages.i4Lead' }),
+          el('ul', { class: 'advantages__item-points' }, [
+            el('li', { 'data-lang': 'home.advantages.i4Points.p1' }),
+            el('li', { 'data-lang': 'home.advantages.i4Points.p2' }),
+            el('li', { 'data-lang': 'home.advantages.i4Points.p3' }),
+          ]),
         ]),
       ]),
     ]),

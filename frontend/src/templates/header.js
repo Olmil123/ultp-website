@@ -119,15 +119,12 @@ const mobileDropdown = ({ id, labelKey, href, items, itemLangKey }) =>
 export const createHeader = () => {
   const header = el('header', { class: 'site-header' }, [
     el('div', { class: 'header__inner' }, [
-      // Logo -> home
       el('a', { href: '/', 'data-link': '', class: 'header__logo' }, [
         el('span', { class: 'logo__circle' }, [el('span', { class: 'logo__text' }, 'ULTP')]),
         el('span', { class: 'logo__label' }, 'ULTP'),
       ]),
 
-      //! Desktop nav
       el('nav', { class: 'header__nav' }, [
-        // Practices dropdown
         el('div', { class: 'nav-item nav-item--has-dropdown' }, [
           el('a', { href: '/#practices', 'data-link': '', class: 'nav-item__trigger' }, [
             el('span', { 'data-lang': 'nav.practices' }),
@@ -205,11 +202,7 @@ export const createHeader = () => {
             ),
           ),
         ]),
-        el(
-          'a',
-          { href: '/#reviews', 'data-link': '', 'data-lang': 'nav.reviewsConsult' },
-          'Відгуки і консультація',
-        ),
+        el('a', { href: '/#reviews', 'data-link': '', 'data-lang': 'nav.reviewsConsult' }),
       ]),
 
       el('div', { class: 'header__right' }, [
@@ -238,7 +231,6 @@ export const createHeader = () => {
       ]),
     ]),
 
-    //* Mobile nav
     el('nav', { class: 'header__nav header__nav--mobile' }, [
       mobileDropdown({
         id: 'mobile-practices-menu',
@@ -256,11 +248,7 @@ export const createHeader = () => {
         items: CASES,
         itemLangKey: (c) => `home.cases.items.${c.key}.title`,
       }),
-      el(
-        'a',
-        { href: '/#reviews', 'data-link': '', 'data-lang': 'nav.reviewsConsult' },
-        'Відгуки і консультація',
-      ),
+      el('a', { href: '/#reviews', 'data-link': '', 'data-lang': 'nav.reviewsConsult' }),
 
       el('button', {
         class: 'btn btn--primary',
