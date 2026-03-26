@@ -58,7 +58,7 @@ def database_from_url(url: str) -> dict:
 
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-change-me-in-production")
 DEBUG = env_bool("DEBUG", True)
-ALLOWED_HOSTS = env_list("ALLOWED_HOSTS", "127.0.0.1,localhost")
+ALLOWED_HOSTS = ["ultp.com.ua", "www.ultp.com.ua", "127.0.0.1", "localhost"]
 
 # Application definition
 INSTALLED_APPS = [
