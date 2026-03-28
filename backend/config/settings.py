@@ -182,6 +182,15 @@ X_FRAME_OPTIONS = "DENY"
 
 # DRF
 REST_FRAMEWORK = {
+
+"DEFAULT_RENDERER_CLASSES": (
+    ["rest_framework.renderers.JSONRenderer"]
+    if not DEBUG
+    else [
+        "rest_framework.renderers.JSONRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ]
+),
     "DEFAULT_THROTTLE_RATES": {
         "anon": os.getenv("DRF_THROTTLE_ANON", "300/day"),
         "questions_burst": os.getenv("DRF_THROTTLE_QUESTIONS_BURST", "3/minute"),
