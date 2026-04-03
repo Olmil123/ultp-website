@@ -63,7 +63,8 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     minify: 'esbuild',
-    target: 'es2024',
+    target: ['es2020', 'safari14'],
+    cssTarget: 'safari14',
     esbuild: {
       legalComments: 'none',
     },
