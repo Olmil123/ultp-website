@@ -1,4 +1,4 @@
-﻿import i18next from './i18n';
+﻿import i18next, { i18nReady } from './i18n';
 
 import 'normalize.css';
 import '@/sass/styles.scss';
@@ -74,7 +74,9 @@ document.addEventListener('app:render', updateTranslations);
 document.addEventListener('app:render', initScrollReveal);
 document.addEventListener('app:language-switch-start', () => setLanguageSwitchState(true));
 document.addEventListener('app:language-switch-end', () => setLanguageSwitchState(false));
-updateTranslations();
+i18nReady.finally(() => {
+  updateTranslations();
+});
 
 const modal = () => document.getElementById('questionModal');
 const practiceModal = () => document.getElementById('practiceModal');
