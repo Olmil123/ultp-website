@@ -9,6 +9,7 @@ import { createFooter } from '@/templates/footer.js';
 import { createLayout } from '@/templates/layout.js';
 import { initRouter } from '@/router.js';
 import { initScrollReveal } from '@/utils/scrollReveal.js';
+import { updateSeo } from '@/utils/seo.js';
 import { sendQuestion } from '@/api/request.js';
 
 const mount = document.getElementById('app');
@@ -69,13 +70,16 @@ const setLanguageSwitchState = (active) => {
 
 i18next.on('initialized', updateTranslations);
 i18next.on('languageChanged', updateTranslations);
+i18next.on('languageChanged', updateSeo);
 i18next.on('loaded', updateTranslations);
 document.addEventListener('app:render', updateTranslations);
 document.addEventListener('app:render', initScrollReveal);
+document.addEventListener('app:render', updateSeo);
 document.addEventListener('app:language-switch-start', () => setLanguageSwitchState(true));
 document.addEventListener('app:language-switch-end', () => setLanguageSwitchState(false));
 i18nReady.finally(() => {
   updateTranslations();
+  updateSeo();
 });
 
 const modal = () => document.getElementById('questionModal');
