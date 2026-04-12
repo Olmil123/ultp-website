@@ -1,13 +1,7 @@
-from django.urls import include, path
-from .views import QuestionCreateView, ItemViewSet, health
-from rest_framework.routers import DefaultRouter
-
-
-router = DefaultRouter()
-router.register('items', ItemViewSet, basename='item')
+from django.urls import path
+from .views import QuestionCreateView, health
 
 urlpatterns = [
     path('health/', health),
-    path('', include(router.urls)),
     path('questions/', QuestionCreateView.as_view(), name='question-create'),
 ]
