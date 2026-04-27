@@ -41,8 +41,9 @@ export const setLanguage = async (lang) => {
     const waitMs = Math.max(0, LANG_SWITCH_FADE_MS - elapsed);
     if (waitMs > 0) await sleep(waitMs);
 
-    if (switchId !== langSwitchSeq) return;
-    document.dispatchEvent(new CustomEvent('app:language-switch-end', { detail: { lang } }));
+    if (switchId === langSwitchSeq) {
+      document.dispatchEvent(new CustomEvent('app:language-switch-end', { detail: { lang } }));
+    }
   }
 };
 

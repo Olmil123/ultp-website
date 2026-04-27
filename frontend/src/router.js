@@ -28,9 +28,8 @@ export const initRouter = (mountNode) => {
   const render = () => {
     const currentToken = ++renderToken;
     clearTimeout(renderTimer);
-    showLoader();
+    if (!isFirstRender) showLoader();
 
-    const startedAt = performance.now();
     const path = normalize(window.location.pathname || '/');
     const routeName = path === '/' ? 'home' : path.slice(1).replace(/[^a-z0-9-]/gi, '') || 'home';
     document.body.dataset.route = routeName;
@@ -42,10 +41,6 @@ export const initRouter = (mountNode) => {
       hideLoader();
       throw error;
     }
-
-    const minLoaderTime = isFirstRender ? 320 : 180;
-    const elapsed = performance.now() - startedAt;
-    const delay = Math.max(0, minLoaderTime - elapsed);
 
     renderTimer = window.setTimeout(() => {
       if (currentToken !== renderToken) return;
@@ -60,7 +55,7 @@ export const initRouter = (mountNode) => {
       document.dispatchEvent(new Event('app:render'));
       handleScrollAfterRender();
       isFirstRender = false;
-    }, delay);
+    }, 0);
   };
 
   document.addEventListener('click', (e) => {

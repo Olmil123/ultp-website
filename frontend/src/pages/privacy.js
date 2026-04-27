@@ -19,6 +19,7 @@ export const createPrivacyPage = () =>
             width: 28,
             height: 28,
             loading: 'lazy',
+            decoding: 'async',
           }),
         ]),
         el('div', { class: 'privacy__hero-content' }, [

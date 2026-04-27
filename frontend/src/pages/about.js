@@ -7,6 +7,8 @@ const createPartnerCard = ({
   roleKey,
   image,
   alt,
+  width,
+  height,
   textKey,
   linkHref,
   linkLabel,
@@ -17,7 +19,10 @@ const createPartnerCard = ({
         src: image,
         alt,
         class: 'about__partner-img',
+        width,
+        height,
         loading: 'lazy',
+        decoding: 'async',
       }),
       el('div', { class: 'about__partner-overlay' }, [
         el('p', { class: 'about__partner-name' }, name),
@@ -116,7 +121,6 @@ export const createAboutPage = () =>
               ]),
             ]),
           ]),
-
         ]),
 
         el('aside', { class: 'about__aside' }, [
@@ -125,7 +129,10 @@ export const createAboutPage = () =>
               src: '/assets/ico/2.jpg',
               alt: 'Svitlana Rudiuk',
               class: 'about__img',
+              width: 640,
+              height: 640,
               loading: 'lazy',
+              decoding: 'async',
             }),
           ]),
           el('div', { class: 'about__photo-meta' }, [
@@ -223,6 +230,8 @@ export const createAboutPage = () =>
                 roleKey: 'about.partners.maryRole',
                 image: '/assets/ico/mary.jpg',
                 alt: 'Mary Prokhorova',
+                width: 800,
+                height: 800,
                 textKey: 'about.partners.mary',
                 linkHref: 'https://www.linkedin.com/in/maryprokhorova/?originalSubdomain=ua',
                 linkLabel: 'LinkedIn',
@@ -234,6 +243,8 @@ export const createAboutPage = () =>
                 roleKey: 'about.partners.oleksandrRole',
                 image: '/assets/ico/oleksandr.jpg',
                 alt: 'Oleksandr Volynskiy',
+                width: 500,
+                height: 500,
                 textKey: 'about.partners.oleksandr',
                 linkHref: 'https://www.linkedin.com/in/oleksandr-volynskiy/',
                 linkLabel: 'LinkedIn',

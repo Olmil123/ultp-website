@@ -18,8 +18,7 @@ const bootLoader = document.getElementById('boot-loader');
 const finishBootLoading = () => {
   document.body.classList.remove('is-boot-loading');
   if (!bootLoader) return;
-  bootLoader.classList.add('is-leaving');
-  window.setTimeout(() => bootLoader.remove(), 320);
+  bootLoader.remove();
 };
 
 if (!mount) {
@@ -365,7 +364,11 @@ document.addEventListener('submit', async (e) => {
   }
 
   if (!formNode.checkValidity()) {
-    setFormHint(node, 'error', tSafe('modal.invalid', 'Перевірте, будь ласка, коректність введених даних.'));
+    setFormHint(
+      node,
+      'error',
+      tSafe('modal.invalid', 'Перевірте, будь ласка, коректність введених даних.'),
+    );
     formNode.reportValidity();
     return;
   }
@@ -391,11 +394,19 @@ document.addEventListener('submit', async (e) => {
       !/spam detected/i.test(message);
 
     if (isThrottled) {
-      setFormHint(node, 'error', tSafe('modal.throttled', 'Забагато запитів. Зачекайте трохи та спробуйте ще раз.'));
+      setFormHint(
+        node,
+        'error',
+        tSafe('modal.throttled', 'Забагато запитів. Зачекайте трохи та спробуйте ще раз.'),
+      );
     } else if (shouldUseServerMessage) {
       setFormHint(node, 'error', message);
     } else {
-      setFormHint(node, 'error', tSafe('modal.error', 'Не вдалося надіслати повідомлення. Спробуйте пізніше.'));
+      setFormHint(
+        node,
+        'error',
+        tSafe('modal.error', 'Не вдалося надіслати повідомлення. Спробуйте пізніше.'),
+      );
     }
   } finally {
     setFormPending(formNode, submitBtn, false);

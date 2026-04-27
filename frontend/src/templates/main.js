@@ -63,7 +63,10 @@ const createHeroJurisdictions = () =>
           alt: '',
           'aria-hidden': 'true',
         }),
-        el('span', { class: 'hero__jurisdiction-name', 'data-lang': `home.hero.jurisdictions.${key}` }),
+        el('span', {
+          class: 'hero__jurisdiction-name',
+          'data-lang': `home.hero.jurisdictions.${key}`,
+        }),
       ]),
     ),
   );
@@ -99,7 +102,10 @@ export const createMain = () => {
           ]),
         ]),
         el('div', { class: 'hero__jurisdictions' }, [
-          el('span', { class: 'hero__jurisdictions-label', 'data-lang': 'home.hero.jurisdictionsLabel' }),
+          el('span', {
+            class: 'hero__jurisdictions-label',
+            'data-lang': 'home.hero.jurisdictionsLabel',
+          }),
           createHeroJurisdictions(),
           el('p', { class: 'hero__credibility', 'data-lang': 'home.advantages.i3Text' }),
         ]),
@@ -108,7 +114,16 @@ export const createMain = () => {
       el('div', { class: 'hero__photo' }, [
         el('h1', { class: 'hero__brand-side', 'data-lang': 'home.hero.brand' }),
         el('div', { class: 'hero__photo-wrap' }, [
-          el('img', { src: '/assets/ico/logo.jpg', alt: 'Світлана Рудюк', class: 'hero__img' }),
+          el('img', {
+            src: '/assets/ico/logo.jpg',
+            alt: 'Світлана Рудюк',
+            class: 'hero__img',
+            width: 853,
+            height: 1280,
+            loading: 'eager',
+            decoding: 'async',
+            fetchpriority: 'high',
+          }),
         ]),
         el('div', { class: 'hero__card' }, [
           el('strong', { class: 'hero__card-title', 'data-lang': 'home.hero.cardName' }),
@@ -211,6 +226,7 @@ export const createMain = () => {
                   width: item.width,
                   height: item.height,
                   loading: 'lazy',
+                  decoding: 'async',
                 }),
               ]),
             ]),
@@ -248,7 +264,10 @@ export const createMain = () => {
             src: '/assets/ico/author.png',
             alt: '',
             class: 'reviews-consult__img',
+            width: 640,
+            height: 640,
             loading: 'lazy',
+            decoding: 'async',
           }),
         ]),
       ]),
@@ -274,51 +293,64 @@ export const createModal = () => {
     },
     [
       el('div', { class: 'modal__backdrop', 'data-close-modal': 'question' }),
-      el('div', { class: 'modal__dialog modal__dialog--question', role: 'dialog', 'aria-modal': 'true' }, [
-        el('div', { class: 'modal__visual', 'aria-hidden': 'true' }),
-        el('div', { class: 'modal__content' }, [
-          el('div', { class: 'modal__head' }, [
-            el('h3', { class: 'modal__title', 'data-lang': 'modal.title' }),
-            el('p', { class: 'modal__subtitle', 'data-lang': 'modal.subtitle' }),
-            el(
-              'button',
-              {
-                class: 'modal__close',
-                type: 'button',
-                'data-close-modal': 'question',
-                'aria-label': 'Закрити',
-              },
-              'x',
-            ),
-          ]),
-          el('form', { class: 'form', id: 'questionForm', 'aria-busy': 'false' }, [
-            el('label', { class: 'form__field' }, [
-              el('span', { 'data-lang': 'modal.name' }),
-              el('input', { type: 'text', name: 'name', required: true }),
+      el(
+        'div',
+        { class: 'modal__dialog modal__dialog--question', role: 'dialog', 'aria-modal': 'true' },
+        [
+          el('div', { class: 'modal__visual', 'aria-hidden': 'true' }),
+          el('div', { class: 'modal__content' }, [
+            el('div', { class: 'modal__head' }, [
+              el('h3', { class: 'modal__title', 'data-lang': 'modal.title' }),
+              el('p', { class: 'modal__subtitle', 'data-lang': 'modal.subtitle' }),
+              el(
+                'button',
+                {
+                  class: 'modal__close',
+                  type: 'button',
+                  'data-close-modal': 'question',
+                  'aria-label': 'Закрити',
+                },
+                'x',
+              ),
             ]),
-            el('label', { class: 'form__field' }, [
-              el('span', { 'data-lang': 'modal.email' }),
-              el('input', { type: 'email', name: 'email', required: true }),
-            ]),
-            el('label', { class: 'form__field' }, [
-              el('span', { 'data-lang': 'modal.message' }),
-              el('textarea', { name: 'message', rows: 4, maxlength: 2000, required: true }),
-            ]),
-            el('label', { class: 'form__honeypot', 'aria-hidden': 'true' }, [
-              el('span', {}, 'Вебсайт'),
-              el('input', {
-                type: 'text',
-                name: 'website',
-                autocomplete: 'off',
-                tabindex: '-1',
+            el('form', { class: 'form', id: 'questionForm', 'aria-busy': 'false' }, [
+              el('label', { class: 'form__field' }, [
+                el('span', { 'data-lang': 'modal.name' }),
+                el('input', { type: 'text', name: 'name', required: true }),
+              ]),
+              el('label', { class: 'form__field' }, [
+                el('span', { 'data-lang': 'modal.email' }),
+                el('input', { type: 'email', name: 'email', required: true }),
+              ]),
+              el('label', { class: 'form__field' }, [
+                el('span', { 'data-lang': 'modal.message' }),
+                el('textarea', { name: 'message', rows: 4, maxlength: 2000, required: true }),
+              ]),
+              el('label', { class: 'form__honeypot', 'aria-hidden': 'true' }, [
+                el('span', {}, 'Вебсайт'),
+                el('input', {
+                  type: 'text',
+                  name: 'website',
+                  autocomplete: 'off',
+                  tabindex: '-1',
+                }),
+              ]),
+              el('button', { class: 'btn', type: 'submit', 'data-lang': 'modal.send' }),
+              el('p', {
+                class: 'form__consent',
+                'data-lang': 'modal.consentHtml',
+                'data-lang-html': true,
+              }),
+              el('p', {
+                class: 'form__hint',
+                id: 'formHint',
+                role: 'status',
+                'aria-live': 'polite',
               }),
             ]),
-            el('button', { class: 'btn', type: 'submit', 'data-lang': 'modal.send' }),
-            el('p', { class: 'form__consent', 'data-lang': 'modal.consentHtml', 'data-lang-html': true }),
-            el('p', { class: 'form__hint', id: 'formHint', role: 'status', 'aria-live': 'polite' }),
           ]),
-        ]),
-      ]),
+        ],
+      ),
     ],
   );
 
