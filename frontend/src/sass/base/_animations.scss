@@ -11,6 +11,7 @@ body.is-boot-loading {
 
 body.is-boot-loading #app {
   opacity: 0;
+  visibility: hidden;
 }
 
 #app::after {
@@ -112,36 +113,32 @@ body.is-page-loading::after {
 }
 
 .app-main.is-route-entering {
-  animation: route-fade-in 460ms cubic-bezier(0.22, 1, 0.36, 1);
+  animation: route-fade-in 380ms cubic-bezier(0.18, 0.82, 0.24, 1);
 }
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(var(--reveal-distance));
+  transform: translate3d(0, var(--reveal-distance), 0) scale(0.985);
   transition:
     opacity var(--reveal-duration) var(--reveal-ease),
     transform var(--reveal-duration) var(--reveal-ease);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 [data-lang] {
   transition:
     opacity var(--lang-switch-text-duration) var(--ease),
-    transform var(--lang-switch-text-duration) var(--ease),
-    filter var(--lang-switch-text-duration) var(--ease);
-  will-change: opacity, transform, filter;
+    transform var(--lang-switch-text-duration) var(--ease);
 }
 
 body.is-language-switching [data-lang] {
   opacity: 0;
   transform: translateY(var(--lang-switch-shift)) scale(0.995);
-  filter: blur(var(--lang-switch-blur));
 }
 
 body.is-language-switching #app::after {
@@ -158,12 +155,12 @@ body.is-language-switching #app::after {
 @keyframes route-fade-in {
   from {
     opacity: 0;
-    transform: translateY(14px) scale(0.995);
+    transform: translate3d(0, 16px, 0) scale(0.99);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -216,7 +213,6 @@ body.is-language-switching #app::after {
   body.is-language-switching [data-lang] {
     opacity: 1;
     transform: none;
-    filter: none;
     transition: none;
   }
 

@@ -2,6 +2,7 @@
 
 .page-about {
   @include m.section(44px);
+  padding-top: 24px;
   background: transparent;
   font-family: var(--font-body);
   color: var(--about-text-color);
@@ -684,6 +685,11 @@
   .page-about {
     @include m.section(34px);
     overflow-x: hidden;
+  }
+
+  .page-about .breadcrumbs {
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 
   .about__title {

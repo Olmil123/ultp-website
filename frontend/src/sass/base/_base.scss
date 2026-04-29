@@ -6,7 +6,6 @@ html {
   height: 100%;
   scroll-padding-top: var(--header-offset);
 }
-
 body {
   @include m.page-background;
   min-height: 100vh;
@@ -69,5 +68,13 @@ body[data-route='about'] .app-main {
 
   .app-main {
     padding-top: var(--header-offset-mobile);
+  }
+
+  .page-about,
+  .page-services,
+  .page-case,
+  .page-privacy,
+  .page-practices {
+    padding-top: 8px;
   }
 }

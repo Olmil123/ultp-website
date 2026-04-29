@@ -35,9 +35,9 @@ const langBtn = (code, label) =>
       type: 'button',
       class: `lang-switch__btn ${getLanguage() === code ? 'is-active' : ''}`,
       'data-lang-switch': code,
-      onClick: (e) => {
+      onClick: async (e) => {
         e.stopPropagation();
-        setLanguage(code);
+        await setLanguage(code);
       },
     },
     label,

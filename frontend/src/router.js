@@ -48,8 +48,12 @@ export const initRouter = (mountNode) => {
       mountNode.innerHTML = '';
       mountNode.appendChild(nextPage);
       clearTimeout(enterTimer);
-      mountNode.classList.add('is-route-entering');
-      enterTimer = window.setTimeout(() => mountNode.classList.remove('is-route-entering'), 380);
+      if (!isFirstRender) {
+        mountNode.classList.add('is-route-entering');
+        enterTimer = window.setTimeout(() => mountNode.classList.remove('is-route-entering'), 380);
+      } else {
+        mountNode.classList.remove('is-route-entering');
+      }
 
       hideLoader();
       document.dispatchEvent(new Event('app:render'));

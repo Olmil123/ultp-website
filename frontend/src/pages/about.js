@@ -1,4 +1,5 @@
 import { el } from '@/utils/createElement';
+import { createBreadcrumbs } from '@/components/breadcrumbs';
 
 const createPartnerCard = ({
   name,
@@ -68,6 +69,7 @@ const createPartnerCard = ({
 export const createAboutPage = () =>
   el('section', { class: 'page page-about' }, [
     el('div', { class: 'container about' }, [
+      createBreadcrumbs('/about'),
       el('header', { class: 'about__header' }, [
         el('p', { class: 'about__eyebrow', 'data-lang': 'nav.about' }),
         el('h1', { class: 'about__title', 'data-lang': 'about.title' }),

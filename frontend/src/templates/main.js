@@ -44,7 +44,8 @@ const HERO_JURISDICTIONS = [
   { key: 'usa', flag: 'us' },
 ];
 
-const REVIEWS_LINK = 'https://www.linkedin.com/in/svitlana-rudiuk-8b77929b';
+const REVIEWS_LINK =
+  'https://www.linkedin.com/in/svitlana-rudiuk-8b77929b/details/recommendations/';
 
 const createHeroJurisdictions = () =>
   el(
@@ -274,7 +275,7 @@ export const createMain = () => {
     ]),
   ]);
 
-  return el('main', { class: 'app-main', id: 'main-content' }, [
+  return el('main', { class: 'page-home', id: 'main-content' }, [
     hero,
     advantages,
     practices,
@@ -313,18 +314,39 @@ export const createModal = () => {
                 'x',
               ),
             ]),
-            el('form', { class: 'form', id: 'questionForm', 'aria-busy': 'false' }, [
+            el('form', { class: 'form', id: 'questionForm', 'aria-busy': 'false', novalidate: true }, [
               el('label', { class: 'form__field' }, [
                 el('span', { 'data-lang': 'modal.name' }),
-                el('input', { type: 'text', name: 'name', required: true }),
+                el('input', {
+                  type: 'text',
+                  name: 'name',
+                  required: true,
+                  autocomplete: 'name',
+                  maxlength: 120,
+                }),
+                el('p', { class: 'form__field-error', 'data-field-error': 'name' }),
               ]),
               el('label', { class: 'form__field' }, [
                 el('span', { 'data-lang': 'modal.email' }),
-                el('input', { type: 'email', name: 'email', required: true }),
+                el('input', {
+                  type: 'email',
+                  name: 'email',
+                  required: true,
+                  autocomplete: 'email',
+                  maxlength: 160,
+                }),
+                el('p', { class: 'form__field-error', 'data-field-error': 'email' }),
               ]),
               el('label', { class: 'form__field' }, [
                 el('span', { 'data-lang': 'modal.message' }),
-                el('textarea', { name: 'message', rows: 4, maxlength: 2000, required: true }),
+                el('textarea', {
+                  name: 'message',
+                  rows: 4,
+                  maxlength: 2000,
+                  minlength: 10,
+                  required: true,
+                }),
+                el('p', { class: 'form__field-error', 'data-field-error': 'message' }),
               ]),
               el('label', { class: 'form__honeypot', 'aria-hidden': 'true' }, [
                 el('span', {}, 'Вебсайт'),
@@ -346,6 +368,17 @@ export const createModal = () => {
                 id: 'formHint',
                 role: 'status',
                 'aria-live': 'polite',
+              }),
+            ]),
+            el('div', { class: 'form-success is-hidden', id: 'questionFormSuccess' }, [
+              el('span', { class: 'form-success__icon', 'aria-hidden': 'true' }),
+              el('h4', { class: 'form-success__title', 'data-lang': 'modal.successTitle' }),
+              el('p', { class: 'form-success__text', 'data-lang': 'modal.successText' }),
+              el('button', {
+                class: 'btn',
+                type: 'button',
+                'data-close-modal': 'question',
+                'data-lang': 'modal.successClose',
               }),
             ]),
           ]),
@@ -417,8 +450,11 @@ export const createModal = () => {
               class: 'review-image-modal__img',
               id: 'reviewImageModalImg',
               src: '',
+              width: 789,
+              height: 217,
               alt: 'Скріншот відгуку',
               loading: 'lazy',
+              decoding: 'async',
             }),
           ]),
         ],

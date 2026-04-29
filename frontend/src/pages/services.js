@@ -1,4 +1,5 @@
 import { el } from '@/utils/createElement';
+import { createBreadcrumbs } from '@/components/breadcrumbs';
 
 const WORK_STEPS = [
   { key: 'analysis', icon: '/assets/icons/services/analysis.svg' },
@@ -17,6 +18,7 @@ const COST_ITEMS = [
 export const createServicesPage = () =>
   el('section', { class: 'page page-services' }, [
     el('div', { class: 'container' }, [
+      createBreadcrumbs('/services'),
       el('header', { class: 'services-hero' }, [
         el('h1', { class: 'services__title', 'data-lang': 'services.title' }),
         el('p', { class: 'services__subtitle', 'data-lang': 'services.subtitle' }),

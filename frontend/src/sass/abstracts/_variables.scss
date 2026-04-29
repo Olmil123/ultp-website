@@ -187,19 +187,19 @@
   --header-h: 72px;
   --header-offset: 84px;
   --header-offset-tablet: 72px;
-  --header-offset-mobile: 64px;
+  --header-offset-mobile: 56px;
   --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.08);
 
   //! Motion
   --t: 220ms;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --reveal-distance: 16px;
-  --reveal-duration: 520ms;
-  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-distance: 20px;
+  --reveal-duration: 460ms;
+  --reveal-ease: cubic-bezier(0.18, 0.82, 0.24, 1);
   --lang-switch-duration: 280ms;
   --lang-switch-text-duration: 220ms;
   --lang-switch-shift: 3px;
-  --lang-switch-blur: 0.8px;
+  --lang-switch-blur: 0;
   --lang-switch-veil:
     linear-gradient(
       110deg,

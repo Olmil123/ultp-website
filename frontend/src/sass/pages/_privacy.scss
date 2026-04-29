@@ -17,6 +17,7 @@ body[data-route='terms'] .app-main {
 
 .page-privacy {
   @include m.section(44px);
+  padding-top: 24px;
   background: transparent;
 }
 

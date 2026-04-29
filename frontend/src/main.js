@@ -14,11 +14,18 @@ import { sendQuestion } from '@/api/request.js';
 
 const mount = document.getElementById('app');
 const bootLoader = document.getElementById('boot-loader');
+let hasRenderedInitialRoute = false;
+let hasLoadedInitialTranslations = false;
 
 const finishBootLoading = () => {
   document.body.classList.remove('is-boot-loading');
   if (!bootLoader) return;
   bootLoader.remove();
+};
+
+const tryFinishBootLoading = () => {
+  if (!hasRenderedInitialRoute || !hasLoadedInitialTranslations) return;
+  finishBootLoading();
 };
 
 if (!mount) {
@@ -32,7 +39,16 @@ if (!mount) {
     mount.appendChild(mainContainer);
     mount.appendChild(createFooter());
     mount.appendChild(createModal());
-    document.addEventListener('app:render', finishBootLoading, { once: true });
+    document.addEventListener(
+      'app:render',
+      () => {
+        window.requestAnimationFrame(() => {
+          hasRenderedInitialRoute = true;
+          tryFinishBootLoading();
+        });
+      },
+      { once: true },
+    );
     initRouter(mainContainer);
   } catch (err) {
     mount.innerHTML = `<p style="padding:20px;color:red;">Помилка: ${err.message}</p>`;
@@ -76,10 +92,16 @@ document.addEventListener('app:render', initScrollReveal);
 document.addEventListener('app:render', updateSeo);
 document.addEventListener('app:language-switch-start', () => setLanguageSwitchState(true));
 document.addEventListener('app:language-switch-end', () => setLanguageSwitchState(false));
-i18nReady.finally(() => {
-  updateTranslations();
-  updateSeo();
-});
+i18nReady
+  .catch((err) => {
+    console.error(err);
+  })
+  .finally(() => {
+    updateTranslations();
+    updateSeo();
+    hasLoadedInitialTranslations = true;
+    tryFinishBootLoading();
+  });
 
 const modal = () => document.getElementById('questionModal');
 const practiceModal = () => document.getElementById('practiceModal');
@@ -131,11 +153,7 @@ const openModal = () => {
   document.body.classList.add('is-modal-open');
   node.classList.remove('is-hidden');
   node.setAttribute('aria-hidden', 'false');
-  const nodeHint = hint();
-  if (nodeHint) {
-    nodeHint.textContent = '';
-    delete nodeHint.dataset.state;
-  }
+  resetFormState();
   node.querySelector('input, textarea, button')?.focus();
 };
 
@@ -145,6 +163,7 @@ const closeModal = () => {
   document.body.classList.remove('is-modal-open');
   node.classList.add('is-hidden');
   node.setAttribute('aria-hidden', 'true');
+  resetFormState();
 };
 
 const openPracticeModal = (trigger) => {
@@ -195,6 +214,12 @@ const openReviewImageModal = (trigger) => {
 
   image.setAttribute('src', src);
   image.setAttribute('alt', alt);
+  const width = trigger?.getAttribute('width');
+  const height = trigger?.getAttribute('height');
+  if (width && height) {
+    image.setAttribute('width', width);
+    image.setAttribute('height', height);
+  }
 
   node.classList.remove('is-hidden');
   node.setAttribute('aria-hidden', 'false');
@@ -305,6 +330,7 @@ document.addEventListener('keydown', (e) => {
 
 const form = () => document.getElementById('questionForm');
 const hint = () => document.getElementById('formHint');
+const formSuccess = () => document.getElementById('questionFormSuccess');
 const detectClientTimezone = () => {
   try {
     return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
@@ -316,6 +342,70 @@ const detectClientTimezone = () => {
 const setFormHint = (node, state, text) => {
   node.dataset.state = state;
   node.textContent = text;
+};
+
+const clearFieldError = (field) => {
+  const fieldNode = form()?.querySelector(`[data-field-error="${field}"]`);
+  if (fieldNode) fieldNode.textContent = '';
+  const control = form()?.elements?.[field];
+  if (control) control.removeAttribute('aria-invalid');
+};
+
+const setFieldError = (field, message) => {
+  const fieldNode = form()?.querySelector(`[data-field-error="${field}"]`);
+  if (fieldNode) fieldNode.textContent = message;
+  const control = form()?.elements?.[field];
+  if (control) control.setAttribute('aria-invalid', 'true');
+};
+
+const clearFormErrors = () => {
+  ['name', 'email', 'message'].forEach(clearFieldError);
+};
+
+const resetFormState = () => {
+  clearFormErrors();
+  modal()?.classList.remove('is-success');
+  const nodeHint = hint();
+  if (nodeHint) {
+    nodeHint.textContent = '';
+    delete nodeHint.dataset.state;
+  }
+
+  form()?.classList.remove('is-hidden');
+  formSuccess()?.classList.add('is-hidden');
+};
+
+const showFormSuccess = () => {
+  modal()?.classList.add('is-success');
+  form()?.classList.add('is-hidden');
+  formSuccess()?.classList.remove('is-hidden');
+};
+
+const validateQuestionForm = (payload, formNode) => {
+  const errors = {};
+
+  if (!payload.name) {
+    errors.name = tSafe('modal.required', 'Будь ласка, заповніть усі поля.');
+  } else if (!/\p{L}/u.test(payload.name) || payload.name.length < 2) {
+    errors.name = tSafe('modal.nameInvalid', "Вкажіть коректне ім'я.");
+  }
+
+  if (!payload.email) {
+    errors.email = tSafe('modal.required', 'Будь ласка, заповніть усі поля.');
+  } else if (!formNode.email?.checkValidity()) {
+    errors.email = tSafe('modal.emailInvalid', 'Вкажіть коректну електронну пошту.');
+  }
+
+  if (!payload.message) {
+    errors.message = tSafe('modal.required', 'Будь ласка, заповніть усі поля.');
+  } else if (payload.message.length < 10) {
+    errors.message = tSafe(
+      'modal.messageInvalid',
+      'Повідомлення має містити щонайменше 10 символів.',
+    );
+  }
+
+  return errors;
 };
 
 const setFormPending = (formNode, submitBtn, pending) => {
@@ -353,23 +443,21 @@ document.addEventListener('submit', async (e) => {
   };
 
   if (payload.website) {
+    clearFormErrors();
     setFormHint(node, 'success', tSafe('modal.sent', 'Повідомлення успішно надіслано.'));
+    showFormSuccess();
     formNode.reset();
     return;
   }
 
-  if (!payload.name || !payload.email || !payload.message) {
-    setFormHint(node, 'error', tSafe('modal.required', 'Будь ласка, заповніть усі поля.'));
-    return;
-  }
+  clearFormErrors();
+  const errors = validateQuestionForm(payload, formNode);
+  const firstErrorField = Object.keys(errors)[0];
 
-  if (!formNode.checkValidity()) {
-    setFormHint(
-      node,
-      'error',
-      tSafe('modal.invalid', 'Перевірте, будь ласка, коректність введених даних.'),
-    );
-    formNode.reportValidity();
+  if (firstErrorField) {
+    Object.entries(errors).forEach(([field, message]) => setFieldError(field, message));
+    setFormHint(node, 'error', tSafe('modal.invalid', 'Перевірте, будь ласка, коректність введених даних.'));
+    formNode.elements[firstErrorField]?.focus();
     return;
   }
 
@@ -379,6 +467,7 @@ document.addEventListener('submit', async (e) => {
   try {
     await sendQuestion(payload);
     setFormHint(node, 'success', tSafe('modal.sent', 'Повідомлення успішно надіслано.'));
+    showFormSuccess();
     formNode.reset();
   } catch (err) {
     console.error(err);
@@ -410,5 +499,21 @@ document.addEventListener('submit', async (e) => {
     }
   } finally {
     setFormPending(formNode, submitBtn, false);
+  }
+});
+
+document.addEventListener('input', (e) => {
+  const target = e.target;
+  if (!(target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement)) return;
+  if (!target.form || target.form.id !== 'questionForm') return;
+
+  if (target.name === 'name' || target.name === 'email' || target.name === 'message') {
+    clearFieldError(target.name);
+  }
+
+  const node = hint();
+  if (node?.dataset.state === 'error') {
+    node.textContent = '';
+    delete node.dataset.state;
   }
 });

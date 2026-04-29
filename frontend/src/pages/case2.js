@@ -1,8 +1,10 @@
 import { el } from '@/utils/createElement';
+import { createBreadcrumbs } from '@/components/breadcrumbs';
 
 export const createCaseDigitalIdentityPage = () =>
   el('section', { class: 'page page-case' }, [
     el('div', { class: 'container' }, [
+      createBreadcrumbs('/cases/digital-identity'),
       el('section', { class: 'case-hero' }, [
         el('div', { class: 'case-hero__content' }, [
           el('p', { class: 'case-hero__eyebrow', 'data-lang': 'case2.hero.eyebrow' }),

@@ -200,6 +200,10 @@
   display: none;
 }
 
+.advantages__item-strong:empty {
+  display: none;
+}
+
 .advantages__item-strong {
   margin: 0;
   margin-top: auto;
@@ -260,6 +264,7 @@
 /* Practices page cards */
 .page-practices {
   @include m.section(72px);
+  padding-top: 24px;
   background-color: var(--practices-bg);
   background-image:
     var(--practices-gradient),

@@ -11,11 +11,12 @@ body[data-route='services'] {
 
 .page-services {
   @include m.section(80px);
+  padding-top: 24px;
 }
 
 .services-hero {
   max-width: 760px;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 
 .services__title {

@@ -1,8 +1,7 @@
 let revealObserver = null;
 
 const TARGET_SELECTOR = [
-  '.app-main > .hero',
-  '.app-main > .section',
+  '.page-home > .section',
   '.page-services .services-hero',
   '.page-services .services-section',
   '.page-services .service-card',
@@ -51,7 +50,7 @@ export const initScrollReveal = () => {
   nodes.forEach((node, index) => {
     node.classList.add('reveal-on-scroll');
     node.classList.remove('is-revealed');
-    node.style.setProperty('--reveal-delay', `${(index % 4) * 50}ms`);
+    node.style.setProperty('--reveal-delay', `${(index % 4) * 35}ms`);
   });
 
   revealObserver = new IntersectionObserver(

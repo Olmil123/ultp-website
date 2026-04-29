@@ -1,4 +1,5 @@
 import { el } from '@/utils/createElement';
+import { createBreadcrumbs } from '@/components/breadcrumbs';
 
 const list = (baseKey, keys) =>
   el(
@@ -10,6 +11,7 @@ const list = (baseKey, keys) =>
 export const createTermsPage = () =>
   el('section', { class: 'page page-privacy page-terms' }, [
     el('div', { class: 'container privacy' }, [
+      createBreadcrumbs('/terms'),
       el('header', { class: 'privacy__hero' }, [
         el('div', { class: 'privacy__icon-wrap' }, [
           el('img', {
